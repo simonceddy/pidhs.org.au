@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class ArticleController extends Controller
 {
@@ -13,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -46,6 +47,14 @@ class ArticleController extends Controller
     public function show($id)
     {
         //
+        // Make better
+        $article = $this->article->find($id);
+        $data = [];
+        $data['id'] = $article->id;
+        $data['title'] = $article->title;
+        $data['content'] = $article->content;
+        $data['published'] = $article->publicationData;
+        return view('article', $data);
     }
 
     /**
