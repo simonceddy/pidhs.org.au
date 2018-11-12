@@ -7,6 +7,9 @@ use App\Article;
 
 class PageController extends Controller
 {
+    // TODO: Clean up this almighty racket
+    // Every function does the same thing fffffffff
+
     protected $article;
 
     public function __construct(Article $article)
