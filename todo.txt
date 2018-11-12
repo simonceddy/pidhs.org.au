@@ -1,0 +1,4 @@
+- handling images
+- single user authentication
+- implementing ckeditor or similar (check vulnerabilities)
+- check out alternatives to unescaped html articles
