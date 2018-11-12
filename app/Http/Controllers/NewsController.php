@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use Illuminate\Http\Request;
-use App\Article;
 
-class ArticleController extends Controller
+class NewsController extends Controller
 {
-    protected $article;
-
-    public function __construct(Article $article)
-    {
-        $this->article = $article;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +14,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-
+        //
+        $list = News::all()->sortByDesc('publicationDate');
+        return view('list', ['title' => 'News', 'list' => $list]);
     }
 
     /**
@@ -48,29 +43,22 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, News $news)
     {
-        //
-        // Make better
-        $article = $this->article->find($id);
-        $data = [];
-        $data['id'] = $article->id;
-        $data['title'] = $article->title;
-        $data['content'] = $article->content;
-        $data['published'] = $article->publicationData;
-        return view('article', $data);
+        $article = $news->find($id);
+        return view('article', $article);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(News $news)
     {
         //
     }
@@ -79,10 +67,10 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, News $news)
     {
         //
     }
@@ -90,10 +78,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(News $news)
     {
         //
     }

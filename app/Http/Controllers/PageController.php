@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class PageController extends Controller
 {
@@ -10,13 +11,12 @@ class PageController extends Controller
 
     public function __construct(Article $article)
     {
-        $this->article = new ArticleController;
+        $this->article = new ArticleController($article);
     }
 
     protected function getArticle(int $id)
     {
-        $data = $this->article->find($id);
-        return view('article', $data);
+        return $this->article->show($id);
     }
 
     public function home()
@@ -49,7 +49,7 @@ class PageController extends Controller
         return $this->getArticle(7);
     }
 
-    public function whereToFind()
+    public function findUs()
     {
         return $this->getArticle(9);
     }
@@ -57,5 +57,45 @@ class PageController extends Controller
     public function whatToDo()
     {
         return $this->getArticle(10);
+    }
+
+    public function books()
+    {
+        return $this->getArticle(11);
+    }
+
+    public function reports()
+    {
+        return $this->getArticle(19);
+    }
+
+    public function takedown()
+    {
+        return $this->getArticle(18);
+    }
+
+    public function membership()
+    {
+        return $this->getArticle(13);
+    }
+
+    public function contact()
+    {
+        return $this->getArticle(12);
+    }
+
+    public function donate()
+    {
+        return $this->getArticle(14);
+    }
+
+    public function services()
+    {
+        return $this->getArticle(15);
+    }
+
+    public function links()
+    {
+        return $this->getArticle(16);
     }
 }

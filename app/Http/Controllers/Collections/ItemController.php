@@ -1,19 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Collections;
 
+use App\Gallery\Item;
 use Illuminate\Http\Request;
-use App\Article;
 
-class ArticleController extends Controller
+class ItemController extends Controller
 {
-    protected $article;
-
-    public function __construct(Article $article)
-    {
-        $this->article = $article;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -48,29 +41,21 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Gallery\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Item $item)
     {
         //
-        // Make better
-        $article = $this->article->find($id);
-        $data = [];
-        $data['id'] = $article->id;
-        $data['title'] = $article->title;
-        $data['content'] = $article->content;
-        $data['published'] = $article->publicationData;
-        return view('article', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Gallery\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Item $item)
     {
         //
     }
@@ -79,10 +64,10 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Gallery\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Item $item)
     {
         //
     }
@@ -90,10 +75,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Gallery\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Item $item)
     {
         //
     }

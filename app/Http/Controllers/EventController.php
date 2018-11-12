@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use Illuminate\Http\Request;
-use App\Article;
 
-class ArticleController extends Controller
+class EventController extends Controller
 {
-    protected $article;
-
-    public function __construct(Article $article)
-    {
-        $this->article = $article;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +14,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-
+        // TODO: Fix Events
+        $list = Event::all()->sortByDesc('event_date');
+        return view('list', ['title' => 'Events', 'list' => $list]);
     }
 
     /**
@@ -48,29 +43,21 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Event $event)
     {
         //
-        // Make better
-        $article = $this->article->find($id);
-        $data = [];
-        $data['id'] = $article->id;
-        $data['title'] = $article->title;
-        $data['content'] = $article->content;
-        $data['published'] = $article->publicationData;
-        return view('article', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Event $event)
     {
         //
     }
@@ -79,10 +66,10 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
         //
     }
@@ -90,10 +77,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Event $event)
     {
         //
     }
