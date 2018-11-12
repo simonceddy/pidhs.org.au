@@ -72,9 +72,25 @@ Route::get('/links', 'PageController@links')->name('links');
 // Collection/Gallery routes
 Route::group(['prefix' => 'collection'], function () {
     Route::get('/', function () {
-        return view('welcome');
+        return view('collections/collections');
     })->name('collection_home');
+
+    Route::get('/{id}', function () {
+        return view('collections/collection');
+    })->name('collection_view');
+
+    Route::get('/{id}/item/{item}', function () {
+        return view('collections/item');
+    })->name('collection_item');
 });
+
+Route::get('/essays', function () {
+    return view('welcome');
+})->name('essays');
+
+Route::get('/meetings', function () {
+    return view('welcome');
+})->name('meetings');
 
 // Admin routes
 Route::group(['prefix' => 'admin'], function () {
