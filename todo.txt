@@ -2,3 +2,4 @@
 - single user authentication
 - implementing ckeditor or similar (check vulnerabilities)
 - check out alternatives to unescaped html articles
+- removing js libs not requried by main site from app.js, loading dynamically?
