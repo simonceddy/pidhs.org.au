@@ -94,11 +94,15 @@ Route::get('/meetings', function () {
 
 // Admin routes
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('admin_home');
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 
 Route::group(['prefix' => 'exhibitions'], function () {
-
+    Route::get('/{path?}', function () {
+        return 'exhibitions place holder.';
+    });
 });

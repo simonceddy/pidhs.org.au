@@ -33,6 +33,6 @@
         </div>
     </div>
 
-<script src="/js/app.js"></script>
+<script src="/js/main_app.js"></script>
 </body>
 </html>
