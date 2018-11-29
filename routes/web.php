@@ -106,3 +106,5 @@ Route::group(['prefix' => 'exhibitions'], function () {
         return 'exhibitions place holder.';
     });
 });
+
+Route::resource('items', 'ItemController');
