@@ -93,6 +93,7 @@ Route::get('/meetings', function () {
 })->name('meetings');
 
 // Admin routes
+// TODO: use auth middleware
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
 });
