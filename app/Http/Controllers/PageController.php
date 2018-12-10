@@ -7,8 +7,7 @@ use App\Article;
 
 class PageController extends Controller
 {
-    // TODO: Clean up this almighty racket
-    // Every function does the same thing fffffffff
+    // TODO: Use model binding with slug
 
     protected $article;
 
