@@ -33,9 +33,11 @@ Route::group(['prefix' => 'about'], function () {
         ->name('about_takedown');
 });
 
-Route::get('/news', 'NewsController@index')->name('news');
+/* Route::get('/news', 'NewsController@index')->name('news');
 
-Route::get('/news/{id}', 'NewsController@show');
+Route::get('/news/{id}', 'NewsController@show'); */
+
+Route::resource('news', 'NewsController');
 
 // Museum dropdown routes
 Route::group(['prefix' => 'museum'], function () {
@@ -70,7 +72,7 @@ Route::get('/services', 'PageController@services')->name('services');
 Route::get('/links', 'PageController@links')->name('links');
 
 // Collection/Gallery routes
-Route::group(['prefix' => 'collection'], function () {
+/* Route::group(['prefix' => 'collection'], function () {
     Route::get('/', function () {
         return view('collections/collections');
     })->name('collection_home');
@@ -83,14 +85,18 @@ Route::group(['prefix' => 'collection'], function () {
         return view('collections/item');
     })->name('collection_item');
 });
-
+ */
 Route::get('/essays', function () {
     return view('welcome');
 })->name('essays');
 
+Route::resource('essay', 'EssayController');
+
 Route::get('/meetings', function () {
     return view('welcome');
 })->name('meetings');
+
+Route::resource('meeting', 'MeetingController');
 
 // Admin routes
 // TODO: use auth middleware
@@ -109,3 +115,5 @@ Route::group(['prefix' => 'exhibitions'], function () {
 });
 
 Route::resource('items', 'ItemController');
+
+Route::resource('collection', 'CollectionController');
