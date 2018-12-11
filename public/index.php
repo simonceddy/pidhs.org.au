@@ -56,6 +56,6 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
+//dd($app->make(Cocur\Slugify\Slugify::class)->slugify('what to see & do'));
 $response->send();
-
 $kernel->terminate($request, $response);
