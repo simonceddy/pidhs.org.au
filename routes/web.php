@@ -37,7 +37,7 @@ Route::group(['prefix' => 'about'], function () {
 
 Route::get('/news/{id}', 'NewsController@show'); */
 
-Route::resource('news', 'NewsController');
+Route::resource('news', 'NewsController')->names('news');
 
 // Museum dropdown routes
 Route::group(['prefix' => 'museum'], function () {

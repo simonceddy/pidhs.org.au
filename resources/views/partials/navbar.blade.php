@@ -16,7 +16,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('news')}}">News</a>
+                <a class="nav-link" href="{{route('news.index')}}">News</a>
             </li>
             <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="museum-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Museum</a>
