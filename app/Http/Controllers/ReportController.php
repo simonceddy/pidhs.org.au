@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Report;
 use Illuminate\Http\Request;
-use App\Article;
-use Cocur\Slugify\Slugify;
 
-class ArticleController extends Controller
+class ReportController extends Controller
 {
-    protected $article;
-
-    public function __construct(Article $article)
-    {
-        $this->article = $article;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -33,7 +25,6 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('admin.forms.articleform');
     }
 
     /**
@@ -42,40 +33,29 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Slugify $slugify)
+    public function store(Request $request)
     {
         //
-        $data = $request->post();
-        $data['slug'] = $slugify->slugify($data['title']);
-        dd($data);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Report $report)
     {
         //
-        // Make better
-        $article = $this->article->find($id);
-        $data = [];
-        $data['id'] = $article->id;
-        $data['title'] = $article->title;
-        $data['content'] = $article->content;
-        $data['published'] = $article->publicationData;
-        return view('article', $data);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Report $report)
     {
         //
     }
@@ -84,10 +64,10 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Report $report)
     {
         //
     }
@@ -95,10 +75,10 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Report $report)
     {
         //
     }

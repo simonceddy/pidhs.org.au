@@ -13,7 +13,9 @@
         <div class="row mx-auto" style="width: 100%" id="header">
             <a href="/"><img src="/storage/logo1.png"></a>
         </div>
-        @include('partials/navbar')
+        <div class="row">
+            @include('partials/navbar')
+        </div>
         <div class="row">
             <div class="col-2">
                 @include('partials/sidebar')
@@ -34,5 +36,6 @@
     </div>
 
 <script src="/js/main_app.js"></script>
+@yield('scripts')
 </body>
 </html>

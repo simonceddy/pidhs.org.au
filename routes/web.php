@@ -14,6 +14,7 @@
 // Navbar routes
 Route::get('/', 'PageController@home')->name('home');
 
+Route::resource('article', 'ArticleController');
 
 // About dropdown routes
 Route::group(['prefix' => 'about'], function () {
