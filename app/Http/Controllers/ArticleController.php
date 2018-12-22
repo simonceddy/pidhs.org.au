@@ -33,7 +33,7 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        return view('admin.forms.articleform');
+        return view('article.create');
     }
 
     /**
@@ -47,7 +47,9 @@ class ArticleController extends Controller
         //
         $data = $request->post();
         $data['slug'] = $slugify->slugify($data['title']);
-        dd($data);
+        $article = new Article($data);
+        $article->save();
+        return redirect('articles');
     }
 
     /**
@@ -56,17 +58,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Article $article)
     {
-        //
-        // Make better
-        $article = $this->article->find($id);
-        $data = [];
-        $data['id'] = $article->id;
-        $data['title'] = $article->title;
-        $data['content'] = $article->content;
-        $data['published'] = $article->publicationData;
-        return view('article', $data);
+        return view('article.show', $article);
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('layout')
 
 @section('title', 'Phillip Island & District Historical Society')
 
