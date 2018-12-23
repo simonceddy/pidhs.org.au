@@ -49,7 +49,7 @@ class ArticleController extends Controller
         $data['slug'] = $slugify->slugify($data['title']);
         $article = new Article($data);
         $article->save();
-        return redirect('articles');
+        return redirect(route('article.show', $article));
     }
 
     /**
@@ -79,12 +79,15 @@ class ArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Article $article)
     {
-        //
+        // TODO: validate
+        $article->fill($request->post());
+        $article->save();
+        return redirect(route('article.show', $article));
     }
 
     /**

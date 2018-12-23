@@ -2,8 +2,9 @@
 
 @section('content')
 <div class="container">
-<form action="{{route('article.store')}}" method="POST" name="create.article">
+<form action="{{route('article.update', $slug)}}" method="POST" name="create.article">
         @csrf
+        @method('PATCH')
         <div class="form-group row">
             <label for="title" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-8">
