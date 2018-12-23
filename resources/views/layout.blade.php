@@ -36,6 +36,6 @@
     </div>
 
 <script src="/js/main_app.js"></script>
-@yield('scripts')
+@stack('scripts')
 </body>
 </html>

@@ -1,9 +1,9 @@
-@extends('layouts/layout')
+@extends('layout')
 
 @section('title', 'Phillip Island & District Historical Society')
 
 @section('content')
 <h1>
-    Item
+    Collections
 </h1>
 @endsection

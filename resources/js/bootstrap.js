@@ -55,4 +55,4 @@ if (token) {
 //     encrypted: true
 // });
 
-window.CKEditor = require('@ckeditor/ckeditor5-build-classic');
+//window.CKEditor = require('@ckeditor/ckeditor5-build-classic');

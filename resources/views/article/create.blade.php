@@ -10,13 +10,7 @@
                 <input type="text" class="form-control" name="title" id="title" placeholder="Title">
             </div>
         </div>
-        <fieldset class="form-group row">
-            <div class="col-sm-10">
-
-                <label for="editor">Article Content</label>
-                <textarea name="content" id="editor" placeholder="The HTML content of the article" maxlength="100000" style="height: 30em;"></textarea>
-            </div>
-        </fieldset>
+        @include('includes.editor')
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -26,15 +20,6 @@
 </div>
 @endsection
 
-@section('scripts')
-<script>
-    window.CKEditor.create(document.querySelector('#editor'))
-        .then(editor => {
-            console.log(editor);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-
-</script>
-@endsection
+@push('scripts')
+<script src="/js/editor.js"></script>
+@endpush
