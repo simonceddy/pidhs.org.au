@@ -8,13 +8,6 @@ use Cocur\Slugify\Slugify;
 
 class ArticleController extends Controller
 {
-    protected $article;
-
-    public function __construct(Article $article)
-    {
-        $this->article = $article;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -55,7 +48,7 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Article  $article
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
@@ -66,7 +59,7 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Article  $article
      * @return \Illuminate\Http\Response
      */
     public function edit(Article $article)
