@@ -14,7 +14,9 @@ class EssayController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Essay::all();
+        //dd($articles[0]);
+        return view('essay.index', ['articles' => $articles]);
     }
 
     /**
@@ -24,7 +26,7 @@ class EssayController extends Controller
      */
     public function create()
     {
-        //
+        return view('essay.create');
     }
 
     /**
@@ -35,7 +37,11 @@ class EssayController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->post();
+        // todo validate
+        $essay = new Essay($data);
+        $essay->save();
+        return redirect(route('essay.show', $essay->id));
     }
 
     /**
@@ -46,7 +52,7 @@ class EssayController extends Controller
      */
     public function show(Essay $essay)
     {
-        //
+        return view('essay.show', $essay);
     }
 
     /**
@@ -57,7 +63,7 @@ class EssayController extends Controller
      */
     public function edit(Essay $essay)
     {
-        //
+        return view('essay.edit', $essay);
     }
 
     /**
@@ -69,7 +75,11 @@ class EssayController extends Controller
      */
     public function update(Request $request, Essay $essay)
     {
-        //
+        $data = $request->post();
+        // validate data
+        $essay->fill($data);
+        $essay->save();
+        return redirect(route('essay.show', $essay));
     }
 
     /**
@@ -80,6 +90,7 @@ class EssayController extends Controller
      */
     public function destroy(Essay $essay)
     {
-        //
+        $essay->delete();
+        return redirect(route('essay.index'));
     }
 }

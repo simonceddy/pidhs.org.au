@@ -15,8 +15,8 @@ class NewsController extends Controller
     public function index()
     {
         //
-        $list = News::all()->sortByDesc('publicationDate');
-        return view('list', ['title' => 'News', 'list' => $list]);
+        $list = News::all()->sortByDesc('created_at');
+        return view('news.index', ['title' => 'News', 'articles' => $list]);
     }
 
     /**
@@ -26,7 +26,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('news.create');
     }
 
     /**
@@ -37,7 +37,11 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->post();
+        // todo validate
+        $news = new News($data);
+        $news->save();
+        return redirect(route('news.show', $news->id));
     }
 
     /**
@@ -46,10 +50,9 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show($id, News $news)
+    public function show(News $news)
     {
-        $article = $news->find($id);
-        return view('article', $article);
+        return view('news.show', $news);
     }
 
     /**
@@ -60,7 +63,7 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        return view('news.edit', $news);
     }
 
     /**
@@ -83,6 +86,8 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        //dd($news);
+        $news->delete();
+        return redirect(route('news.index'));
     }
 }

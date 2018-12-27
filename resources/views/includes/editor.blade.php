@@ -9,3 +9,8 @@
         </textarea>
     </div>
 </fieldset>
+
+
+@push('scripts')
+<script src="/js/editor.js"></script>
+@endpush

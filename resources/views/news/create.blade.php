@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-@include('shared.articleform', ['action' => route('article.store')])
+@include('shared.articleform', ['action' => route('news.store')])
 </div>
 @endsection
