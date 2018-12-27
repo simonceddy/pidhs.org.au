@@ -15,6 +15,7 @@ class ExhibitionController extends Controller
     public function index()
     {
         //
+        return view('exhibition.app');
     }
 
     /**

@@ -51,6 +51,9 @@
             <li class="nav-item">
                 <a href="{{route('donate')}}">Donate</a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('exhibitions.index')}}">Exhibitions</a>
+            </li>
         </ul>
 
     </div>
