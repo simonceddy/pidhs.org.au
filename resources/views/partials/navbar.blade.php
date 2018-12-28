@@ -2,28 +2,28 @@
     <div id="menu">
         <ul id="nav-menu">
             <li>
-                <a href="{{route('home')}}">Home</a>
+                <a href="@article(home)">Home</a>
             </li>
             <li>
                 <a href="#" id="about-dropdown">About</a>
                 <ul>
                     <li>
-                        <a href="{{route('about_committee')}}">Committee</a>
+                        <a href="@article(committee)">Committee</a>
                     </li>
                     <li>
-                    <a href="{{route('about_objectives')}}">Aims & Objectives</a>
+                    <a href="@article(aims_objectives)">Aims & Objectives</a>
                     </li>
                     <li>
-                    <a href="{{route('about_area')}}">Geographic Area</a>
+                    <a href="@article(geographic_area)">Geographic Area</a>
                     </li>
                     <li>
-                    <a href="{{route('about_constitution')}}">Constitution</a>
+                    <a href="@article(constitution)">Constitution</a>
                     </li>
                     <li>
-                    <a href="{{route('about_reports')}}">Annual Reports</a>
+                    <a href="@article(annual_reports)">Annual Reports</a>
                     </li>
                     <li>
-                    <a href="{{route('about_takedown')}}">Takedown Policy</a>
+                    <a href="@article(takedown_policy)">Takedown Policy</a>
                     </li>
                 </ul>
             </li>
@@ -34,22 +34,22 @@
                     <a href="#">Museum</a>
 
                     <ul>
-                        <li><a href="{{route('museum_find_us')}}">Where and When to Find Us</a></li>
-                        <li><a href="{{route('museum_what_to_do')}}">What to See & Do</a></li>
-                        <li><a href="{{route('museum_books')}}">Books For Sale</a></li>
+                        <li><a href="@article(where_and_when_to_find_us)}}">Where and When to Find Us</a></li>
+                        <li><a href="@article(what_to_see_do)">What to See & Do</a></li>
+                        <li><a href="@article(books_for_sale)">Books For Sale</a></li>
                     </ul>
                 </li>
             <li class="nav-item">
-                <a href="/events">Events</a>
+            <a href="{{route('event.index')}}">Events</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('contact')}}">Contact</a>
+                <a href="@article(contact)">Contact</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('membership')}}">Membership</a>
+                <a href="@article(membership)">Membership</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('donate')}}">Donate</a>
+                <a href="@article(donate)">Donate</a>
             </li>
             <li class="nav-item">
                 <a href="{{route('exhibitions.index')}}">Exhibitions</a>

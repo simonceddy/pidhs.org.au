@@ -50,18 +50,15 @@ Route::group(['prefix' => 'museum'], function () {
 
 });
 
-Route::get('/events', function() {
-    return view('list');
-});
 
 Route::get('/contact', 'PageController@contact')
-    ->name('contact');
+->name('contact');
 
 Route::get('/membership', 'PageController@membership')
-    ->name('membership');
+->name('membership');
 
 Route::get('/donate', 'PageController@donate')
-    ->name('donate');
+->name('donate');
 
 // Sidebar routes
 Route::get('/services', 'PageController@services')->name('services');
@@ -73,6 +70,7 @@ Route::get('/essays', function () {
 })->name('essays');
 
 Route::resource('essay', 'EssayController');
+Route::resource('event', 'EventController');
 
 Route::get('/meetings', function () {
     return view('welcome');
@@ -90,12 +88,8 @@ Auth::routes([
     'register' => false
 ]);
 
-Route::group(['prefix' => 'exhibitions'], function () {
-    Route::get('/{path?}', function () {
-        return 'exhibitions place holder.';
-    });
-});
-
 Route::resource('items', 'ItemController');
 
 Route::resource('collection', 'CollectionController');
+
+Route::resource('exhibitions', 'ExhibitionController');
