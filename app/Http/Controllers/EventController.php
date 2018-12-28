@@ -15,8 +15,7 @@ class EventController extends Controller
     public function index()
     {
         // TODO: Fix Events
-        $list = Event::all()->sortByDesc('event_date');
-        return view('list', ['title' => 'Events', 'list' => $list]);
+
     }
 
     /**
@@ -27,6 +26,7 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view('event.create');
     }
 
     /**
