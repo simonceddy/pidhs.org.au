@@ -35,7 +35,7 @@
         </div>
     </div>
 
-<script src="/js/main_app.js"></script>
+<script src="/js/app.js"></script>
 @stack('scripts')
 </body>
 </html>
