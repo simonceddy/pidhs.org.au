@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Collection;
+use App\Exhibitions\Section;
 use Illuminate\Http\Request;
 
-class CollectionController extends Controller
+class SectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,6 @@ class CollectionController extends Controller
     public function index()
     {
         //
-        return 'Collections';
     }
 
     /**
@@ -42,10 +41,10 @@ class CollectionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Collection  $collection
+     * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function show(Collection $collection)
+    public function show(Section $section)
     {
         //
     }
@@ -53,10 +52,10 @@ class CollectionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Collection  $collection
+     * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function edit(Collection $collection)
+    public function edit(Section $section)
     {
         //
     }
@@ -65,10 +64,10 @@ class CollectionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Collection  $collection
+     * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Collection $collection)
+    public function update(Request $request, Section $section)
     {
         //
     }
@@ -76,10 +75,10 @@ class CollectionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Collection  $collection
+     * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Collection $collection)
+    public function destroy(Section $section)
     {
         //
     }

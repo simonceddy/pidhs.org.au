@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExhibitionsTable extends Migration
+class CreateSectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateExhibitionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('exhibitions', function (Blueprint $table) {
+        Schema::create('sections', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateExhibitionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exhibitions');
+        Schema::dropIfExists('sections');
     }
 }
