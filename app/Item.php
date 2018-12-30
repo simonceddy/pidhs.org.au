@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     protected $fillable = [
-        'image',
         'title',
         'caption',
+        'thumbnail'
     ];
 
     public function collection()

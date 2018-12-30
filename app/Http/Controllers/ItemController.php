@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+    protected $valid_mimetype = [
+        'image/jpeg',
+        'image/png',
+        'image/gif'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        // not applicable - not publically accessible
+        // items are displayed by collection
     }
 
     /**
@@ -24,7 +31,9 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        // item form - upload image, caption, title
+        // must assign to collection
+        return view('collection.item.create');
     }
 
     /**
@@ -35,7 +44,13 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate file
+        $image = $request->file('image-upload');
+        $type = $image->getMimeType();
+        if (!in_array($type, $this->valid_mimetype)) {
+            dd('error: type '.$type.' not allowed');
+        }
+        dd(/* $request,  */$image);
     }
 
     /**
@@ -47,6 +62,7 @@ class ItemController extends Controller
     public function show(Item $item)
     {
         //
+        return view('collection.item.show', $item);
     }
 
     /**

@@ -1,8 +1,8 @@
 <fieldset class="form-group row">
     <div class="col-sm-10">
 
-        <label for="editor">Article Content</label>
-        <textarea name="content" id="editor" placeholder="The HTML content of the article" maxlength="100000" style="height: 30em;">
+        <label for="{{$editor_name ?? 'content'}}">{{$editor_title ?? 'Article Content'}}</label>
+        <textarea name="{{$editor_name ?? 'content'}}" id="{{$editor_id ?? 'editor'}}" placeholder="The HTML content of the article" maxlength="100000" style="height: 30em;">
             @if (isset($content))
                 {{ $content }}
             @endif

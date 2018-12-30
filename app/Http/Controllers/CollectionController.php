@@ -15,7 +15,7 @@ class CollectionController extends Controller
     public function index()
     {
         //
-        return 'Collections';
+        return view('collection.index');
     }
 
     /**
@@ -25,7 +25,8 @@ class CollectionController extends Controller
      */
     public function create()
     {
-        //
+        // todo: collection creation form - adding items on collection create
+        // alternatively make items addable only after collection is created
     }
 
     /**
@@ -36,7 +37,7 @@ class CollectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // store collection and any applicable items
     }
 
     /**

@@ -1,4 +1,3 @@
-{{-- todo --}}
 <div class="container">
 <form action="{{$action ?? route('article.store')}}" method="POST" name="create.article">
         @csrf
