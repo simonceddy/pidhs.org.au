@@ -2,8 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Gallery\Collection::class, function (Faker $faker) {
+$factory->define(App\Collection::class, function (Faker $faker) {
     return [
-        //
+        'title' => $faker->sentence(),
+        'caption' => $faker->paragraph()
     ];
 });

@@ -39,7 +39,8 @@ class ArticleController extends Controller
     {
         //
         $data = $request->post();
-        $data['slug'] = $slugify->slugify($data['title']);
+        $data['slug'] = $slugify
+            ->slugify($data['title'], ['separator' => '_']);
         $article = new Article($data);
         $article->save();
         return redirect(route('article.show', $article));

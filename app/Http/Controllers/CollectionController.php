@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Collection;
 use Illuminate\Http\Request;
+use App\Item;
 
 class CollectionController extends Controller
 {
@@ -14,8 +15,7 @@ class CollectionController extends Controller
      */
     public function index()
     {
-        //
-        return view('collection.index');
+        return view('collection.index', ['collections' => Collection::all()]);
     }
 
     /**
@@ -48,7 +48,7 @@ class CollectionController extends Controller
      */
     public function show(Collection $collection)
     {
-        //
+        return view('collection.show', ['collection' => $collection]);
     }
 
     /**

@@ -11,8 +11,8 @@ class Collection extends Model
         'caption'
     ];
 
-    public function item()
+    public function items()
     {
-        $this->hasMany('items');
+        return $this->hasMany(Item::class);
     }
 }

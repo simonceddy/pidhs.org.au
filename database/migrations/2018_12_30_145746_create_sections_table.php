@@ -15,11 +15,11 @@ class CreateSectionsTable extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('exhibition');
+            $table->unsignedInteger('exhibition_id');
             $table->string('title');
             $table->text('content');
             $table->timestamps();
-            $table->foreign('exhibition')
+            $table->foreign('exhibition_id')
                 ->references('id')
                 ->on('exhibitions');
         });

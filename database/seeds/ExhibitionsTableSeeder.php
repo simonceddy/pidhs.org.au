@@ -12,13 +12,13 @@ class ExhibitionsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('exhibitions')->insert([
-            'id' => 1,
-            'title' => str_random(32)
-        ]);
-        DB::table('exhibitions')->insert([
-            'id' => 2,
-            'title' => str_random(32)
-        ]);
+        factory(App\Exhibitions\Exhibition::class, 15)
+            ->create()
+            ->each(function ($coll) {
+                $coll->sections()
+                    ->saveMany(
+                        factory(App\Exhibitions\Section::class, 10)->make()
+                    );
+            });
     }
 }

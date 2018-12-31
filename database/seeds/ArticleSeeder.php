@@ -15,7 +15,7 @@ class ArticleSeeder extends Seeder
     public function run()
     {
         // Populate DB with existing data from old DB
-        $slugify = new Slugify();
+        $slugify = new Slugify(['separator' => '_']);
         $articles = include dirname(__DIR__, 2).'/storage/db/articles.php';
         foreach ($articles as $article) {
             $data = ['title' => $article['title'], 'content' => $article['content']];

@@ -13,5 +13,5 @@ return [
     ['title' => 'Services', 'content' => ''],
     ['title' => 'Links', 'content' => ''],
     ['title' => 'Notice and Takedown Policy', 'content' => ''],
-    ['title' => 'President\'s Annual Report', 'content' => ''],
+    ['title' => 'President\'s Annual Report', 'content' => '', 'slug' => 'annual_reports'],
 ];

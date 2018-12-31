@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('collection_id');
             $table->string('title');
-            $table->string('caption');
+            $table->text('caption');
             $table->string('thumbnail');
             $table->timestamps();
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use Illuminate\Http\Request;
+use App\Collection;
 
 class ItemController extends Controller
 {
@@ -45,12 +46,19 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         // validate file
+        $data = $request->post();
         $image = $request->file('image-upload');
         $type = $image->getMimeType();
         if (!in_array($type, $this->valid_mimetype)) {
             dd('error: type '.$type.' not allowed');
         }
-        dd(/* $request,  */$image);
+        $image->store('collection');
+        // generate thumbnail
+        $data['thumbnail'] = $image->hashName();
+        $data['collection'] = 1;
+        $item = new Item($data);
+        $item->save();
+        dd(/* $request,  */$item);
     }
 
     /**

@@ -10,8 +10,8 @@ class Exhibition extends Model
         'title'
     ];
 
-    public function section()
+    public function sections()
     {
-        $this->hasMany('section');
+        return $this->hasMany(Section::class);
     }
 }
