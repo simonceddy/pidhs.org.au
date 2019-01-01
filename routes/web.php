@@ -40,3 +40,8 @@ Route::resources([
 ]);
 
 Route::resource('collection/item', 'ItemController')->except(['index']);
+
+Route::resource('pdf', 'PdfController')
+    ->except(['update', 'create', 'edit']);
+Route::resource('photo', 'PhotoController')
+    ->except(['update', 'create', 'edit']);

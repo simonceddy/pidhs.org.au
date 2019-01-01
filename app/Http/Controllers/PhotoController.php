@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
@@ -43,9 +44,13 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($filename)
+    public function show($photo)
     {
-        //
+        if (Storage::exists($path = 'collection/'.$photo)) {
+            $photo = Storage::get($path);
+
+        }
+        dd(response()->file($photo));
     }
 
     /**

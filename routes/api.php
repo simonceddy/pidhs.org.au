@@ -22,6 +22,4 @@ Route::apiResources([
     'sections' => 'SectionController'
 ]);
 
-Route::apiResource('pdf', 'PdfController')->except('update');
-Route::apiResource('photo', 'PhotoController')->except('update');
 
