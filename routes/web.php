@@ -11,23 +11,6 @@
 |
 */
 
-Route::resource('article', 'ArticleController');
-
-Route::resource('news', 'NewsController')->names('news');
-
-Route::get('/essays', function () {
-    return view('welcome');
-})->name('essays');
-
-Route::resource('essay', 'EssayController');
-Route::resource('event', 'EventController');
-
-Route::get('/meetings', function () {
-    return view('welcome');
-})->name('meetings');
-
-Route::resource('meeting', 'MeetingController');
-
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
 });
@@ -36,8 +19,13 @@ Auth::routes([
     'register' => false
 ]);
 
-Route::resource('collection/item', 'ItemController');
-
-Route::resource('collection', 'CollectionController');
-
-Route::resource('exhibitions', 'ExhibitionController');
+Route::resources([
+    'article' => 'ArticleController',
+    'news' => 'NewsController',
+    'essay' => 'EssayController',
+    'event' => 'EventController',
+    'meetings' => 'MeetingController',
+    'collection/item' => 'ItemController',
+    'collection' => 'CollectionController',
+    'exhibitions' => 'ExhibitionController'
+]);

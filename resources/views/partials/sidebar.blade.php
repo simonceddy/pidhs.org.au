@@ -8,7 +8,7 @@
 
         <li><a href="{{route('essay.index')}}">Essays &amp; Talks</a></li>
 
-        <li><a href="{{route('meeting.index')}}">Meetings</a></li>
+        <li><a href="{{route('meetings.index')}}">Meetings</a></li>
 
         <li><a href="@article(links)">Links</a></li>
 

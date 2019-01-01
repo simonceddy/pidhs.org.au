@@ -8,11 +8,28 @@ use App\Collection;
 
 class ItemController extends Controller
 {
+    /**
+     * Todo: Move this to image validation middleware
+     *
+     * @var array
+     */
     protected $valid_mimetype = [
         'image/jpeg',
         'image/png',
         'image/gif'
     ];
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['index', 'show']
+        ]);
+    }
 
     /**
      * Display a listing of the resource.
