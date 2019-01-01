@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Pdf;
 use Illuminate\Http\Request;
 
 class PdfController extends Controller
@@ -14,9 +13,7 @@ class PdfController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', [
-            'except' => ['index', 'show']
-        ]);
+        $this->middleware('auth:api')->except('show');
     }
 
     /**
@@ -43,22 +40,10 @@ class PdfController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pdf  $pdf
+     * @param  string  $filename
      * @return \Illuminate\Http\Response
      */
-    public function show(Pdf $pdf)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pdf  $pdf
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Pdf $pdf)
+    public function show($filename)
     {
         //
     }
@@ -66,10 +51,10 @@ class PdfController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pdf  $pdf
+     * @param  string  $filename
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pdf $pdf)
+    public function destroy($filename)
     {
         //
     }

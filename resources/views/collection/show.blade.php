@@ -12,7 +12,7 @@
     <div class="row">
         @foreach ($collection->items as $item)
             <div class="col-sm-3">
-                {{$item->title}}
+            <a href="{{route('item.show', $item->id)}}">{{$item->title}}</a>
             </div>
         @endforeach
     </div>

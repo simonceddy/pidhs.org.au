@@ -11,6 +11,17 @@
 |
 */
 
+Route::get('/', function () {
+    return (new App\Http\Controllers\ArticleController)->show(
+        (new App\Article)->query()->where('slug', '=', 'home')->first()
+    );
+})->name('home');
+
+// front controller for exhibitions react app
+Route::get('/exhibitions/{path?}', function () {
+    return view('exhibition.app');
+})->name('exhibitions.app');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
 });
@@ -25,7 +36,7 @@ Route::resources([
     'essay' => 'EssayController',
     'event' => 'EventController',
     'meetings' => 'MeetingController',
-    'collection/item' => 'ItemController',
-    'collection' => 'CollectionController',
-    'exhibitions' => 'ExhibitionController'
+    'collection' => 'CollectionController'
 ]);
+
+Route::resource('collection/item', 'ItemController')->except(['index']);

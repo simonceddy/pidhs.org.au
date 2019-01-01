@@ -18,6 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResources([
-    'photos' => 'PhotoController'
+    'exhibition' => 'ExhibitionController',
+    'sections' => 'SectionController'
 ]);
+
+Route::apiResource('pdf', 'PdfController')->except('update');
+Route::apiResource('photo', 'PhotoController')->except('update');
 

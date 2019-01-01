@@ -14,7 +14,7 @@ class ExhibitionController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', [
+        $this->middleware('auth:api', [
             'except' => ['index', 'show']
         ]);
     }
@@ -27,17 +27,7 @@ class ExhibitionController extends Controller
     public function index()
     {
         //
-        return view('exhibition.app');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Exhibition::all();
     }
 
     /**
@@ -58,17 +48,6 @@ class ExhibitionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Exhibition $exhibition)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Exhibitions\Exhibition  $exhibition
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Exhibition $exhibition)
     {
         //
     }

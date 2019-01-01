@@ -13,9 +13,7 @@ class PhotoController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', [
-            'except' => ['index', 'show']
-        ]);
+        $this->middleware('auth:api')->except('show');
     }
 
     /**
@@ -45,19 +43,7 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function show($filename)
     {
         //
     }
@@ -68,7 +54,7 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($filename)
     {
         //
     }

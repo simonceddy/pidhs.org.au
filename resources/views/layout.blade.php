@@ -11,7 +11,7 @@
 
     <div class="container bg-white" id="root">
         <div class="row mx-auto" style="width: 100%" id="header">
-            <a href="/"><img src="/storage/logo1.png"></a>
+            <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
         </div>
         <div class="row">
             @include('partials/navbar')

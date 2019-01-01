@@ -2,7 +2,7 @@
     <div id="menu">
         <ul id="nav-menu">
             <li>
-                <a href="@article(home)">Home</a>
+                <a href="{{route('home')}}">Home</a>
             </li>
             <li>
                 <a href="#" id="about-dropdown">About</a>
@@ -52,7 +52,7 @@
                 <a href="@article(donate)">Donate</a>
             </li>
             <li class="nav-item">
-                <a href="{{route('exhibitions.index')}}">Exhibitions</a>
+                <a href="{{route('exhibitions.app')}}">Exhibitions</a>
             </li>
         </ul>
 
