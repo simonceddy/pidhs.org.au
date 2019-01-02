@@ -22,4 +22,3 @@ Route::apiResources([
     'sections' => 'SectionController'
 ]);
 
-

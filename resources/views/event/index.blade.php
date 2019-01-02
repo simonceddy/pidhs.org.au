@@ -3,8 +3,12 @@
 @section('title', $title ?? 'Events')
 
 @section('content')
-    @include('shared.articlelist', [
-        'title' => $title ?? 'Events',
-        'baseUri' => 'event'
-    ])
+    <div class="container">
+@foreach ($events as $event)
+        <div class="row my-3">
+        <a href="{{route('event.show', $event->id)}}"><h3>{{$event->title}}</h3></a>
+            <p>{{$event->event_date}}</p>
+        </div>
+@endforeach
+    </div>
 @endsection

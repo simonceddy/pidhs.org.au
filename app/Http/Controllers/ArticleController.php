@@ -27,7 +27,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-
+        // make admin
     }
 
     /**

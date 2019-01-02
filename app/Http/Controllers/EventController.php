@@ -26,8 +26,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        // TODO: Fix Events
 
+        return view('event.index', [
+            'events' => Event::all()->sortByDesc('event_date')
+        ]);
     }
 
     /**
@@ -61,6 +63,7 @@ class EventController extends Controller
     public function show(Event $event)
     {
         //
+        return view('event.show', $event);
     }
 
     /**

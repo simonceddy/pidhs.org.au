@@ -1,7 +1,9 @@
 @extends('layout')
 
-@section('title', 'Phillip Island & District Historical Society')
+@section('title', $title ?? 'Events')
 
 @section('content')
-    @include('shared.article')
+    <div class="container">
+        <h2>{{ $title }}</h2>
+    </div>
 @endsection
