@@ -1,9 +1,8 @@
 @extends('layout')
 
 @section('content')
-    <h1>EXHIBITIONS</h1>
     <div class="container" id="exhibitions-app">
-
+        Loading Exhibitions...
     </div>
 @endsection
 
