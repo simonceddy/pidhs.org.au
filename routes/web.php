@@ -35,7 +35,6 @@ Route::resources([
     'news' => 'NewsController',
     'essay' => 'EssayController',
     'event' => 'EventController',
-    'meetings' => 'MeetingController',
     'collection' => 'CollectionController'
 ]);
 
