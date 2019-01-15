@@ -1,8 +1,11 @@
 import React from 'react';
 
-class IndexBar extends React.Component
-{
-
+const IndexBar = () => {
+    return (
+        <div>
+            Sidebar
+        </div>
+    );
 }
 
 export default IndexBar;
