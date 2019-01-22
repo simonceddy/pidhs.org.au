@@ -17,6 +17,7 @@ class NewsController extends Controller
         $this->middleware('auth', [
             'except' => ['index', 'show']
         ]);
+        $this->middleware('html.purify')->only(['store', 'update']);
     }
 
     /**
@@ -86,7 +87,9 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $news->fill($request->post());
+        $news->save();
+        return redirect(route('news.show', $news));
     }
 
     /**

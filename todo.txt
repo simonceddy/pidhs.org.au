@@ -1,12 +1,9 @@
 THINGS TO BE UNDERSTANDING
 
 - ckeditor file uploads
-- registering middleware
 - remove unneccessary views -> use controllers for differences
-    - news, articles, essays can all share views
     - thumnail generation
     - watermarking
-    - layout for collections
     - show images in collections views
 - PDF
     - allow ckeditor to upload PDFs and attach link to an article
@@ -15,3 +12,5 @@ THINGS TO BE UNDERSTANDING
 - Photo
     - allow ckeditor to upload images
     - set up image validation middleware
+- add date field to event form
+- layout issues

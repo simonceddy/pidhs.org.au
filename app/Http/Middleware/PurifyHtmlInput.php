@@ -6,11 +6,16 @@ use Closure;
 
 class PurifyHtmlInput
 {
-    protected $htmlPurifier;
+    /**
+     * HTMLPurifier
+     *
+     * @var \HtmlPurifier
+     */
+    protected $purify;
 
-    public function __construct(HTMLPurifier $htmlPurifier)
+    public function __construct(\HTMLPurifier $purify)
     {
-        $this->htmlPurifier = $htmlPurifier;
+        $this->purify = $purify;
     }
 
     /**
@@ -22,6 +27,10 @@ class PurifyHtmlInput
      */
     public function handle($request, Closure $next)
     {
+        $request->request->set(
+            'content',
+            $this->purify->purify($request->input('content'))
+        );
         return $next($request);
     }
 }
