@@ -51,11 +51,11 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
-dd($app);
-
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
+
+//dd($app);
 
 //dd($app->make(Cocur\Slugify\Slugify::class)->slugify('what to see & do'));
 $response->send();
