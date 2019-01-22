@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Cocur\Slugify\Slugify;
 
-class SlugifyProvider extends ServiceProvider
+class UtilProvider extends ServiceProvider
 {
     protected $defer = true;
 
@@ -17,10 +17,14 @@ class SlugifyProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(Slugify::class);
+        $this->app->singleton(\HTMLPurifier::class);
     }
 
     public function provides()
     {
-        return [Slugify::class];
+        return [
+            Slugify::class,
+            \HTMLPurifier::class
+        ];
     }
 }

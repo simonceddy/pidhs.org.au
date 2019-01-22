@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
 
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
@@ -10495,18 +10495,13 @@ a.text-dark:focus {
 
 /* style body and outer container */
 
-body {
-  margin: 0;
-  color: #333;
-  background-color: #CCC;
-  background-image: url(/storage/muralbg1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.5em;
-  background-size: cover;
+#root-container {
+  min-height: 100vh;
 }
+
+/* #content-container {
+    min-height: 80vh;
+} */
 
 #sidebar {
   margin-left: 1%;
@@ -10685,8 +10680,19 @@ body {
   text-align: center;
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+body {
+  margin: 0;
+  color: #333;
+  background-color: #CCC;
+  background-image: url(/storage/muralbg1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+  /* 	-webkit-background-size: cover;
+    	-moz-background-size: cover;
+    	-o-background-size: cover; */
+  background-size: cover;
 }
 

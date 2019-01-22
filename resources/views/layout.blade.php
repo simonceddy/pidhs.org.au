@@ -9,22 +9,22 @@
 </head>
 <body>
 
-    <div class="container bg-white" id="root">
-        <div class="row mx-auto" style="width: 100%" id="header">
+    <div class="container bg-white" id="root-container">
+        <div class="row mx-auto" style="width: 100%" id="header-container">
             <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
         </div>
-        <div class="row">
+        <div class="row" id="top-navbar-container">
             @include('partials/navbar')
         </div>
         <div class="row">
-            <div class="col-2">
+            <div class="col-2" id="sidebar-container">
                 @include('partials/sidebar')
             </div>
-            <div class="col-10">
+            <div class="col-10" id="content-container">
                 @yield('content')
             </div>
         </div>
-        <div class="row" id="footer">
+        <div class="row" id="footer-container">
             <div class="col-10">
                 <p>Phillip Island and District Historical Society Inc, ABN: 22 720 654 974</p>
                 <p>Site by <a href="https://simoneddy.com.au">Simon Eddy</a> &copy; 2018. <a href="/login">Site Admin</a></p>
