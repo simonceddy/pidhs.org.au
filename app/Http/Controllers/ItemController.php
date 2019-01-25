@@ -48,11 +48,11 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Collection $collection = null)
     {
         // item form - upload image, caption, title
         // must assign to collection
-        return view('collection.item.create');
+        return view('collection.item.create', ['collection' => $collection]);
     }
 
     /**
