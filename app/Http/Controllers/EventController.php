@@ -52,7 +52,11 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate
+        $data = $request->post();
+        $data['event_date'] = $data['event-date'];
+        $event = new Event($data);
+        dd($event);
     }
 
     /**
@@ -76,6 +80,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
+        return view('event.edit', $event);
     }
 
     /**

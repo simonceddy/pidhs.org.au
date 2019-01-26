@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-@include('shared.articleform', [
+@include('admin.forms.events', [
     'action' => route('event.update', $id),
     'method' => 'PATCH'
 ])
