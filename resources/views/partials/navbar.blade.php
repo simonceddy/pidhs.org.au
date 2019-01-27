@@ -1,6 +1,6 @@
 {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> --}}
-    <div id="menu">
-        <ul id="nav-menu">
+    <div class="navbar">
+        <ul class="navbar-menu">
             <li>
                 <a href="{{route('home')}}">Home</a>
             </li>

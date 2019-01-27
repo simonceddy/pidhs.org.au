@@ -9,14 +9,14 @@
 </head>
 <body>
 
-    <div class="container bg-white" id="root-container">
+    <div class="root-container" id="root-container">
         <div class="row mx-auto" style="width: 100%" id="header-container">
             <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
         </div>
         <div class="row" id="top-navbar-container">
             @include('partials/navbar')
         </div>
-        <div class="row">
+        <div class="row content-row">
             <div class="col-2" id="sidebar-container">
                 @include('partials/sidebar')
             </div>
