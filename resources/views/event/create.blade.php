@@ -1,5 +1,7 @@
 @extends('layout')
 
 @section('content')
-    @include('admin/forms/events')
+    <div class="container">
+    @include('admin.forms.events')
+    </div>
 @endsection

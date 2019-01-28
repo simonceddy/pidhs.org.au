@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="{{$action ?? route('event.store')}}" method="POST" name="create.article">
+    <form action="{{ $action ?? route('event.store') }}" method="POST" name="events.form">
         @csrf
         @if (isset($method))
             @method($method)
@@ -20,4 +20,5 @@
                 <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </div>
-
+    </form>
+</div>

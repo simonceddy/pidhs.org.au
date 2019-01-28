@@ -93,6 +93,8 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
+        //dd('here');
+        dd($request, $event);
     }
 
     /**
@@ -104,5 +106,7 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+
+        dd($event);
     }
 }
