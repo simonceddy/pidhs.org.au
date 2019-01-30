@@ -11,7 +11,7 @@
 <body>
 
     <div class="root-container" id="root-container">
-        <div class="row mx-auto" style="width: 100%" id="header-container">
+        <div class="row logo" style="width: 100%" id="header-container">
             <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
         </div>
         <div class="row" id="top-navbar-container">
@@ -25,12 +25,12 @@
                 @yield('content')
             </div>
         </div>
-        <div class="row" id="footer-container">
-            <div class="col-10">
+        <div class="row footer-container">
+            <div class="footer-notice">
                 <p>Phillip Island and District Historical Society Inc, ABN: 22 720 654 974</p>
                 <p>Site by <a href="https://simoneddy.com.au">Simon Eddy</a> &copy; 2018. <a href="/login">Site Admin</a></p>
             </div>
-            <div class="col-2">
+            <div class="footer-banner">
                 <a href="http://www.fluccs.com.au" title="Fluccs" target="_blank"><img class="float-right" id="banner" src="/storage/banner.gif" alt="Fluccs" width="120" height="60"></a>
             </div>
         </div>
