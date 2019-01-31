@@ -16,7 +16,7 @@ class Essays extends Migration
         Schema::create('essays', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('content');
+            $table->longtext('content');
             $table->timestamps();
         });
     }

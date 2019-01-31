@@ -17,7 +17,7 @@ class CreateSectionsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('exhibition_id');
             $table->string('title');
-            $table->text('content');
+            $table->longtext('content');
             $table->timestamps();
             $table->foreign('exhibition_id')
                 ->references('id')

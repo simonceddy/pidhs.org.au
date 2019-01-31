@@ -17,7 +17,7 @@ class Events extends Migration
             $table->increments('id');
             $table->date('event_date');
             $table->string('title');
-            $table->text('content');
+            $table->longtext('content');
             $table->timestamps();
         });
     }

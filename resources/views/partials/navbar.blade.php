@@ -17,6 +17,9 @@
                     <a href="@article(geographic_area)">Geographic Area</a>
                     </li>
                     <li>
+                    <a href="@article(history_of_the_society)">History Of The Society</a>
+                    </li>
+                    <li>
                     <a href="@article(constitution)">Constitution</a>
                     </li>
                     <li>
@@ -34,7 +37,7 @@
                     <a href="#">Museum</a>
 
                     <ul>
-                        <li><a href="@article(where_and_when_to_find_us)}}">Where and When to Find Us</a></li>
+                        <li><a href="@article(where_when_to_find_us)">Where and When to Find Us</a></li>
                         <li><a href="@article(what_to_see_do)">What to See & Do</a></li>
                         <li><a href="@article(books_for_sale)">Books For Sale</a></li>
                     </ul>

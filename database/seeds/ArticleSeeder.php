@@ -20,7 +20,7 @@ class ArticleSeeder extends Seeder
         foreach ($articles as $article) {
             $data = [
                 'title' => $article['title'],
-                'content' => '<p>HTML Content</p>'//$article['content']
+                'content' => $article['content']
             ];
             if (isset($article['slug'])) {
                 $data['slug'] = $article['slug'];

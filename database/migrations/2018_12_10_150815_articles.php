@@ -17,7 +17,7 @@ class Articles extends Migration
             $table->increments('id');
             $table->string('slug')->unique();
             $table->string('title');
-            $table->text('content');
+            $table->longtext('content');
             $table->timestamps();
         });
     }
