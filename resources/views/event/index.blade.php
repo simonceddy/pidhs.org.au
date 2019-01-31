@@ -3,6 +3,8 @@
 @section('title', $title ?? 'Events')
 
 @section('content')
+    <h1>Events</h1>
+
     <div class="container">
         @auth
             <div>

@@ -18,7 +18,10 @@ class ArticleSeeder extends Seeder
         $slugify = new Slugify(['separator' => '_']);
         $articles = include dirname(__DIR__, 2).'/storage/db/articles.php';
         foreach ($articles as $article) {
-            $data = ['title' => $article['title'], 'content' => $article['content']];
+            $data = [
+                'title' => $article['title'],
+                'content' => '<p>HTML Content</p>'//$article['content']
+            ];
             if (isset($article['slug'])) {
                 $data['slug'] = $article['slug'];
             } else {

@@ -27,7 +27,7 @@ class EssayController extends Controller
      */
     public function index()
     {
-        $articles = Essay::all();
+        $articles = Essay::paginate(15);
         //dd($articles[0]);
         return view('essay.index', ['articles' => $articles]);
     }

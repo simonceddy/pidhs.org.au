@@ -8,4 +8,7 @@
 
 <p class="pubDate">Published on {{$article->created_at}}</p>
     @endforeach
+
+
+    {{ $articles->links() }}
 </div>

@@ -4,9 +4,17 @@
 
 @section('content')
 <div class="container">
+    @auth
+        <div>
+            <a href="{{ route('collection.edit', $collection) }}" class="create-button">Edit Collection</a>
+        </div>
+        <div>
+            <a href="{{ route('item.create', $collection) }}" class="create-button">Add Items to the Collection</a>
+        </div>
+    @endauth
     <div class="row">
         <h1>
-            Collection
+            {{$collection->title ?? "Collection"}}
         </h1>
     </div>
     <div class="row">

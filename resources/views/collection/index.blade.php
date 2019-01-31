@@ -4,6 +4,11 @@
 
 @section('content')
 <div class="container">
+    @auth
+        <div>
+            <a href="{{ route('collection.create') }}" class="create-button">Create a new Collection</a>
+        </div>
+    @endauth
     <div class="row">
         <h1>
             Collections
