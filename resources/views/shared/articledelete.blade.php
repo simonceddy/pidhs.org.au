@@ -1,5 +1,6 @@
 <form action="{{ $action }}" method="POST">
     @csrf
     @method('DELETE')
-    <button type="submit" class="btn btn-danger">Delete</button>
+    {{-- fix onclick!!!! --}}
+    <button type="submit" class="btn btn-danger" onclick="confirm('Confirm delete? This action cannot be undone.')">Delete</button>
 </form>
