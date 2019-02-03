@@ -23762,7 +23762,7 @@ __webpack_require__(/*! ./components/index */ "./resources/js/components/index.j
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\js\exhibitions.js */"./resources/js/exhibitions.js");
+module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/exhibitions.js */"./resources/js/exhibitions.js");
 
 
 /***/ })

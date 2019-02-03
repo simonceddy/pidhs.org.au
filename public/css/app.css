@@ -157,6 +157,25 @@ body {
   background: #333;
 }
 
+.sidebar {
+  margin: 12px 12px;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin-left: -12px;
+}
+
+.sidebar-menu-link {
+  text-decoration: none;
+}
+
+.sidebar-menu-link:hover {
+  text-decoration: underline;
+}
+
 .article {
   margin: 16px;
 }
