@@ -39,6 +39,7 @@ class CollectionController extends Controller
     {
         // todo: collection creation form - adding items on collection create
         // alternatively make items addable only after collection is created
+        return view('collection.create');
     }
 
     /**
@@ -72,6 +73,7 @@ class CollectionController extends Controller
     public function edit(Collection $collection)
     {
         //
+        return view('collection.edit');
     }
 
     /**
@@ -95,5 +97,6 @@ class CollectionController extends Controller
     public function destroy(Collection $collection)
     {
         //
+
     }
 }
