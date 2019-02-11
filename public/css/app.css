@@ -8,35 +8,62 @@
 @import 'sidebar';
 @import 'nav'; */
 
+.flex,
+.col,
+.row {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-left {
+  justify-content: left;
+}
+
+.justify-right {
+  justify-content: right;
+}
+
+.space-even {
+  justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 html,
 body {
   height: 100%;
 }
 
 .root-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1100px;
+  max-width: 1200px;
   min-height: 100%;
   background: rgba(255, 255, 255, 0.85);
   margin: 0 auto;
-}
-
-.row {
-  display: flex;
-}
-
-.logo {
-  justify-content: center;
-}
-
-.content-row {
-  flex: 1;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
 }
 
 .footer-container > div {

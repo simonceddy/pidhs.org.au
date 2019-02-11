@@ -73,7 +73,7 @@ class CollectionController extends Controller
     public function edit(Collection $collection)
     {
         //
-        return view('collection.edit');
+        return view('collection.edit', $collection);
     }
 
     /**
