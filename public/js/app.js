@@ -36377,10 +36377,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./resources/css/tailwind.css":
 /*!************************************!*\
   !*** ./resources/css/tailwind.css ***!
   \************************************/
+=======
+/***/ "./resources/css/tailwind.src.css":
+/*!****************************************!*\
+  !*** ./resources/css/tailwind.src.css ***!
+  \****************************************/
+>>>>>>> ac65c0c11edabbf7c3b57a717174d3283d6d939b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -36463,18 +36470,8 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
+<<<<<<< HEAD
 /*!******************************************************************************************!*\
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/css/tailwind.css ***!
   \******************************************************************************************/
@@ -36484,6 +36481,16 @@ if (token) {
 __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/sass/app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/css/tailwind.css */"./resources/css/tailwind.css");
+=======
+/*!********************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/tailwind.src.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\css\tailwind.src.css */"./resources/css/tailwind.src.css");
+>>>>>>> ac65c0c11edabbf7c3b57a717174d3283d6d939b
 
 
 /***/ })
