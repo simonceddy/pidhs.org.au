@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="root-container col" id="root-container">
+    <div class="root-container" id="root-container">
         <div class="row logo justify-center text-center" id="header-container">
             <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
         </div>
