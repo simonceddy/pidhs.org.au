@@ -17,6 +17,10 @@ Route::get('/', function () {
     );
 })->name('home');
 
+Route::get('/mob/{path?}', function () {
+    return view('mobile');
+});
+
 // front controller for exhibitions react app
 Route::get('/exhibitions/{path?}', function () {
     return view('exhibition.app');

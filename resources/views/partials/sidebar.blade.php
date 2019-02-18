@@ -1,6 +1,6 @@
 <div id="sidebar" class="sidebar">
 
-    <ul class="sidebar-menu" id="sidebar-menu">
+    <ul class="sidebar-menu flex flex-col bg-pidhs" id="sidebar-menu">
 
         <li><a href="@article(services)" class="sidebar-menu-link">Services</a></li>
 

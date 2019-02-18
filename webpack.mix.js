@@ -1,7 +1,5 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
-
-const tailwindcss = require('tailwindcss');
+const tailwindcss = require('tailwindcss')
 
 /*
  |--------------------------------------------------------------------------
@@ -17,14 +15,8 @@ const tailwindcss = require('tailwindcss');
 mix.js('resources/js/app.js', 'public/js')
    //.react('resources/js/exhibitions.js', 'public/js')
    .js('resources/js/editor/editor.js', 'public/js')
-<<<<<<< HEAD
+   .react('resources/js/mobileApp/mobileApp.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .postCss('resources/css/tailwind.css', 'public/css', [
        tailwindcss('./tailwind.js')
    ]);
-=======
-   .postCss('resources/css/tailwind.src.css', 'public/css', [
-      tailwindcss('./tailwind.js')
-   ])
-   //.sass('resources/sass/app.scss', 'public/css');
->>>>>>> ac65c0c11edabbf7c3b57a717174d3283d6d939b
