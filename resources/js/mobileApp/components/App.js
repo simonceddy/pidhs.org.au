@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './Menu';
 import Logo from './Logo';
+import AppSwitch from './routes';
 
 class App extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class App extends React.Component {
           <Menu />
         </header>
         <article>
-          Content
+          <AppSwitch />
         </article>
         <footer>
           Footer content

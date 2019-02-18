@@ -28,7 +28,9 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^11.2.0",
+        "react-redux": "^6.0.0",
         "react-router-dom": "^4.3.1",
+        "redux": "^4.0.1",
         "tailwindcss": "^0.7.4"
     }
 }
