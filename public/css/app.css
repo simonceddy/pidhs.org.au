@@ -1,74 +1,7 @@
 /* // Variables
 @import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-@import 'pidhs';
 @import 'sidebar';
 @import 'nav'; */
-
-.flex,
-.col,
-.row {
-  display: flex;
-}
-
-.col {
-  flex-direction: column;
-}
-
-.f1 {
-  flex: 1;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-left {
-  justify-content: left;
-}
-
-.justify-right {
-  justify-content: right;
-}
-
-.space-even {
-  justify-content: space-evenly;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-.root-container {
-  max-width: 1200px;
-  min-height: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  margin: 0 auto;
-}
-
-.footer-container > div {
-  margin: 0 12px;
-}
 
 .navbar {
   display: flex;
@@ -203,10 +136,6 @@ body {
   text-decoration: underline;
 }
 
-.article {
-  margin: 16px;
-}
-
 body {
   margin: 0;
   color: #333;
@@ -220,5 +149,22 @@ body {
     	-moz-background-size: cover;
     	-o-background-size: cover; */
   background-size: cover;
+}
+
+.content {
+  margin: 20px;
+}
+
+.row {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.publication-date,
+h1 {
+  color: #eb6841;
+}
+
+.publication-date {
+  font-size: 0.8em;
 }
 
