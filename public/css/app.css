@@ -13,6 +13,10 @@
   font-weight: 700;
 }
 
+.navbar-item {
+  margin: 0 10px;
+}
+
 .navbar-dropdown {
   display: none;
   z-index: 2;
@@ -44,13 +48,6 @@
   color: #fff;
   background: #6b0c36;
   text-decoration: underline;
-}
-
-.navbar-menu ul li {
-  padding-top: 1px;
-  /* Introducing a padding between the li and the a give the illusion spaced items */
-  float: none;
-  z-index: 2;
 }
 
 .navbar-dropdown {
@@ -90,6 +87,10 @@ h1 {
   font-size: 0.8em;
 }
 
+.collection-box {
+  flex: 1 1 200px;
+}
+
 body,
 html {
   margin: 0;
@@ -112,13 +113,18 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  min-height: 100%;
 }
 
 .container,
 .sidebar {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.footer {
+  border-top: 1px solid #00a0b0;
 }
 

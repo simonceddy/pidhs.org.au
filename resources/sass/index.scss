@@ -7,6 +7,7 @@
 @import './navbar';
 @import './sidebar';
 @import './article';
+@import './collection';
 
 body, html {
     margin: 0;
@@ -30,11 +31,16 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
+	position: relative;
+	min-height: 100%;
 }
 
 .container, .sidebar {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.86);
+}
+
+.footer {
+	border-top: 1px solid #00a0b0;
 }
