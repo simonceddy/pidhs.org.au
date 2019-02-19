@@ -1,0 +1,38 @@
+/* // Variables
+@import 'variables';
+@import 'sidebar';
+@import 'nav'; */
+
+//@import 'site/layout';
+@import './navbar';
+@import './sidebar';
+@import './article';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+	color: #333;
+	background-color: #CCC;
+	background-image:url(/storage/muralbg1.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-attachment:fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	//line-height: 1.5em;
+/* 	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover; */
+  	background-size: cover;
+}
+
+.content {
+	margin: 20px;
+}
+
+.row {
+	background: rgba(255, 255, 255, 0.75);
+}

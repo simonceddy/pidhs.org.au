@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^11.2.0",
+        "prop-types": "^15.7.2",
         "react-redux": "^6.0.0",
         "react-router-dom": "^4.3.1",
         "redux": "^4.0.1",

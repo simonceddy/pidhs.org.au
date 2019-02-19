@@ -1,6 +1,7 @@
 import React from 'react';
+import {} from 'prop-types';
 
-const Article = (props) => {
+const Article = props => {
   let article = props.article || {};
   return (
     <div>
