@@ -18,9 +18,11 @@
         </header>
 
         @include('partials/navbar')
-        @include('partials/sidebar')
-        <div class="content flex-1 m-4">
-            @yield('content')
+        <div class="mid-row flex">
+            @include('partials/sidebar')
+            <div class="content flex-1 m-4">
+                @yield('content')
+            </div>
         </div>
         @include('partials/footer')
     </div>

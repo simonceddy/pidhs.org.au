@@ -61,13 +61,14 @@
   width: 9.5%;
   margin-left: 1%;
   margin-right: 2%;
-  background: #fff;
+  float: left;
   padding: 10px;
-  font-size: 14px;
+  font-size: 1.2rem;
   border-radius: 5px;
+  z-index: 2;
   overflow: auto;
-  /*
-  position: absolute; */
+  position: relative;
+  right: 150px;
 }
 
 .sidebar-menu-link {
@@ -126,5 +127,9 @@ body {
 
 .footer {
   border-top: 1px solid #00a0b0;
+}
+
+.mid-row {
+  width: 100%;
 }
 

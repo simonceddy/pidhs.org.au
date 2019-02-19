@@ -5,16 +5,16 @@
     width: 9.5%;
 	margin-left: 1%;
 	margin-right: 2%;
-	background: #fff;
-	//float:left;
+	float:left;
 	padding:10px;
-	font-size:14px;
+	font-size:1.2rem;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	//z-index:-2;
-    overflow:auto;/*
-    position: absolute; */
+	z-index: 2;
+    overflow:auto;
+	position: relative;
+	right: 150px;
 }
 
 .sidebar-menu-link {
