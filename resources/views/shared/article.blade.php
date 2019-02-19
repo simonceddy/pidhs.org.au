@@ -1,7 +1,7 @@
-<div class="container" id="article">
+<div class="text-left" id="article">
     <h1>{{ $title }}</h1>
 
-    <div class="container" id="article-content">
+    <div class="article-content" id="article-content">
         {!! $content !!}
     </div>
 </div>

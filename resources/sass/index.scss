@@ -29,10 +29,12 @@ body {
   	background-size: cover;
 }
 
-.content {
-	margin: 20px;
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.row {
-	background: rgba(255, 255, 255, 0.75);
+.container, .sidebar {
+    background: rgba(255, 255, 255, 0.75);
 }

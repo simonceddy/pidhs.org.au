@@ -4,50 +4,43 @@
 @import 'nav'; */
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
   /* width: 70%; */
   /* background: #fff; */
   margin: 20px auto;
   padding: 14px;
   border-radius: 5px;
   text-align: center;
+  font-weight: 700;
 }
 
-.navbar-menu {
-  list-style: none;
-  font-weight: bold;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar-menu ul {
-  background: #fff;
-  /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
-  background: rgba(255, 255, 255, 0);
-  /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
-  list-style: none;
+.navbar-dropdown {
+  display: none;
+  z-index: 2;
+  float: right;
   position: absolute;
-  left: -9999px;
-  /* Hide off-screen when not needed (this is more accessible than display:none; - is it?) */
-  white-space: nowrap;
+  flex-direction: column;
+  overflow: visible;
 }
 
-.navbar-menu li {
-  float: left;
-  margin-right: 10px;
-  position: relative;
+.navbar-item:hover > .navbar-dropdown {
+  display: flex;
 }
 
-.navbar-menu a {
+.navbar-item > a,
+.navbar-dropdown-item > a {
+  text-decoration: none;
   padding: 5px;
   color: #fff;
   background: #333;
-  text-decoration: none;
 }
 
-.navbar-menu a:hover {
+.navbar-dropdown-item {
+  padding-top: 1px;
+  margin: 5px;
+}
+
+.navbar-item > a:hover,
+.navbar-dropdown-item:hover > a {
   color: #fff;
   background: #6b0c36;
   text-decoration: underline;
@@ -60,72 +53,24 @@
   z-index: 2;
 }
 
-.navbar-menu ul a {
-  white-space: nowrap;
-  /* Stop text wrapping and creating multi-line dropdown items */
-}
-
-.navbar-menu li:hover ul {
-  /* Display the dropdown on hover */
-  left: 0;
-  /* Bring back on-screen when needed */
-}
-
-.navbar-menu li:hover a {
-  /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+.navbar-dropdown {
   background: #6b0c36;
-  text-decoration: underline;
-}
-
-.navbar-menu li:hover ul a {
-  /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
-  text-decoration: none;
-}
-
-.navbar-menu li:hover ul li a:hover {
-  /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-  background: #333;
-}
-
-.navbar-menu ul li {
-  padding-top: 1px;
-  /* Introducing a padding between the li and the a give the illusion spaced items */
-  float: none;
-}
-
-.navbar-menu ul a {
-  white-space: nowrap;
-  /* Stop text wrapping and creating multi-line dropdown items */
-}
-
-.navbar-menu li:hover ul {
-  /* Display the dropdown on hover */
-  left: auto;
-  right: 0;
-  margin-right: -10px;
-  /* Bring back on-screen when needed */
-}
-
-.navbar-menu li:hover a {
-  /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-  background: #6b0c36;
-  text-decoration: underline;
-}
-
-.navbar-menu li:hover ul li a:hover {
-  /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-  background: #333;
 }
 
 .sidebar {
-  margin: 12px 12px;
+  /* float: left;
   font-size: 1.1em;
-  font-weight: 700;
-}
-
-.sidebar-menu {
-  list-style: none;
-  margin-left: -12px;
+  font-weight: 700; */
+  width: 9.5%;
+  margin-left: 1%;
+  margin-right: 2%;
+  background: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  overflow: auto;
+  /*
+  position: absolute; */
 }
 
 .sidebar-menu-link {
@@ -136,8 +81,23 @@
   text-decoration: underline;
 }
 
-body {
+.publication-date,
+h1 {
+  color: #eb6841;
+}
+
+.publication-date {
+  font-size: 0.8em;
+}
+
+body,
+html {
   margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
   color: #333;
   background-color: #CCC;
   background-image: url(/storage/muralbg1.jpg);
@@ -151,20 +111,14 @@ body {
   background-size: cover;
 }
 
-.content {
-  margin: 20px;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.row {
+.container,
+.sidebar {
   background: rgba(255, 255, 255, 0.75);
-}
-
-.publication-date,
-h1 {
-  color: #eb6841;
-}
-
-.publication-date {
-  font-size: 0.8em;
 }
 

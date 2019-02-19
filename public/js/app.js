@@ -36658,10 +36658,10 @@ if (token) {
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/sass/index.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/index.scss ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -36670,15 +36670,15 @@ if (token) {
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/css/tailwind.css ***!
-  \******************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/index.scss ./resources/css/tailwind.css ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\css\tailwind.css */"./resources/css/tailwind.css");
+__webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/sass/index.scss */"./resources/sass/index.scss");
+module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/css/tailwind.css */"./resources/css/tailwind.css");
 
 
 /***/ })

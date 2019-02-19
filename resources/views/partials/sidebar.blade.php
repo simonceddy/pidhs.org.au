@@ -1,15 +1,18 @@
-<div id="sidebar" class="sidebar">
+<div id="sidebar" class="sidebar flex flex-col text-left float-left absolute pin-l">
+    <div class="siderbar-item">
+        <a href="@article(services)" class="sidebar-menu-link">Services</a>
+    </div>
 
-    <ul class="sidebar-menu flex flex-col bg-pidhs" id="sidebar-menu">
+    <div>
+        <a href="{{route('collection.index')}}" class="sidebar-menu-link">Collection</a>
+    </div>
 
-        <li><a href="@article(services)" class="sidebar-menu-link">Services</a></li>
+    <div>
+        <a href="{{route('essay.index')}}" class="sidebar-menu-link">Essays &amp; Talks</a>
+    </div>
 
-        <li><a href="{{route('collection.index')}}" class="sidebar-menu-link">Collection</a></li>
-
-        <li><a href="{{route('essay.index')}}" class="sidebar-menu-link">Essays &amp; Talks</a></li>
-
-        <li><a href="@article(links)" class="sidebar-menu-link">Links</a></li>
-
-    </ul>
+    <div>
+        <a href="@article(links)" class="sidebar-menu-link">Links</a>
+    </div>
 
 </div>

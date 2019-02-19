@@ -10,7 +10,22 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <div class="container flex flex-col app-container items-center">
+
+    <div class="container flex flex-col items-center">
+
+        <header class="justify-center">
+            <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
+        </header>
+
+        @include('partials/navbar')
+        @include('partials/sidebar')
+        <div class="content flex-1 m-4">
+            @yield('content')
+        </div>
+        @include('partials/footer')
+    </div>
+
+    <!-- <div class="container flex flex-col app-container items-center">
         <div class="row flex flex-col top-row bg-pidhs justify-center items-center">
             <header class="justify-center">
                 <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
@@ -39,7 +54,7 @@
             </div>
 
         </footer>
-    </div>
+    </div> -->
 <script src="/js/app.js"></script>
 @stack('scripts')
 </body>

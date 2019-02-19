@@ -5,7 +5,7 @@
 @section('content')
     <h1>Events</h1>
 
-    <div class="container">
+    <div class="events-container">
         @auth
             <div>
                 <a href="{{ route('event.create') }}" class="create-button">Create a new Event</a>
