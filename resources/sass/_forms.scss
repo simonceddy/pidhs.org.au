@@ -1,0 +1,21 @@
+.submit-button {
+    width: 12em;
+    padding: 10px;
+    border: 2px solid #7c412b;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, .8);
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, .8);
+    color: #fff;
+    background: #ef7d50;
+    font-weight: bold;
+    -webkit-appearance: none;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    background: #fff;
+    color: #ef7d50;
+}

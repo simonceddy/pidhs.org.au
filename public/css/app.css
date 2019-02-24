@@ -1096,7 +1096,6 @@
   /* float: left;
   font-size: 1.1em;
   font-weight: 700; */
-  width: 9.5%;
   margin-left: 1%;
   margin-right: 2%;
   padding: 10px;
@@ -1127,6 +1126,24 @@ h1 {
   flex: 1 1 200px;
 }
 
+.submit-button {
+  width: 12em;
+  padding: 10px;
+  border: 2px solid #7c412b;
+  border-radius: 5px;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+  color: #fff;
+  background: #ef7d50;
+  font-weight: bold;
+  -webkit-appearance: none;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background: #fff;
+  color: #ef7d50;
+}
+
 body,
 html {
   margin: 0;
@@ -1149,9 +1166,8 @@ body {
 }
 
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
+  margin: 0;
+  padding: 0;
   min-height: 100%;
 }
 

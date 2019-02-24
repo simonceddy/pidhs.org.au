@@ -11,22 +11,30 @@
 </head>
 <body>
 
-    <div class="container flex flex-col items-center">
-        <div class="header-row flex flex-col items-center bg-default">
-            <header class="justify-center">
-                <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
-            </header>
-            @include('partials/navbar')
-        </div>
-        <div class="mid-row flex">
-            @include('partials/sidebar')
-            <div class="content flex-1 m-4 bg-default">
-                @yield('content')
+    <div class="container flex flex-col items-center w-full">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class=" bg-default col-8 flex flex-col items-center">
+                <header class="justify-center">
+                    <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
+                </header>
+                @include('partials/navbar')
             </div>
-            <div class="spacer"></div>
+            <div class="col-2"></div>
         </div>
-        <div class="footer-row">
-            @include('partials/footer')
+        <div class="row flex-1">
+            <div class="col-2">
+                @include('partials/sidebar')
+            </div>
+            <div class="col-8 main-section flex flex-col bg-default">
+                <div class="content flex-1 m-4">
+                    @yield('content')
+                </div>
+                <div class="">
+                    @include('partials/footer')
+                </div>
+            </div>
+            <div class="col-2"></div>
         </div>
     </div>
 
