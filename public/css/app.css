@@ -61,14 +61,11 @@
   width: 9.5%;
   margin-left: 1%;
   margin-right: 2%;
-  float: left;
   padding: 10px;
   font-size: 1.2rem;
   border-radius: 5px;
   z-index: 2;
   overflow: auto;
-  position: relative;
-  right: 150px;
 }
 
 .sidebar-menu-link {
@@ -114,14 +111,13 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
   min-height: 100%;
 }
 
-.container,
-.sidebar {
+.bg-default {
   background: rgba(255, 255, 255, 0.86);
 }
 

@@ -12,19 +12,22 @@
 <body>
 
     <div class="container flex flex-col items-center">
-
-        <header class="justify-center">
-            <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
-        </header>
-
-        @include('partials/navbar')
+        <div class="header-row flex flex-col items-center bg-default">
+            <header class="justify-center">
+                <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
+            </header>
+            @include('partials/navbar')
+        </div>
         <div class="mid-row flex">
             @include('partials/sidebar')
-            <div class="content flex-1 m-4">
+            <div class="content flex-1 m-4 bg-default">
                 @yield('content')
             </div>
+            <div class="spacer"></div>
         </div>
-        @include('partials/footer')
+        <div class="footer-row">
+            @include('partials/footer')
+        </div>
     </div>
 
     <!-- <div class="container flex flex-col app-container items-center">
