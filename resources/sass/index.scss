@@ -3,7 +3,11 @@
 @import 'sidebar';
 @import 'nav'; */
 
-//@import 'site/layout';
+@import './../../node_modules/bootstrap/scss/functions';
+@import './../../node_modules/bootstrap/scss/variables';
+@import './../../node_modules/bootstrap/scss/mixins';
+@import "./../../node_modules/bootstrap/scss/grid";
+
 @import './navbar';
 @import './sidebar';
 @import './article';
