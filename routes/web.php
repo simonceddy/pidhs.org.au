@@ -49,10 +49,9 @@ Route::resource('pdf', 'PdfController')
 Route::resource('photo', 'PhotoController')
     ->except(['update', 'create', 'edit']);
 
-Route::get('upload', function () {
-    return view('collection.item.upload');
-});
+Route::get('upload', 'Collection\\UploadsController@create');
 
-Route::post('upload/item', function () {
-    dd(request());
-});
+Route::post('upload/item', 'Collection\\UploadsController@store');
+
+Route::get('addCaptions', 'Collection\AddCaptionsController@edit')
+    ->name('addCaptions');
