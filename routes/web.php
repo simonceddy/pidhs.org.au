@@ -48,3 +48,11 @@ Route::resource('pdf', 'PdfController')
     ->except(['update', 'create', 'edit']);
 Route::resource('photo', 'PhotoController')
     ->except(['update', 'create', 'edit']);
+
+Route::get('upload', function () {
+    return view('collection.item.upload');
+});
+
+Route::post('upload/item', function () {
+    dd(request());
+});
