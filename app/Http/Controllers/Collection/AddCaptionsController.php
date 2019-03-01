@@ -8,9 +8,9 @@ use App\Item;
 
 class AddCaptionsController extends Controller
 {
-    public function edit(Item ...$item)
+    public function edit(Request $request)
     {
-        dd(...$item);
+        dd($request->query());
         // todo return captions view
     }
 
