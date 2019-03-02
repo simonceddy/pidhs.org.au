@@ -10,7 +10,9 @@ class AddCaptionsController extends Controller
 {
     public function edit(Request $request)
     {
-        dd($request->query());
+        $ids = array_keys($request->query());
+        $items = Item::where('id', $ids)->get();
+        dd($items);
         // todo return captions view
     }
 
