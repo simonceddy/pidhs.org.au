@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Resource::withoutWrapping();
         Blade::directive('article', function (string $slug) {
             return route('article.show', $slug);
         });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Item;
 use Illuminate\Http\Request;
 use App\Collection;
+use Intervention\Image\Facades\Image;
 
 class ItemController extends Controller
 {
