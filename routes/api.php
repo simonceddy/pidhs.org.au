@@ -19,6 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResources([
     'exhibition' => 'Api\\ExhibitionController',
-    'sections' => 'Api\\SectionController'
+    'exhibition/{exhibition}/section' => 'Api\\SectionController'
 ]);
 

@@ -18,6 +18,7 @@ class ExhibitionController extends Controller
         $this->middleware('auth:api', [
             'except' => ['index', 'show']
         ]);
+        $this->middleware('cors');
     }
 
     /**
@@ -50,7 +51,8 @@ class ExhibitionController extends Controller
      */
     public function show(Exhibition $exhibition)
     {
-        //
+        $exhibition->load('sections');
+        return $exhibition;
     }
 
     /**

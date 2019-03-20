@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Exhibitions\Section;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Exhibitions\Exhibition;
 
 class SectionController extends Controller
 {
@@ -18,6 +19,7 @@ class SectionController extends Controller
         $this->middleware('auth:api', [
             'except' => ['index', 'show']
         ]);
+        $this->middleware('cors');
     }
 
     /**
@@ -25,9 +27,13 @@ class SectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Exhibition $exhibition)
     {
-        return Section::all();
+        return $exhibition->sections()->get([
+            'id',
+            'exhibition_id',
+            'title'
+        ]);
     }
 
     /**
@@ -47,9 +53,8 @@ class SectionController extends Controller
      * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function show(Section $section)
+    public function show(Exhibition $exhibition, Section $section)
     {
-        //
         return $section;
     }
 

@@ -60,8 +60,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'local.cors' => \App\Http\Middleware\LocalCors::class,
         'html.purify' => \App\Http\Middleware\PurifyHtmlInput::class,
+        'cors' => \Barryvdh\Cors\HandleCors::class,
     ];
 
     /**
