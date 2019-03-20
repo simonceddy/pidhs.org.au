@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -102,10 +102,10 @@
 
 /***/ }),
 
-/***/ "./resources/js/editor/editor.js":
-/*!***************************************!*\
-  !*** ./resources/js/editor/editor.js ***!
-  \***************************************/
+/***/ "./resources/js/editor/index.js":
+/*!**************************************!*\
+  !*** ./resources/js/editor/index.js ***!
+  \**************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -122,14 +122,26 @@ _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a.create(
 
 /***/ }),
 
-/***/ 1:
-/*!*********************************************!*\
-  !*** multi ./resources/js/editor/editor.js ***!
-  \*********************************************/
+/***/ "./resources/sass/index.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/index.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!************************************************************************!*\
+  !*** multi ./resources/js/editor/index.js ./resources/sass/index.scss ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/editor.js */"./resources/js/editor/editor.js");
+__webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\js\editor\index.js */"./resources/js/editor/index.js");
+module.exports = __webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\sass\index.scss */"./resources/sass/index.scss");
 
 
 /***/ })
