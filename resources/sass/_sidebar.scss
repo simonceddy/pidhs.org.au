@@ -6,15 +6,17 @@
 	margin-left: 1%;
 	margin-right: 2%;
 	//float:left;
-	padding:10px;
+	//padding:10px;
 	font-size:1.2rem;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
 	z-index: 2;
     overflow:auto;
-	//position: relative;
-	//right: 150px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar-container {
+        float: none;
+        position: inherit;
+    }
 }
 
 .sidebar-menu-link {

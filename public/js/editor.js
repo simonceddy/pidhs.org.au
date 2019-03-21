@@ -140,8 +140,8 @@ _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a.create(
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\js\editor\index.js */"./resources/js/editor/index.js");
-module.exports = __webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\sass\index.scss */"./resources/sass/index.scss");
+__webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/index.js */"./resources/js/editor/index.js");
+module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/sass/index.scss */"./resources/sass/index.scss");
 
 
 /***/ })

@@ -10,31 +10,25 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-
-    <div class="container flex flex-col items-center w-full">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class=" bg-default col-8 flex flex-col items-center">
-                <header class="justify-center">
-                    <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
-                </header>
-                @include('partials/navbar')
-            </div>
-            <div class="col-2"></div>
+    <div class="app flex flex-col items-center w-3/4">
+        <div class="bg-default flex flex-col items-center w-full rounded-lg mb-4">
+            <header class="justify-center">
+                <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
+            </header>
+            @include('partials/navbar')
         </div>
-        <div class="row flex-1">
-            <div class="col-2">
+        <div class="flex-1 bg-default w-full rounded-lg">
+            <div class="sidebar-container float-left absolute pin-l">
                 @include('partials/sidebar')
             </div>
-            <div class="col-8 main-section flex flex-col bg-default">
-                <div class="content flex-1 m-4">
+            <div class="main-section flex flex-col w-full">
+                <div class="content flex-1 p-4">
                     @yield('content')
                 </div>
-                <div class="">
-                    @include('partials/footer')
-                </div>
             </div>
-            <div class="col-2"></div>
+            <div class="">
+                @include('partials/footer')
+            </div>
         </div>
     </div>
 
