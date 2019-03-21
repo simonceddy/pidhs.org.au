@@ -13,6 +13,6 @@ class Section extends Model
 
     public function exhibition()
     {
-        $this->belongsTo('exhibition');
+        return $this->belongsTo(Exhibition::class);
     }
 }

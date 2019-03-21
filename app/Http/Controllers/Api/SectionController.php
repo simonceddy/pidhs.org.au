@@ -55,6 +55,7 @@ class SectionController extends Controller
      */
     public function show(Exhibition $exhibition, Section $section)
     {
+        $section->load('exhibition');
         return $section;
     }
 
