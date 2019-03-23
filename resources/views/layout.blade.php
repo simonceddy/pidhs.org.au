@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="main-section flex-1 flex flex-col w-full">
-                <div class="content flex-1 p-4">
+                <div class="content flex-1 px-8 py-2">
                     @yield('content')
                 </div>
             </div>

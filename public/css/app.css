@@ -71,6 +71,11 @@ h1 {
   font-size: 0.8em;
 }
 
+.article-content > p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .submit-button {
   width: 12em;
   padding: 10px;
@@ -87,6 +92,19 @@ h1 {
   cursor: pointer;
   background: #fff;
   color: #ef7d50;
+}
+
+.pagination > .active,
+.pagination > .disabled {
+  text-decoration: none;
+}
+
+.pagination-link:hover {
+  background: #6b0c36;
+}
+
+.pagination-link:hover > a {
+  color: #fff;
 }
 
 body,

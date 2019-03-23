@@ -1,5 +1,9 @@
 @extends('layout')
 
+@php
+    dd(new \ReflectionClass($this->getCompiler()));
+@endphp
+
 @section('title', 'Phillip Island & District Historical Society')
 
 @section('content')
@@ -12,6 +16,6 @@
     <h1>
         Item
     </h1>
-    <div><img src="{{$thumbnail}}"></div>
+    <div><img src="{{ Storage::get('collection/'.$thumbnail) }}"></div>
 </div>
 @endsection

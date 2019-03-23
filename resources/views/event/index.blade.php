@@ -13,7 +13,7 @@
         @endauth
 @foreach ($events as $event)
         <div class="row my-3">
-        <a href="{{route('event.show', $event->id)}}"><h3>{{$event->title}}</h3></a>
+        <a href="{{route('event.show', $event->id)}}"><h2 class="m-2">{{$event->title}}</h1></a>
             <p>{{$event->event_date}}</p>
         </div>
 @endforeach
