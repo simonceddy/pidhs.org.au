@@ -17,11 +17,13 @@
             </header>
             @include('partials/navbar')
         </div>
-        <div class="flex-1 bg-default w-full rounded-lg">
-            <div class="sidebar-container float-left absolute pin-l">
-                @include('partials/sidebar')
+        <div class="flex-1 bg-default w-full rounded-lg flex flex-col">
+            <div>
+                <div class="sidebar-container float-left absolute pin-l">
+                    @include('partials/sidebar')
+                </div>
             </div>
-            <div class="main-section flex flex-col w-full">
+            <div class="main-section flex-1 flex flex-col w-full">
                 <div class="content flex-1 p-4">
                     @yield('content')
                 </div>

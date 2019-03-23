@@ -1,18 +1,16 @@
 .sidebar {
-    /* float: left;
-    font-size: 1.1em;
-    font-weight: 700; */
-    //width: 9.5%;
 	margin-left: 1%;
 	margin-right: 2%;
-	//float:left;
-	//padding:10px;
 	font-size:1.2rem;
 	z-index: 2;
     overflow:auto;
 }
 
-@media only screen and (max-width: 1200px) {
+.sidebar-container {
+    width: 11.8%;
+}
+
+@media only screen and (max-width: 700px) {
     .sidebar-container {
         float: none;
         position: inherit;

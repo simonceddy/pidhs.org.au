@@ -1,4 +1,4 @@
-<div class="navbar flex justify-around">
+<div class="navbar flex justify-around text-center p-5 font-bold my-2 w-full">
     <div class="navbar-item">
         <a href="{{route('home')}}">Home</a>
     </div>

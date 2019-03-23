@@ -1,17 +1,3 @@
-.navbar {
-  /* width: 70%; */
-  /* background: #fff; */
-  margin: 20px auto;
-  padding: 14px;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: 700;
-}
-
-.navbar-item {
-  margin: 0 10px;
-}
-
 .navbar-dropdown {
   display: none;
   z-index: 2;
@@ -50,9 +36,6 @@
 }
 
 .sidebar {
-  /* float: left;
-  font-size: 1.1em;
-  font-weight: 700; */
   margin-left: 1%;
   margin-right: 2%;
   font-size: 1.2rem;
@@ -60,7 +43,11 @@
   overflow: auto;
 }
 
-@media only screen and (max-width: 1200px) {
+.sidebar-container {
+  width: 11.8%;
+}
+
+@media only screen and (max-width: 700px) {
   .sidebar-container {
     float: none;
     position: inherit;
@@ -82,10 +69,6 @@ h1 {
 
 .publication-date {
   font-size: 0.8em;
-}
-
-.collection-box {
-  flex: 1 1 200px;
 }
 
 .submit-button {

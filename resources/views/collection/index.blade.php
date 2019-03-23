@@ -15,7 +15,7 @@
 
 
     @foreach ($collections as $collection)
-    <div class="collection-box border m-4">
+    <div class="collection-box flex-1 border m-4">
     <a href="{{route('collection.show', $collection->id)}}">{{$collection->title}}</a>
     </div>
     @endforeach

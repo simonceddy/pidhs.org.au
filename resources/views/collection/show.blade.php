@@ -17,9 +17,9 @@
             {{$collection->title ?? "Collection"}}
         </h1>
     </div>
-    <div class="row">
+    <div class="flex flex-row flex-wrap">
         @foreach ($collection->items as $item)
-            <div class="col-sm-3">
+            <div class="flex-1">
             <a href="{{route('item.show', $item->id)}}">{{$item->title}}</a>
             </div>
         @endforeach
