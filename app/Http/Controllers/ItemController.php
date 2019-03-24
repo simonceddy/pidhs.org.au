@@ -6,6 +6,7 @@ use App\Item;
 use Illuminate\Http\Request;
 use App\Collection;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
@@ -89,6 +90,9 @@ class ItemController extends Controller
     public function show(Item $item)
     {
         //
+        $thumb = Storage::url('collection/'.$item->thumbnail);
+        $item->thumb_url = $thumb;
+        //dd($item);
         return view('collection.item.show', $item);
     }
 
