@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Storage;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::directive('article', function (string $slug) {
             return route('article.show', $slug);
+        });
+
+        Blade::directive('itemUrl', function (string $thumb) {
+            return Storage::url('collection/'.$thumb);
         });
     }
 

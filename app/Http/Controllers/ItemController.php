@@ -89,10 +89,6 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
-        $thumb = Storage::url('collection/'.$item->thumbnail);
-        $item->thumb_url = $thumb;
-        //dd($item);
         return view('collection.item.show', $item);
     }
 

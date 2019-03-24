@@ -12,6 +12,10 @@
     <h1>
         {{ $title }}
     </h1>
-    <div><img src="{{ $thumb_url }}"></div>
+    <div>
+        <a href="@itemUrl({{$thumbnail}})">
+            <img src="@itemUrl({{$thumbnail}})">
+        </a>
+    </div>
 </div>
 @endsection
