@@ -41,8 +41,6 @@ class ItemController extends Controller
      */
     public function create(Collection $collection = null)
     {
-        // item form - upload image, caption, title
-        // must assign to collection
         return view('collection.item.create', ['collection' => $collection]);
     }
 
@@ -116,7 +114,7 @@ class ItemController extends Controller
      */
     public function edit(Collection $collection, Item $item)
     {
-        //
+        // update item title and caption
     }
 
     /**
@@ -128,7 +126,7 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        // update item title and caption
     }
 
     /**
@@ -139,6 +137,7 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
-        //
+        // Remove item
+        // Remove associated image + thumbnail
     }
 }
