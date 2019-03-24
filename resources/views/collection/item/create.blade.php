@@ -3,7 +3,7 @@
 @section('content')
 <div class="container" id="item-form">
     <h1>Add a new item to Collection</h1>
-    <form method="POST" action="{{route('item.store')}}" enctype="multipart/form-data" accept-charset="UTF-8">
+    <form method="POST" action="{{route('item.store', $collection)}}" enctype="multipart/form-data" accept-charset="UTF-8">
         @csrf
         <div class="form-group">
           <label for="title">Title</label>

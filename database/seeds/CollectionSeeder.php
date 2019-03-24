@@ -12,8 +12,11 @@ class CollectionSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Collection::class, 15)->create()->each(function ($coll) {
-            $coll->items()->saveMany(factory(App\Item::class, 20)->make());
-        });
+        factory(App\Collection::class, 15)
+            ->create()
+            ->each(function ($collection) {
+                $collection->items()
+                    ->saveMany(factory(App\Item::class, 15)->make());
+            });
     }
 }

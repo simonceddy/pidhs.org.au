@@ -19,8 +19,11 @@
     </div>
     <div class="flex flex-row flex-wrap">
         @foreach ($collection->items as $item)
-            <div class="flex-1">
-            <a href="{{route('item.show', $item->id)}}">{{$item->title}}</a>
+            <div class="collection-box p-2">
+                <a href="{{route('item.show', [$collection, $item])}}" class="flex flex-col">
+                <img src="@itemThumb({{$item->thumbnail}})">
+                <span>{{$item->title}}</span>
+            </a>
             </div>
         @endforeach
     </div>

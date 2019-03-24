@@ -28,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('itemUrl', function (string $thumb) {
             return Storage::url('collection/'.$thumb);
         });
+
+        Blade::directive('itemThumb', function (string $thumb) {
+            return Storage::url('collection/thumb/th_'.$thumb);
+        });
     }
 
     /**
