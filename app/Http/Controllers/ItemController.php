@@ -29,20 +29,9 @@ class ItemController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['index', 'show']
+            'except' => ['show']
         ]);
         $this->middleware('html.purify')->only(['store', 'update']);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        // not applicable - not publically accessible
-        // items are displayed by collection
     }
 
     /**
