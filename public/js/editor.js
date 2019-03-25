@@ -115,15 +115,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _uploadAdapter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./uploadAdapter */ "./resources/js/editor/uploadAdapter.js");
 
- //console.log(new UploadAdapter);
 
-_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a.create(document.querySelector('#editor'), {
-  /* toolbar: ['underline'] */
-}).then(function (editor) {
+
+function InitUploadAdapter(editor) {
   editor.plugins.get('FileRepository').createUploadAdapter = function (loader) {
     return new _uploadAdapter__WEBPACK_IMPORTED_MODULE_1__["default"](loader);
   };
+}
 
+_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a.create(document.querySelector('#editor'), {
+  /* toolbar: ['underline'] */
+  extraPlugins: [InitUploadAdapter]
+}).then(function (editor) {
   console.log(editor);
   console.log('Editor loaded.');
 }).catch(function (err) {
@@ -160,14 +163,16 @@ function () {
     key: "upload",
     value: function upload() {
       var client = window.axios;
-      return client.post('/editor/upload', {
-        file: this.loader.file
-      }, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      }).then(function (res) {
-        return console.log(res);
+      var data = new FormData();
+      data.append('file', this.loader.file);
+      return new Promise(function (resolve, reject) {
+        client.post('/editor/upload', data, {
+          headers: {
+            'Content-Type': 'image/form-data'
+          }
+        }).then(function (res) {
+          return console.log(res);
+        });
       });
     }
   }, {
@@ -193,7 +198,7 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/index.js */"./resources/js/editor/index.js");
+module.exports = __webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\js\editor\index.js */"./resources/js/editor/index.js");
 
 
 /***/ })

@@ -5,11 +5,14 @@ class UploadAdapter {
 
   upload() {
     const client = window.axios;
-    return client.post('/editor/upload', {file: this.loader.file}, {
+    let data = new FormData();
+    data.append('file', this.loader.file)
+
+    return new Promise((resolve, reject) => {client.post('/editor/upload', data, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'image/form-data'
       }
-    }).then(res => console.log(res));
+    }).then(res => console.log(res));});
   }
 
   abort() {

@@ -14,6 +14,13 @@ class UploadsController extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        if (!$request->ajax()) {
+            return response()->setStatusCode(500, 'Invalid upload');
+        }
+        $file = $request->file('file');
+
+        dump($file);
+        //Storage::put('app/assets', $contents);
+        return response()->json('testing');
     }
 }

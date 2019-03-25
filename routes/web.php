@@ -21,7 +21,9 @@ Route::get('/mob/{path?}', function () {
     return view('mobile');
 });
 
+
 // front controller for exhibitions react app
+
 Route::get('/exhibitions/{path?}', function () {
     return view('exhibition.app');
 })->name('exhibitions.app');
@@ -56,11 +58,4 @@ Route::post('upload/item', 'Collection\\UploadsController@store');
 Route::get('addCaptions', 'Collection\AddCaptionsController@edit')
     ->name('addCaptions');
 
-Route::post('editor/upload', function () {
-    if (!request()->ajax()) {
-        return response()->setStatusCode(500, 'Invalid upload');
-    }
-    dump(request());
-    //Storage::put('app/assets', $contents);
-    return response()->json('testing');
-});
+Route::post('editor/upload', 'UploadsController');
