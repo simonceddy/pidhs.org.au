@@ -113,11 +113,18 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _uploadAdapter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./uploadAdapter */ "./resources/js/editor/uploadAdapter.js");
+
+ //console.log(new UploadAdapter);
 
 _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a.create(document.querySelector('#editor'), {
   /* toolbar: ['underline'] */
 }).then(function (editor) {
-  console.log(Array.from(editor.ui.componentFactory.names()));
+  editor.plugins.get('FileRepository').createUploadAdapter = function (loader) {
+    return new _uploadAdapter__WEBPACK_IMPORTED_MODULE_1__["default"](loader);
+  };
+
+  console.log(editor);
   console.log('Editor loaded.');
 }).catch(function (err) {
   console.log(err);
@@ -125,26 +132,68 @@ _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a.create(
 
 /***/ }),
 
-/***/ "./resources/sass/index.scss":
-/*!***********************************!*\
-  !*** ./resources/sass/index.scss ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./resources/js/editor/uploadAdapter.js":
+/*!**********************************************!*\
+  !*** ./resources/js/editor/uploadAdapter.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var UploadAdapter =
+/*#__PURE__*/
+function () {
+  function UploadAdapter(loader) {
+    _classCallCheck(this, UploadAdapter);
+
+    this.loader = loader;
+  }
+
+  _createClass(UploadAdapter, [{
+    key: "upload",
+    value: function upload() {
+      var client = window.axios;
+      return client.post('/editor/upload', {
+        file: this.loader.file
+      }, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }).then(function (res) {
+        return console.log(res);
+      });
+    }
+  }, {
+    key: "abort",
+    value: function abort() {
+      if (this.xhr) {
+        this.xhr.abort();
+      }
+    }
+  }]);
+
+  return UploadAdapter;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (UploadAdapter);
 
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************!*\
-  !*** multi ./resources/js/editor/index.js ./resources/sass/index.scss ***!
-  \************************************************************************/
+/*!********************************************!*\
+  !*** multi ./resources/js/editor/index.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/index.js */"./resources/js/editor/index.js");
-module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/sass/index.scss */"./resources/sass/index.scss");
+module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/index.js */"./resources/js/editor/index.js");
 
 
 /***/ })
