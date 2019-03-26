@@ -198,7 +198,7 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\simon\documents\dev\pidhs.org.au\resources\js\editor\index.js */"./resources/js/editor/index.js");
+module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/index.js */"./resources/js/editor/index.js");
 
 
 /***/ })

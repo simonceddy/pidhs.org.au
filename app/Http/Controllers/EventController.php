@@ -56,7 +56,7 @@ class EventController extends Controller
         $data = $request->post();
         $data['event_date'] = $data['event-date'];
         $event = new Event($data);
-        dd($event);
+        dump($event);
     }
 
     /**
