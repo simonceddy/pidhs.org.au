@@ -9,7 +9,7 @@ class UploadsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('validate.upload');
+        $this->middleware('validate.ckupload');
     }
 
     /**
@@ -29,7 +29,7 @@ class UploadsController extends Controller
         $file = $request->file('file');
 
         $file->store('public/assets');
-        dump($file);
+        //dump($file);
         //Storage::put('app/assets', $contents);
         return response()->json([
             'uploaded' => true,

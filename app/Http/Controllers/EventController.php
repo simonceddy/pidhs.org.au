@@ -95,9 +95,11 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
-        //dd('here');
-        dd($request, $event);
+        $data = $request->post();
+        // validate data
+        $event->fill($data);
+        $event->save();
+        return redirect(route('event.show', $event));
     }
 
     /**
@@ -109,7 +111,7 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
-
-        dd($event);
+        $event->delete();
+        return redirect(route('event.index'));
     }
 }

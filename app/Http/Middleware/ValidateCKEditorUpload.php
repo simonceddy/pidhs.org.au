@@ -4,10 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class ValidateImageMimeType
+class ValidateCKEditorUpload
 {
     /**
-     * Todo: Move this to image validation middleware
+     * Accepted mimetypes
      *
      * @var array
      */
@@ -26,10 +26,15 @@ class ValidateImageMimeType
      */
     public function handle($request, Closure $next)
     {
-        // check if an uploaded file is a valid mimetype
-        $file = $request->file('image-upload');
-        dd($file);
-        // if not return to form with error message and post data
+        //dump($request);
+        $file = $request->file('file');
+        if (!in_array($file->getMimeType(), $this->valid_mimetype)) {
+            //dump($file);
+            return response()->json([
+                'uploaded' => false,
+                'error' => ['Invalid Mimetype']
+            ])->setStatusCode(500);
+        }
         return $next($request);
     }
 }

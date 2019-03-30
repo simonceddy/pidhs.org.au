@@ -11,17 +11,6 @@ use Illuminate\Support\Facades\Storage;
 class ItemController extends Controller
 {
     /**
-     * Todo: Move this to image validation middleware
-     *
-     * @var array
-     */
-    protected $valid_mimetype = [
-        'image/jpeg',
-        'image/png',
-        'image/gif'
-    ];
-
-    /**
      * Create a new controller instance.
      *
      * @return void
@@ -56,11 +45,6 @@ class ItemController extends Controller
         // validate file
         $data = $request->post();
         $image = $request->file('image-upload');
-        $type = $image->getMimeType();
-        if (!in_array($type, $this->valid_mimetype)) {
-            // todo: handle errors better
-            dd('error: type '.$type.' not allowed');
-        }
         $img = Image::make($image);
         $img->insert(Storage::get('wm.png'))->save();
         $image->store('public/collection');
