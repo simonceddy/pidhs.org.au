@@ -17,7 +17,8 @@ class EssayController extends Controller
         $this->middleware('auth', [
             'except' => ['index', 'show']
         ]);
-        $this->middleware('html.purify')->only(['store', 'update']);
+        $this->middleware(['html.purify', 'validate.upload'])
+            ->only(['store', 'update']);
     }
 
     /**

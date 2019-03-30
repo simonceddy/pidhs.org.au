@@ -17,7 +17,8 @@ class EventController extends Controller
         $this->middleware('auth', [
             'except' => ['index', 'show']
         ]);
-        $this->middleware('html.purify')->only(['store', 'update']);
+        $this->middleware(['html.purify', 'validate.upload'])
+            ->only(['store', 'update']);
     }
 
     /**
@@ -56,6 +57,8 @@ class EventController extends Controller
         $data = $request->post();
         $data['event_date'] = $data['event-date'];
         $event = new Event($data);
+        
+        $event->save();
         dump($event);
     }
 

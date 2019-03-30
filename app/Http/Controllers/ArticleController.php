@@ -18,8 +18,8 @@ class ArticleController extends Controller
         $this->middleware('auth', [
             'except' => ['show']
         ]);
-
-        $this->middleware('html.purify')->only(['store', 'update']);
+        $this->middleware(['html.purify', 'validate.upload'])
+            ->only(['store', 'update']);
     }
 
     /**

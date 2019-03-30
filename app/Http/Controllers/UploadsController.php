@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Storage;
 
 class UploadsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('validate.upload');
+    }
+
     /**
      * Handle the incoming request.
      *

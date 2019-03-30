@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="navbar-item">
-        <a href="{{route('event.index')}}">Events</a>
+        <a href="{{route('event.upcoming')}}">Events</a>
     </div>
     <div class="navbar-item">
         <a href="@article(contact)">Contact</a>

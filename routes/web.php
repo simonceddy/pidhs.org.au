@@ -36,6 +36,12 @@ Auth::routes([
     //'register' => false
 ]);
 
+Route::get('event/upcoming', 'Events\\UpcomingEventsController')
+    ->name('event.upcoming');
+
+Route::get('event/past', 'Events\\PastEventsController')
+    ->name('event.past');
+
 Route::resources([
     'article' => 'ArticleController',
     'news' => 'NewsController',

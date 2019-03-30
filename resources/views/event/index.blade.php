@@ -3,7 +3,13 @@
 @section('title', $title ?? 'Events')
 
 @section('content')
-    <h1>Events</h1>
+    <h1>{{$title ?? 'Events'}}</h1>
+
+    @if ($linkUri && $linkText)
+        <div>
+            <a href="{{$linkUri}}">{{$linkText}}</a>
+        </div>
+    @endif
 
     <div class="events-container">
         @auth
