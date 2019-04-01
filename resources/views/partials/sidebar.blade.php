@@ -1,4 +1,4 @@
-<div id="sidebar" class="bg-default sidebar flex flex-col text-left p-3 rounded-lg">
+<div id="sidebar" class="bg-default sidebar flex flex-col text-left p-6 rounded-lg">
     <div class="siderbar-item">
         <a href="@article(services)" class="sidebar-menu-link">Services</a>
     </div>

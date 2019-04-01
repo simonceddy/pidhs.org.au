@@ -3,7 +3,7 @@
 @section('title', $title ?? 'Events')
 
 @section('content')
-    <h1>{{$title ?? 'Events'}}</h1>
+    <h1 class="m-2">{{$title ?? 'Events'}}</h1>
 
     @if ($linkUri && $linkText)
         <div>
@@ -18,10 +18,13 @@
             </div>
         @endauth
 @foreach ($events as $event)
-        <div class="row my-3">
-        <a href="{{route('event.show', $event->id)}}"><h2 class="m-2">{{$event->title}}</h1></a>
-            <p>{{$event->event_date}}</p>
+    <div class="my-3">
+        <div class="flex flex-row items-center">
+            <span class="event-list-date text-sm">{{$event->event_date}}</span>
+            <a href="{{route('event.show', $event->id)}}" class="no-underline hover:underline"><h1 class="m-2">{{$event->title}}</h1></a>
+            
         </div>
+    </div>
 @endforeach
     </div>
 @endsection

@@ -12,14 +12,19 @@
 
 .navbar-item > a, .navbar-dropdown-item > a {
     text-decoration: none;
-    padding:5px;
+    padding:8px 5px;
     color:#fff;
     background:#333;
+    display: block;
+}
+
+.navbar-item {
+    margin: 4px 8px;
 }
 
 .navbar-dropdown-item {
     padding-top:1px;
-    margin: 5px;
+    margin: 5px 2px;
 }
 
 .navbar-item > a:hover, .navbar-dropdown-item:hover > a{

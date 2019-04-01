@@ -9,7 +9,7 @@
         </div>
     @endauth
 <div>
-    <h1>
+    <h1 class="m-2">
         {{ $item->title }}
     </h1>
     <div>

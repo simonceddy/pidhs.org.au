@@ -14,14 +14,19 @@
 .navbar-item > a,
 .navbar-dropdown-item > a {
   text-decoration: none;
-  padding: 5px;
+  padding: 8px 5px;
   color: #fff;
   background: #333;
+  display: block;
+}
+
+.navbar-item {
+  margin: 4px 8px;
 }
 
 .navbar-dropdown-item {
   padding-top: 1px;
-  margin: 5px;
+  margin: 5px 2px;
 }
 
 .navbar-item > a:hover,
@@ -44,7 +49,7 @@
 }
 
 .sidebar-container {
-  width: 11.8%;
+  width: 10.8%;
 }
 
 @media only screen and (max-width: 700px) {
@@ -76,6 +81,15 @@ h1 {
   margin-bottom: 1.25rem;
 }
 
+.collection-box {
+  flex: 1 1 200px;
+  background: #fff4cf;
+}
+
+.collection-box:hover {
+  background: #9C6;
+}
+
 .submit-button {
   width: 12em;
   padding: 10px;
@@ -94,6 +108,12 @@ h1 {
   color: #ef7d50;
 }
 
+.form-input {
+  border: 2px solid #666;
+  background: #efe;
+  border-radius: 5px;
+}
+
 .pagination > .active,
 .pagination > .disabled {
   text-decoration: none;
@@ -105,6 +125,26 @@ h1 {
 
 .pagination-link:hover > a {
   color: #fff;
+}
+
+.form-default {
+  background: #fff4cf;
+  border: 1px solid #666;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
+.admin-article-table > tbody {
+  background: #fff4cf;
+}
+
+.admin-article-table > * {
+  border: solid 1px #00a0b0;
+}
+
+.admin-article-table > thead {
+  background: #ef7d50;
+  color: white;
 }
 
 body,
@@ -129,6 +169,7 @@ body {
 .app {
   margin: 0 auto;
   min-height: 100%;
+  width: 73%;
 }
 
 .bg-default {
@@ -137,5 +178,10 @@ body {
 
 .footer {
   border-top: 1px solid #00a0b0;
+}
+
+h1 > a {
+  text-decoration: none;
+  color: inherit;
 }
 

@@ -25,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
             return route('article.show', $slug);
         });
 
+        Blade::directive('shortDate', function ($date) {
+            dd($date);
+        });
+
         Blade::directive('itemUrl', function (string $thumb) {
             return Storage::url('collection/'.$thumb);
         });

@@ -3,7 +3,7 @@
 @section('title', 'Phillip Island & District Historical Society')
 
 @section('content')
-<h1>
+<h1 class="m-2">
     Collections
 </h1>
 @auth
@@ -15,7 +15,7 @@
 
 
     @foreach ($collections as $collection)
-    <div class="collection-box flex-1 border m-4">
+    <div class="collection-box border px-4 py-6">
     <a href="{{route('collection.show', $collection->id)}}">{{$collection->title}}</a>
     </div>
     @endforeach

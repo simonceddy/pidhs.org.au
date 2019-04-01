@@ -9,6 +9,6 @@
         </div>
     @endauth
     <div class="event-container">
-        <h2>{{ $title }}</h2>
+        <h1 class="m-2">{{ $title }}</h1>
     </div>
 @endsection

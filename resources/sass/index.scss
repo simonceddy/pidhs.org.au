@@ -4,6 +4,8 @@
 @import './collection';
 @import './forms';
 @import './pagination';
+@import './components';
+@import './tables';
 
 body, html {
     margin: 0;
@@ -26,6 +28,7 @@ body {
 .app {
     margin: 0 auto;
     min-height: 100%;
+    width: 73%;
 }
 
 .bg-default {
@@ -34,4 +37,9 @@ body {
 
 .footer {
 	border-top: 1px solid #00a0b0;
+}
+
+h1 > a {
+    text-decoration: none;
+    color: inherit;
 }
