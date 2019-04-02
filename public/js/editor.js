@@ -157,29 +157,57 @@ function () {
     _classCallCheck(this, UploadAdapter);
 
     this.loader = loader;
+    this.client = window.axios;
   }
 
   _createClass(UploadAdapter, [{
+    key: "__initListenters",
+    value: function __initListenters(resolve, reject, file) {
+      var client = this.client;
+      var loader = this.loader;
+      var genericErrorText = "Couldn't upload file: ".concat(file.name, ".");
+    }
+  }, {
+    key: "__initCancelToken",
+    value: function __initCancelToken() {
+      var CancelToken = window.axios.CancelToken;
+      this.token = CancelToken.source();
+    }
+  }, {
+    key: "__sendRequest",
+    value: function __sendRequest() {}
+  }, {
     key: "upload",
     value: function upload() {
-      var client = window.axios;
+      var _this = this;
+
       var data = new FormData();
-      data.append('file', this.loader.file);
+      data.append('uploaded-file', this.loader.file);
+
+      this.__initCancelToken();
+
+      console.log(this.token);
       return new Promise(function (resolve, reject) {
-        client.post('/editor/upload', data, {
+        _this.client.post('/editor/upload', data, {
           headers: {
             'Content-Type': 'image/form-data'
-          }
+          } //cancelToken: this.token // fix
+
         }).then(function (res) {
-          return console.log(res);
+          return res.data;
+        }).then(function (data) {
+          console.log(data);
+          resolve({
+            default: data.url
+          });
         });
       });
     }
   }, {
     key: "abort",
     value: function abort() {
-      if (this.xhr) {
-        this.xhr.abort();
+      if (this.token) {
+        this.token.cancel('Cancelled by user.');
       }
     }
   }]);

@@ -27,7 +27,7 @@ class PurifyHtmlInput
      */
     public function handle($request, Closure $next)
     {
-        //dump($request->input('content'));
+        //dd($request->input('content'));
         $request->request->set(
             'content',
             $this->purify->purify($request->input('content'))

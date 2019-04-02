@@ -26,7 +26,7 @@ class UploadsController extends Controller
                 'error' => []
             ]);
         }
-        $file = $request->file('file');
+        $file = $request->file('uploaded-file');
 
         $file->store('public/assets');
         //dump($file);
