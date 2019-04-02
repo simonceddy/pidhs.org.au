@@ -58,7 +58,7 @@
         <a href="@article(donate)">Donate</a>
     </div>
     <div class="navbar-item">
-        <a href="{{route('exhibitions.app')}}">Exhibitions</a>
+        <a href="{{route('exhibitions.index')}}">Exhibitions</a>
     </div>
     {{-- <ul class="navbar-menu flex justify-around">
         <li>

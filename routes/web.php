@@ -22,12 +22,19 @@ Route::get('/mob/{path?}', function () {
 });
 
 
-// front controller for exhibitions react app
+Route::resource('exhibitions', 'Exhibitions\\ExhibitionController');
+Route::resource(
+    'exhibitions/{exhibition}/section',
+    'Exhibitions\\SectionController'
+)->except(['index']);
 
+
+// front controller for exhibitions react app
+/* 
 Route::get('/exhibitions/{path?}', function () {
     return view('exhibition.app');
 })->name('exhibitions.app');
-
+ */
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
 });
