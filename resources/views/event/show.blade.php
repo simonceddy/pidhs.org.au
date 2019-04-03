@@ -15,7 +15,7 @@
         <h1 class="m-2">{{ $title }}</h1>
         <h3 class="m-2">{{$event_date}}</h3>
         <div class="m-2">
-            {{ $content }}
+            {!!$content!!}
         </div>
     </div>
 @endsection

@@ -70,7 +70,6 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
         return view('event.show', $event);
     }
 
@@ -82,7 +81,6 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
         return view('event.edit', $event);
     }
 
@@ -110,7 +108,6 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
         $event->delete();
         return redirect(route('event.index'));
     }

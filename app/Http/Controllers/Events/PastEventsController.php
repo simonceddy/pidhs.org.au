@@ -18,8 +18,8 @@ class PastEventsController extends Controller
     public function __invoke(Request $request)
     {
         $events = Event::where('event_date', '<', Carbon::now())
-            ->get()
-            ->sortByDesc('event_date');
+            ->orderBy('event_date', 'desc')
+            ->paginate(15);
         return view('event.index', [
             'title' => 'Past Events',
             'events' => $events,
