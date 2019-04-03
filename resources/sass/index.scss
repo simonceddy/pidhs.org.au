@@ -1,11 +1,17 @@
+@tailwind preflight;
+
+@tailwind utilities;
+
+@import './variables';
+
 @import './navbar';
 @import './sidebar';
 @import './article';
 @import './collection';
 @import './forms';
 @import './pagination';
-@import './components';
 @import './tables';
+
 
 body, html {
     margin: 0;
@@ -15,7 +21,7 @@ body, html {
 }
 
 body {
-	color: #333;
+	color: $theme-dark;
 	background-color: #CCC;
 	background-image:url(/storage/muralbg1.jpg);
 	background-repeat:no-repeat;
@@ -36,7 +42,7 @@ body {
 }
 
 .footer {
-	border-top: 1px solid #00a0b0;
+	border-top: 1px solid $theme-blue;
 }
 
 h1 > a {

@@ -1,12 +1,12 @@
 .admin-article-table > tbody {
-    background: #fff4cf;
+    background: $theme-bg2;
 }
 
 .admin-article-table > *{
-    border: solid 1px #00a0b0;
+    border: solid 1px $theme-blue;
 }
 
 .admin-article-table > thead {
-    background: #ef7d50;
+    background: $theme-orange;
     color: white;
 }

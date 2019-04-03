@@ -14,7 +14,7 @@
     text-decoration: none;
     padding:8px 5px;
     color:#fff;
-    background:#333;
+    background:$theme-dark;
     display: block;
 }
 
@@ -29,10 +29,10 @@
 
 .navbar-item > a:hover, .navbar-dropdown-item:hover > a{
     color:#fff;
-    background:#6b0c36;
+    background:$theme-purple;
     text-decoration:underline;
 }
 
 .navbar-dropdown {
-    background:#6b0c36;
+    background:$theme-purple;
 }

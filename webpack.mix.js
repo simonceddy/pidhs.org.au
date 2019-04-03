@@ -15,10 +15,11 @@ const tailwindcss = require('tailwindcss')
 mix
     //.js('resources/js/app.js', 'public/js')
     //.react('resources/js/exhibitions.js', 'public/js')
-    .js('resources/js/editor/index.js', 'public/js/editor.js')
+    //.js('resources/js/editor/index.js', 'public/js/editor.js')
     //.react('resources/js/mobileApp/mobileApp.js', 'public/js')
-    //.sass('resources/sass/index.scss', 'public/css/app.css')
-    /* .postCss('resources/css/tailwind.css', 'public/css', [
-        tailwindcss('./tailwind.js')
-    ]) */
+    .sass('resources/sass/index.scss', 'public/css/app.css')
+    .options({
+        processCssUrls: false,
+        postCss: [tailwindcss('./tailwind.js')]
+    })
 ;
