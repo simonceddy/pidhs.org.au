@@ -9,7 +9,7 @@
 </div>
 
 <div class="container">
-    @include('shared.articledelete', [
+    @include('shared.component.form.delete', [
         'action' => route('essay.destroy', $id)
     ])
 </div>

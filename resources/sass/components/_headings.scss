@@ -1,0 +1,17 @@
+.heading, .article-heading {
+    color: $theme-orange;
+}
+
+.article-heading {
+    @apply mx-2 mt-2 mb-4;
+}
+
+.heading > a {
+    @apply no-underline;
+    color: inherit;
+}
+
+.heading > a:hover {
+    @apply underline;
+    text-decoration-color: inherit;
+}

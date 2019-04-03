@@ -13,7 +13,7 @@
         </div>
     @endauth
     <div class="row">
-        <h1 class="m-2">
+        <h1 class="article-heading">
             {{$collection->title ?? "Collection"}}
         </h1>
     </div>

@@ -7,7 +7,7 @@
     'method' => 'PATCH'
 ])
 <div class="container">
-    @include('shared.articledelete', [
+    @include('shared.component.form.delete', [
         'action' => route('news.destroy', $id)
     ])
 </div>

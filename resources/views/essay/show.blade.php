@@ -8,5 +8,8 @@
             <a href="{{ route('essay.edit', $id) }}" class="create-button">Edit {{$title}}</a>
         </div>
     @endauth
-    @include('shared.article')
+    <div class="m-2">
+        <a href="{{route('essay.index')}}">Back to Essays</a>
+    </div>
+    @include('shared.component.htmlarticle')
 @endsection

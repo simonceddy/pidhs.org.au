@@ -8,5 +8,5 @@
             <a href="{{ route('article.edit', $slug) }}" class="create-button">Edit Article</a>
         </div>
     @endauth --}}
-    @include('shared.article')
+    @include('shared.component.htmlarticle')
 @endsection

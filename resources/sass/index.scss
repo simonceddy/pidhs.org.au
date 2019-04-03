@@ -1,8 +1,12 @@
+@import './variables';
+
 @tailwind preflight;
 
+@import './components/headings';
+
+@tailwind components;
 @tailwind utilities;
 
-@import './variables';
 
 @import './navbar';
 @import './sidebar';
@@ -43,9 +47,4 @@ body {
 
 .footer {
 	border-top: 1px solid $theme-blue;
-}
-
-h1 > a {
-    text-decoration: none;
-    color: inherit;
 }

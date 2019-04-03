@@ -9,13 +9,16 @@
         </div>
     @endauth
 <div>
-    <h1 class="m-2">
+    <h1 class="article-heading">
         {{ $item->title }}
     </h1>
-    <div>
+    <div class="my-2">
         <a href="@itemUrl({{$item->thumbnail}})">
             <img src="@itemUrl({{$item->thumbnail}})">
         </a>
+    </div>
+    <div class="mt-2">
+        {{ $item->caption }}
     </div>
 </div>
 @endsection
