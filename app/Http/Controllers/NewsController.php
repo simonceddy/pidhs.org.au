@@ -28,7 +28,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $list = News::paginate(15)/* ->sortByDesc('created_at') */;
+        // todo: switch to created_at
+        $list = News::query()->orderBy('publicationDate', 'DESC')->paginate(15);
         return view('news.index', ['title' => 'News', 'articles' => $list]);
     }
 
