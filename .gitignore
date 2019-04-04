@@ -3,6 +3,7 @@
 /public/storage
 /public/php_errors.log
 /storage/*.key
+/storage/backup/*.sql
 /vendor
 /.idea
 /.vscode
