@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     protected $fillable = [
-        'title',
+        //'title',
         'caption',
         'thumbnail',
         'collection_id'

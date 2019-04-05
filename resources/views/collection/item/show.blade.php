@@ -9,9 +9,9 @@
         </div>
     @endauth
 <div>
-    <h1 class="article-heading">
+{{--     <h1 class="article-heading">
         {{ $item->title }}
-    </h1>
+    </h1> --}}
     <div class="my-2">
         <a href="@itemUrl({{$item->thumbnail}})">
             <img src="@itemUrl({{$item->thumbnail}})">
