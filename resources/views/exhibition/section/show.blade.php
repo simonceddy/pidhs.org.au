@@ -3,10 +3,10 @@
 @section('title', $title)
 
 @section('content')
-    {{-- @auth
+    @auth
         <div>
-            <a href="{{ route('article.edit', $slug) }}" class="create-button">Edit Article</a>
+            <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button">Edit Article</a>
         </div>
-    @endauth --}}
+    @endauth
     @include('shared.component.htmlarticle')
 @endsection

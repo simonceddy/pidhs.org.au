@@ -28,9 +28,11 @@ class SectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Exhibition $exhibition)
     {
-        //
+        return view('exhibition.section.create', [
+            'exhibition' => $exhibition
+        ]);
     }
 
     /**
@@ -39,9 +41,9 @@ class SectionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Exhibition $exhibition, Request $request)
     {
-        //
+        dd($exhibition, $request->post());
     }
 
     /**
@@ -52,7 +54,9 @@ class SectionController extends Controller
      */
     public function show(Exhibition $exhibition, Section $section)
     {
-        return view('exhibition.section.show', $section);
+        return view('exhibition.section.show', $section, [
+            'exhibition' => $exhibition
+        ]);
     }
 
     /**
@@ -61,9 +65,11 @@ class SectionController extends Controller
      * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function edit(Section $section)
+    public function edit(Exhibition $exhibition, Section $section)
     {
-        //
+        return view('exhibition.section.edit', $section, [
+            'exhibition' => $exhibition
+        ]);
     }
 
     /**
@@ -73,9 +79,16 @@ class SectionController extends Controller
      * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Section $section)
-    {
-        //
+    public function update(
+        Request $request,
+        Exhibition $exhibition,
+        Section $section
+    ) {
+        $data = $request->post();
+        $section->fill($data);
+        $section->save();
+        //dd($section);
+        return redirect(route('section.show', [$exhibition, $section]));
     }
 
     /**
@@ -84,8 +97,9 @@ class SectionController extends Controller
      * @param  \App\Exhibitions\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Section $section)
+    public function destroy(Exhibition $exhibition, Section $section)
     {
-        //
+        $section->delete();
+        return redirect(route('exhibitions.show', $exhibition));
     }
 }

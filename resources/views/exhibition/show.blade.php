@@ -3,11 +3,14 @@
 @section('title', $exhibition->title)
 
 @section('content')
-    {{-- @auth
+    @auth
         <div>
-            <a href="{{ route('article.edit', $slug) }}" class="create-button">Edit Article</a>
+            <a href="{{ route('exhibitions.edit', $exhibition) }}" class="create-button">Edit Exhibition</a>
         </div>
-    @endauth --}}
+        <div>
+            <a href="{{ route('section.create', $exhibition) }}" class="create-button">Add Section</a>
+        </div>
+    @endauth
 <h1 class="article-heading">{{$exhibition->title}}</h1>
 <div class="flex flex-row m-2">
     <div class="exhibitions-container flex flex-row flex-wrap flex-1">

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     protected $fillable = [
+        'exhibition_id',
         'title',
         'content'
     ];

@@ -40,7 +40,7 @@ class ExhibitionController extends Controller
      */
     public function create()
     {
-        //
+        return view('exhibition.create');
     }
 
     /**
@@ -51,7 +51,10 @@ class ExhibitionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->post();
+        $exhibition = new Exhibition($data);
+        $exhibition->save();
+        return redirect(route('exhibitions.show', $exhibition));
     }
 
     /**
@@ -74,7 +77,7 @@ class ExhibitionController extends Controller
      */
     public function edit(Exhibition $exhibition)
     {
-        //
+        return view('exhibition.edit', $exhibition);
     }
 
     /**

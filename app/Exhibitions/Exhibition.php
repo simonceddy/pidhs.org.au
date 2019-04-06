@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Exhibition extends Model
 {
     protected $fillable = [
-        'title'
+        'title',
+        'content'
     ];
 
     public function sections()
