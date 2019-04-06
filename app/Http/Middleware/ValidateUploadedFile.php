@@ -26,9 +26,9 @@ class ValidateUploadedFile
      */
     public function handle($request, Closure $next)
     {
-        if (!empty($files = $request->file())) {
+        $files = $request->file('image-upload') ?? $request->file();
+        if (!empty($files)) {
             foreach ($files as $file) {
-                // validate mimetype
                 if (!in_array($file->getMimeType(), $this->valid_mimetype)) {
                     return response('Invalid filetype.')->setStatusCode(500);
                 }

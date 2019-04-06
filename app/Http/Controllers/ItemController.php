@@ -43,38 +43,30 @@ class ItemController extends Controller
     public function store(Request $request, Collection $collection)
     {
         // validate file
-        $data = $request->post();
-        $image = $request->file('image-upload');
-        $img = Image::make($image);
-        $img->insert(Storage::get('wm.png'))->save();
-        $image->store('public/collection');
-
+        $captions = $request->post('caption');
+        
+        $images = $request->file('image-upload');
+        $items = [];
+        foreach ($images as $key => $image) {
+            $img = Image::make($image);
+            $img->insert(Storage::get('wm.png'))->save();
+            $image->store('public/collection');
+            $thumb = $image->hashName();
+            $img->heighten(200)->save(
+                storage_path('app').'/public/collection/thumb/th_'.$thumb
+            );
+            $item = new Item([
+                'collection_id' => $collection->id,
+                'caption' => $captions[$key],
+                'thumbnail' => $thumb
+            ]);
+            $item->save();
+            $items[] = $item;
+        }
+        
+        //dd($items);
         // Thumbnail generation
-        $data['thumbnail'] = $image->hashName();
-        /* if ($img->height() > 200) {
-            if ($img->width() < ($img->height() / 2)) {
-                $img->crop(
-                    $img->width(),
-                    200,
-                    0,
-                    ((int) $img->height() / 3)
-                )->save(
-                    storage_path('app').'/public/collection/thumb/th_'.$data['thumbnail']
-                );
-                dd($img->width());
-            }
-        } else { */
-        $img->resize(200, null, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save(
-            storage_path('app').'/public/collection/thumb/th_'.$data['thumbnail']
-        );
-        /* } */
-
-        $data['collection_id'] = $collection->id;
-        $item = new Item($data);
-        $item->save();
-        return redirect(route('item.show', [$collection, $item]));
+        return redirect(route('collection.show', $collection));
     }
 
     /**

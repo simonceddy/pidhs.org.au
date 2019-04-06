@@ -6,11 +6,7 @@
 <h1 class="m-2">
     Collections
 </h1>
-@auth
-    <div>
-        <a href="{{ route('collection.create') }}" class="create-button">Create a new Collection</a>
-    </div>
-@endauth
+
 <div class="collections-container flex flex-row flex-wrap justify-around">
 
 
@@ -20,4 +16,10 @@
     </div>
     @endforeach
 </div>
+
+@auth
+    <div>
+        <a href="{{ route('collection.create') }}" class="create-button">Add Collection</a>
+    </div>
+@endauth
 @endsection

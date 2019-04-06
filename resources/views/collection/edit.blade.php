@@ -4,6 +4,19 @@
 
 @section('content')
     <div>
-        Edit a collection
+        Edit collection
     </div>
+
+    <form method="POST" action="{{route('collection.update', $id)}}">
+        @method('PATCH')
+        @csrf
+        @include('shared.component.form.title')
+        <div class="flex flex-row m-2 justify-center">
+            <button type="submit" class="submit-button">Save</button>
+        </div>
+    </form>
+
+    @include('shared.component.form.delete', [
+        'action' => route('collection.destroy', $id)
+    ])
 @endsection

@@ -50,6 +50,10 @@ class CollectionController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->post();
+        $collection = new Collection($data);
+        $collection->save();
+        return redirect(route('collection.show', $collection));
         // store collection and any applicable items
     }
 
@@ -97,6 +101,7 @@ class CollectionController extends Controller
     public function destroy(Collection $collection)
     {
         //
-
+        $collection->delete();
+        return redirect(route('collection.index'));
     }
 }
