@@ -4,7 +4,7 @@
 
 @section('content')
     @auth
-        <div>
+        <div class="m-2">
             <a href="{{ route('news.edit', $id) }}" class="create-button">Edit Article</a>
         </div>
     @endauth

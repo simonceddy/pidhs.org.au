@@ -8,7 +8,7 @@
         @csrf
         @method('PATCH')
         @include('shared.component.form.title')
-        @include('shared.component.ckeditor')
+        @ckeditor
         <div class="flex flex-row m-2 justify-center">
             <button type="submit" class="submit-button">Save</button>
         </div>

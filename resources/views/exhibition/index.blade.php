@@ -23,7 +23,7 @@
 </div>
 
 @auth
-    <div>
+    <div class="m-2">
         <a href="{{ route('exhibitions.create') }}" class="create-button">Add Exhibition</a>
     </div>
 @endauth

@@ -57,9 +57,8 @@ class EventController extends Controller
         $data = $request->post();
         $data['event_date'] = $data['event-date'];
         $event = new Event($data);
-        
         $event->save();
-        dump($event);
+        return redirect(route('event.show', $event));
     }
 
     /**
@@ -109,6 +108,6 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
-        return redirect(route('event.index'));
+        return redirect(route('event.upcoming'));
     }
 }

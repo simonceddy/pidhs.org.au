@@ -28,10 +28,10 @@
 </div>
 
 @auth
-    <div>
+    <div class="m-2">
         <a href="{{ route('exhibitions.edit', $exhibition) }}" class="create-button">Edit Exhibition</a>
     </div>
-    <div>
+    <div class="m-2">
         <a href="{{ route('section.create', $exhibition) }}" class="create-button">Add Section</a>
     </div>
 @endauth

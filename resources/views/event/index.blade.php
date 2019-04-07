@@ -5,28 +5,26 @@
 @section('content')
     <h1 class="m-2">{{$title ?? 'Events'}}</h1>
 
-    @if ($linkUri && $linkText)
-        <div>
-            <a href="{{$linkUri}}">{{$linkText}}</a>
-        </div>
-    @endif
-
-    <div class="events-container">
-        @auth
-            <div>
-                <a href="{{ route('event.create') }}" class="create-button">Create a new Event</a>
+    <div class="m-2">
+        <a href="{{$linkUri ?? route('event.upcoming')}}">{{$linkText ?? 'Upcoming Events'}}</a>
+    </div>
+    
+    <div class="events-container mx-2">
+        {{ $events->links() }}
+        @foreach ($events as $event)
+        <div class="my-3">
+            <div class="flex flex-row items-center">
+                <span class="event-list-date text-sm">{{$event->event_date}}</span>
+                <a href="{{route('event.show', $event->id)}}" class="no-underline hover:underline"><h1 class="heading m-2">{{$event->title}}</h1></a>
+                
             </div>
-        @endauth
-    {{ $events->links() }}
-@foreach ($events as $event)
-    <div class="my-3">
-        <div class="flex flex-row items-center">
-            <span class="event-list-date text-sm">{{$event->event_date}}</span>
-            <a href="{{route('event.show', $event->id)}}" class="no-underline hover:underline"><h1 class="heading m-2">{{$event->title}}</h1></a>
-            
         </div>
+        @endforeach
+        {{ $events->links() }}
     </div>
-@endforeach
-    {{ $events->links() }}
-    </div>
+    @auth
+        <div class="m-2">
+            <a href="{{ route('event.create') }}" class="create-button">Create a new Event</a>
+        </div>
+    @endauth
 @endsection

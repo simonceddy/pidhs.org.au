@@ -9,8 +9,8 @@
 </div>
 @include('shared.component.htmlarticle')
 @auth
-    <div>
-        <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button">Edit Article</a>
+    <div class="m-2">
+        <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button">Edit Section</a>
     </div>
 @endauth
 @endsection

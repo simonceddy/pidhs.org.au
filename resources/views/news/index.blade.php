@@ -4,7 +4,7 @@
 
 @section('content')
     @auth
-        <div>
+        <div class="m-2">
             <a href="{{ route('news.create') }}" class="create-button">Create a News Article</a>
         </div>
     @endauth

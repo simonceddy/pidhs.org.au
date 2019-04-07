@@ -12,7 +12,7 @@
             <label for="event-date" class="mr-2">Date of Event:</label>
             <input type="date" class="form-input" name="event-date" id="event-date" value="{{ $event_date ?? null }}">
         </div>
-        @include('shared.component.ckeditor')
+        @ckeditor
         <div class="flex justify-center m-2">
             <button type="submit" class="submit-button">Save</button>
         </div>

@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-    {{ route('event.update', $id) }}
 @include('admin.forms.events', [
     'action' => route('event.update', $id),
     'method' => 'PATCH'

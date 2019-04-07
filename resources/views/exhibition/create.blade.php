@@ -6,7 +6,7 @@
 <form method="POST" action="{{route('exhibitions.store')}}" class="form-default">
     @csrf
     @include('shared.component.form.title')
-    @include('shared.component.ckeditor')
+    @ckeditor
     <div class="flex flex-row m-2 justify-center">
         <button type="submit" class="submit-button">Save</button>
     </div>
