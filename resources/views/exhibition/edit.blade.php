@@ -14,7 +14,7 @@
         </div>
     </form>
     @include('shared.component.form.delete', [
-        'action' => route('exhibition.destroy', $id)
+        'action' => route('exhibitions.destroy', $id)
     ])
 </div>
 @endsection

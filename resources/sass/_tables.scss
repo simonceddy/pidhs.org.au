@@ -10,3 +10,12 @@
     background: $theme-orange;
     color: white;
 }
+
+
+.admin-article-table > tbody > tr:nth-child(odd) {
+    background: white;
+}
+
+.admin-article-table > tbody > tr:hover {
+    background: $theme-green;
+}

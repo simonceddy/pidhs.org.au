@@ -3,11 +3,7 @@
 @section('title', 'Exhibitions')
 
 @section('content')
-    @auth
-        <div>
-            <a href="{{ route('exhibitions.create') }}" class="create-button">Add Exhibition</a>
-        </div>
-    @endauth
+    
 <h1 class="article-heading">Exhibitions</h1>
 <div class="m-2">
     <p>Exhibition text</p>
@@ -25,4 +21,10 @@
         @endforeach
     </div> --}}
 </div>
+
+@auth
+    <div>
+        <a href="{{ route('exhibitions.create') }}" class="create-button">Add Exhibition</a>
+    </div>
+@endauth
 @endsection

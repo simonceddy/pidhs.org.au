@@ -3,10 +3,14 @@
 @section('title', $title)
 
 @section('content')
-    @auth
-        <div>
-            <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button">Edit Article</a>
-        </div>
-    @endauth
-    @include('shared.component.htmlarticle')
+
+<div class="breadcrumb">
+<a href="{{route('exhibitions.index')}}">Exhibitions</a> > <a href="{{route('exhibitions.show', $exhibition)}}">{{$exhibition->title}}</a> > {{$title}}
+</div>
+@include('shared.component.htmlarticle')
+@auth
+    <div>
+        <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button">Edit Article</a>
+    </div>
+@endauth
 @endsection

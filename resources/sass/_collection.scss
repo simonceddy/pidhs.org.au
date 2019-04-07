@@ -3,6 +3,6 @@
     background: $theme-bg2;
 }
 
-.collection-box:hover {
+.collection-box:hover, .item-box:hover {
     background: $theme-green;
 }

@@ -6237,7 +6237,8 @@ h1 {
   background: #fff4cf;
 }
 
-.collection-box:hover {
+.collection-box:hover,
+.item-box:hover {
   background: #9c6;
 }
 
@@ -6296,6 +6297,14 @@ h1 {
 .admin-article-table > thead {
   background: #ef7d50;
   color: white;
+}
+
+.admin-article-table > tbody > tr:nth-child(odd) {
+  background: white;
+}
+
+.admin-article-table > tbody > tr:hover {
+  background: #9c6;
 }
 
 body,

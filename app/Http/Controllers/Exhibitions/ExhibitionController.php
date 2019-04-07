@@ -89,7 +89,10 @@ class ExhibitionController extends Controller
      */
     public function update(Request $request, Exhibition $exhibition)
     {
-        //
+        $data = $request->post();
+        $exhibition->fill($data);
+        $exhibition->save();
+        return redirect(route('exhibitions.show', $exhibition));
     }
 
     /**
@@ -100,6 +103,7 @@ class ExhibitionController extends Controller
      */
     public function destroy(Exhibition $exhibition)
     {
-        //
+        $exhibition->delete();
+        return redirect(route('exhibitions.index'));
     }
 }

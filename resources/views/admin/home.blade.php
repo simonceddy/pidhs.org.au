@@ -21,16 +21,18 @@
                 <th class="p-3">Last Updated</th>
                 <th class="p-3">Article</th>
             </thead>
-        @foreach ($articles as $article)
-            <tr>
-                <td class="text-sm">
-                    {{$article->updated_at ?? $article->created_at}}
-                </td>
-                <td>
-                    {{$article->title}}
-                </td>
-            </tr>
-        @endforeach
+            <tbody>
+            @foreach ($articles as $article)
+                <tr>
+                    <td class="text-sm p-3">
+                        {{$article->updated_at ?? $article->created_at}}
+                    </td>
+                    <td class="p-3">
+                        {{$article->title}}
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
         </table>
     </div>
             

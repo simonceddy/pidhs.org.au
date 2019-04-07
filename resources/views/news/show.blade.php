@@ -9,7 +9,7 @@
         </div>
     @endauth
     <div class="m-2">
-        <a href="{{route('news.index')}}">Back to News</a>
+        <a href="{{session()->previousUrl()}}">Back to News</a>
     </div>
     @include('shared.component.htmlarticle')
 @endsection

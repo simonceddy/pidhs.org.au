@@ -3,22 +3,22 @@
 @section('title', 'Phillip Island & District Historical Society')
 
 @section('content')
-    @auth
-        <div>
-            <a href="{{ route('item.edit', [$collection, $item]) }}" class="create-button">Edit Item</a>
-        </div>
-    @endauth
+<div class="breadcrumb">
+<a href="{{route('collection.index')}}">Collections</a> > <a href="{{route('collection.show', $collection)}}">{{$collection->title}}</a>
+</div>
 <div>
-{{--     <h1 class="article-heading">
-        {{ $item->title }}
-    </h1> --}}
-    <div class="my-2">
+    <div class="my-2 item-box">
         <a href="@itemUrl({{$item->thumbnail}})">
             <img src="@itemUrl({{$item->thumbnail}})">
         </a>
     </div>
-    <div class="mt-2">
+    <div class="mt-2 item-box">
         {{ $item->caption }}
     </div>
 </div>
+@auth
+        <div>
+            <a href="{{ route('item.edit', [$collection, $item]) }}" class="create-button">Edit Item</a>
+        </div>
+    @endauth
 @endsection

@@ -43,7 +43,11 @@ class SectionController extends Controller
      */
     public function store(Exhibition $exhibition, Request $request)
     {
-        dd($exhibition, $request->post());
+        $data = $request->post();
+        $data['exhibition_id'] = $exhibition->id;
+        $section = new Section($data);
+        $section->save();
+        return redirect(route('section.show', [$exhibition, $section]));
     }
 
     /**
