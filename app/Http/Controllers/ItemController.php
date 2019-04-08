@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Collection;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use App\Helpers\ImageHelper;
 
 class ItemController extends Controller
 {
@@ -46,26 +47,17 @@ class ItemController extends Controller
         $captions = $request->post('caption');
         
         $images = $request->file('image-upload');
-        $items = [];
+        //$items = [];
         foreach ($images as $key => $image) {
-            $img = Image::make($image);
-            $img->insert(Storage::get('wm.png'))->save();
-            $image->store('public/collection');
-            $thumb = $image->hashName();
-            $img->heighten(200)->save(
-                storage_path('app').'/public/collection/thumb/th_'.$thumb
-            );
+            $thumb = ImageHelper::storeCollectionItem($image);
             $item = new Item([
-                'collection_id' => $collection->id,
                 'caption' => $captions[$key],
                 'thumbnail' => $thumb
             ]);
+            $item->collection()->associate($collection);
             $item->save();
-            $items[] = $item;
+            //$items[] = $item;
         }
-        
-        //dd($items);
-        // Thumbnail generation
         return redirect(route('collection.show', $collection));
     }
 

@@ -3,6 +3,8 @@
 namespace App\Console\Commands\Convert;
 
 use Illuminate\Console\Command;
+use App\Item;
+use Illuminate\Support\Facades\Storage;
 
 class OldItems extends Command
 {
@@ -37,6 +39,11 @@ class OldItems extends Command
      */
     public function handle()
     {
-        
+        $items = Item::all(['id', 'thumbnail']);
+        foreach ($items as $item) {
+            if (!Storage::exists('public/collection/'.$item->thumbnail)) {
+                dump($item->thumbnail);
+            }
+        }
     }
 }

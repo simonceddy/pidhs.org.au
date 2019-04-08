@@ -1,16 +1,6 @@
-THINGS TO BE UNDERSTANDING
+Todo
 
-- ckeditor file uploads
-- remove unneccessary views -> use controllers for differences
-    - thumnail generation
-    - watermarking
-    - show images in collections views
 - PDF
     - allow ckeditor to upload PDFs and attach link to an article
     - validate pdf file via middleware
-    - PdfController return a file response from local disk
-- Photo
-    - allow ckeditor to upload images
-    - set up image validation middleware
-- add date field to event form
-- layout issues
+    - PdfController return a url to editor

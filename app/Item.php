@@ -15,6 +15,6 @@ class Item extends Model
 
     public function collection()
     {
-        $this->belongsTo('collection');
+        return $this->belongsTo(Collection::class);
     }
 }
