@@ -27,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::include('shared.component.ckeditor', 'ckeditor');
 
+        Blade::include('shared.component.form.delete', 'deleteForm');
+
         Blade::directive('shortDate', function ($date) {
             dd($date);
         });

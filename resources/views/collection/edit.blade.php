@@ -16,7 +16,7 @@
         </div>
     </form>
 
-    @include('shared.component.form.delete', [
+    @deleteForm([
         'action' => route('collection.destroy', $id)
     ])
 @endsection

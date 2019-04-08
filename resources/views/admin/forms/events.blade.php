@@ -6,7 +6,7 @@
         @endif
         <div class="flex flex-row items-center m-2">
             <label for="title" class="mr-2">Event Title</label>
-            <input type="text" class="form-input" name="title" id="title" placeholder="Title" value="{{ $title ?? null }}">
+            <input type="text" class="form-input" name="title" id="title" placeholder="Title" required value="{{ $title ?? null }}">
         </div>
         <div class="flex flex-row items-center m-2">
             <label for="event-date" class="mr-2">Date of Event:</label>

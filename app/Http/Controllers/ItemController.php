@@ -91,7 +91,9 @@ class ItemController extends Controller
      */
     public function edit(Collection $collection, Item $item)
     {
-        // update item title and caption
+        return view('collection.item.edit', $item, [
+            'collection' => $collection
+        ]);
     }
 
     /**
@@ -101,9 +103,14 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
-    {
-        // update item title and caption
+    public function update(
+        Request $request,
+        Collection $collection,
+        Item $item
+    ) {
+        $item->caption = $request->post('caption');
+        $item->save();
+        return redirect(route('item.show', [$collection, $item]));
     }
 
     /**
@@ -112,9 +119,13 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy(Collection $collection, Item $item)
     {
-        // Remove item
-        // Remove associated image + thumbnail
+        if (Storage::exists($fn = 'public/collection/'.$item->thumbnail)) {
+            // return error
+        }
+        $item->delete();
+        Storage::delete($fn);
+        return redirect(route('collection.show', $collection));
     }
 }

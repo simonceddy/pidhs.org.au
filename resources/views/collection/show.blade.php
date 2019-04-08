@@ -29,5 +29,4 @@
         <a href="{{ route('item.create', $collection) }}" class="create-button">Add Items to the Collection</a>
     </div>
 @endauth
-</div>
 @endsection
