@@ -6,7 +6,7 @@ Todo
     - PdfController return a url to editor
 
 - Cancel button for forms
-- Convert old assets - starter command in place - need old files
-- Convert old publicationDate fields to created_at
+- finished for essays/news -  Convert old publicationDate fields to created_at
 
+- Convert old assets - in progress - see mem limit
 - Increase mem limit for intervention image
