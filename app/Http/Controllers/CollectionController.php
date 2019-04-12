@@ -101,6 +101,7 @@ class CollectionController extends Controller
     public function destroy(Collection $collection)
     {
         //
+        $collection->items()->delete();
         $collection->delete();
         return redirect(route('collection.index'));
     }

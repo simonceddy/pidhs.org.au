@@ -5,9 +5,8 @@ Todo
     - validate pdf file via middleware
     - PdfController return a url to editor
 
-- Remove collection items when collection is deleted.
-- Same for exhibition sections
-
 - Cancel button for forms
 - Convert old assets - starter command in place - need old files
 - Convert old publicationDate fields to created_at
+
+- Increase mem limit for intervention image

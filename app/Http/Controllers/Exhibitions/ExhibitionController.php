@@ -103,6 +103,7 @@ class ExhibitionController extends Controller
      */
     public function destroy(Exhibition $exhibition)
     {
+        $exhibition->sections()->delete();
         $exhibition->delete();
         return redirect(route('exhibitions.index'));
     }

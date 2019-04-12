@@ -28,7 +28,9 @@ class EssayController extends Controller
      */
     public function index()
     {
-        $articles = Essay::paginate(15);
+        $articles = Essay::query()
+            ->orderBy('created_at', 'DESC')
+            ->paginate(15);
         return view('essay.index', ['articles' => $articles]);
     }
 
