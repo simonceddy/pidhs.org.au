@@ -543,6 +543,21 @@ table {
   border-color: #cc1f1a;
 }
 
+.link-sidebar {
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-weight: 700;
+}
+
+.link-sidebar:hover {
+  color: #fff;
+  text-decoration: underline;
+  background: #6b0c36;
+}
+
 .container {
   width: 100%;
 }
@@ -6221,20 +6236,12 @@ table {
   width: 10.8%;
 }
 
-@media only screen and (max-width: 700px) {
-  .sidebar-container {
-    float: none;
-    position: inherit;
-  }
-}
-
-.sidebar-menu-link {
-  text-decoration: none;
-}
-
-.sidebar-menu-link:hover {
-  text-decoration: underline;
-}
+/* @media only screen and (max-width: 700px) {
+    .sidebar-container {
+        float: none;
+        position: inherit;
+    }
+} */
 
 .publication-date,
 h1 {

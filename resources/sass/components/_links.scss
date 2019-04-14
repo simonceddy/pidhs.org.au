@@ -1,0 +1,9 @@
+.link-sidebar {
+    font-size: 14px;
+    @apply no-underline block py-1 font-bold;
+}
+
+.link-sidebar:hover {
+    @apply text-white underline;
+    background:$theme-purple;
+}
