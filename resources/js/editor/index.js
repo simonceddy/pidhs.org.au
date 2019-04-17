@@ -1,22 +1,10 @@
-import CKEditor from '@ckeditor/ckeditor5-build-classic';
-import UploadAdapter from './uploadAdapter';
+import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
-// Add upload manager separate to build
-// Allows easy modifications if needed
-function InitUploadAdapter(editor) {
-  editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
-    return new UploadAdapter( loader );
-  };
-}
+import toolbar from './config/toolbar';
+import plugins from './plugins';
+//export default class Editor extends ClassicEditor {}
 
-CKEditor.create(document.querySelector('#editor'), {
-  /* toolbar: ['underline'] */
-  extraPlugins: [InitUploadAdapter]
-})
-  .then(editor => {
-    console.log(editor);
-    console.log('Editor loaded.');
-  })
-  .catch(err => {
-    console.log(err);
-  });
+ClassicEditor.create(document.querySelector('#editor'), {
+  plugins: plugins,
+  toolbar: toolbar,
+});
