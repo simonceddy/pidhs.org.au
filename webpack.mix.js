@@ -1,59 +1,75 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 
-const { styles } = require( '@ckeditor/ckeditor5-dev-utils' );
+const CKEStyles = require( '@ckeditor/ckeditor5-dev-utils' ).styles;
+const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+const CKERegex = {
+    svg: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
+    css: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css/,
+};
+
+Mix.listen('configReady', webpackConfig => {
+    const rules = webpackConfig.module.rules;
+    const targetSVG = /(\.(png|jpe?g|gif|webp)$|^((?!font).)*\.svg$)/;
+    const targetFont = /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/;
+    const targetCSS = /\.css$/;
+
+    // exclude CKE regex from mix's default rules
+    for (let rule of rules) {
+        if (rule.test.toString() === targetSVG.toString()) {
+            rule.exclude = CKERegex.svg;
+        }
+        else if (rule.test.toString() === targetFont.toString()) {
+            rule.exclude = CKERegex.svg;
+        }
+        else if (rule.test.toString() === targetCSS.toString()) {
+            rule.exclude = CKERegex.css;
+        }
+    }
+});
+
+mix.webpackConfig({
+    plugins: [
+        new CKEditorWebpackPlugin({
+            language: 'en'
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: CKERegex.svg,
+                use: [ 'raw-loader' ]
+            },
+            {
+                test: CKERegex.css,
+                use: [
+                    {
+                        loader: 'style-loader',
+                        options: {
+                            singleton: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: CKEStyles.getPostCssConfig({
+                            themeImporter: {
+                                themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
+                            },
+                            minify: true
+                        })
+                    },
+                ]
+            }
+        ]
+    },
+    performance: { hints: false }
+});
+
 
 mix
     //.js('resources/js/app.js', 'public/js')
     //.react('resources/js/exhibitions.js', 'public/js')
-    .webpackConfig({
-        module: {
-            rules: [
-                {
-                    // Or /ckeditor5-[^/]+\/theme\/icons\/[^/]+\.svg$/ if you want to limit this loader
-                    // to CKEditor 5 icons only.
-                    test: /ckeditor5-[^/]+\/theme\/icons\/[^/]+\.svg$/,
-
-                    use: [ 'raw-loader' ]
-                },
-                {
-                    // Or /ckeditor5-[^/]+\/theme\/[^/]+\.css$/ if you want to limit this loader
-                    // to CKEditor 5 theme only.
-                    test: /ckeditor5-[^/]+\/theme\/[^/]+\.css$/,
-    
-                    use: [
-                        {
-                            loader: 'style-loader',
-                            options: {
-                                singleton: true
-                            }
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: styles.getPostCssConfig( {
-                                themeImporter: {
-                                    themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
-                                },
-                                minify: true
-                            } )
-                        }
-                    ]
-                }
-            ],
-        },
-        performance: { hints: false }
-    })
     .js('resources/js/editor/index.js', 'public/js/editor.js')
     //.react('resources/js/mobileApp/mobileApp.js', 'public/js')
     //.sass('resources/sass/index.scss', 'public/css/app.css')
@@ -73,5 +89,5 @@ mix
         }
     }) */
     //.sourceMaps()
-    .dump()
+    //.dump()
 ;

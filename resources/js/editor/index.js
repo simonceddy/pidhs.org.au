@@ -7,4 +7,10 @@ import plugins from './plugins';
 ClassicEditor.create(document.querySelector('#editor'), {
   plugins: plugins,
   toolbar: toolbar,
+})
+.then((editor) => {
+  console.log(editor);
+})
+.catch(err => {
+  console.log(err);
 });

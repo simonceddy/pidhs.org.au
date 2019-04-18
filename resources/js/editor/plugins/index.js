@@ -21,7 +21,13 @@ import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import Upload from '@ckeditor/ckeditor5-upload/src/filerepository';
-import InitUploadAdapter from './initUploadAdapter';
+import UploadAdapter from './uploadAdapter';
+
+function InitUploadAdapter(editor) {
+  editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+    return new UploadAdapter( loader );
+  };
+}
 
 const plugins = [
   Essentials,
