@@ -6330,6 +6330,7 @@ h1 {
 
 .admin-article-table > tbody > tr:hover {
   background: #9c6;
+  cursor: pointer;
 }
 
 body,

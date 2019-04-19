@@ -9,7 +9,7 @@ const CKERegex = {
     css: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css/,
 };
 
-Mix.listen('configReady', webpackConfig => {
+/* mix.listen('configReady', webpackConfig => {
     const rules = webpackConfig.module.rules;
     const targetSVG = /(\.(png|jpe?g|gif|webp)$|^((?!font).)*\.svg$)/;
     const targetFont = /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/;
@@ -64,30 +64,17 @@ mix.webpackConfig({
         ]
     },
     performance: { hints: false }
-});
+}); */
 
 
 mix
     //.js('resources/js/app.js', 'public/js')
-    //.react('resources/js/exhibitions.js', 'public/js')
-    .js('resources/js/editor/index.js', 'public/js/editor.js')
-    //.react('resources/js/mobileApp/mobileApp.js', 'public/js')
-    //.sass('resources/sass/index.scss', 'public/css/app.css')
-    /* .options({
-       // processCssUrls: false,
-        //postCss: [tailwindcss('./tailwind.js')],
-        postCss: [
-            styles.getPostCssConfig( {
-                themeImporter: {
-                    themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
-                },
-                minify: true
-            })
-        ],
-        style: {
-            singleton: true
-        }
-    }) */
+    //.js('resources/js/editor/index.build.js', 'public/js/editor.js')
+    .sass('resources/sass/index.scss', 'public/css/app.css')
+    .options({
+        processCssUrls: false,
+        postCss: [tailwindcss('./tailwind.js')],
+    })
     //.sourceMaps()
     //.dump()
 ;

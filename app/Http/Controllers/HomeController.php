@@ -27,6 +27,7 @@ class HomeController extends Controller
         return view('admin.home', ['articles' => Article::all([
             'id',
             'title',
+            'slug',
             'created_at',
             'updated_at'
         ])]);

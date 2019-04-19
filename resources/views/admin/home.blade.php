@@ -23,7 +23,7 @@
             </thead>
             <tbody>
             @foreach ($articles as $article)
-                <tr>
+                <tr onclick="location='{{ route('article.show', $article->slug)}}'">
                     <td class="text-sm p-3">
                         {{$article->updated_at ?? $article->created_at}}
                     </td>

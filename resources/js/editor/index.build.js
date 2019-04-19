@@ -1,6 +1,5 @@
-//import CKEditor from '@ckeditor/ckeditor5-build-classic';
-import Editor from './editor';
-import UploadAdapter from './uploadAdapter';
+import CKEditor from '@ckeditor/ckeditor5-build-classic';
+import UploadAdapter from './plugins/uploadAdapter';
 
 // Add upload manager separate to build
 // Allows easy modifications if needed
@@ -10,8 +9,7 @@ function InitUploadAdapter(editor) {
   };
 }
 
-console.log(Editor);
-Editor.create(document.querySelector('#editor'), {
+CKEditor.create(document.querySelector('#editor'), {
   extraPlugins: [InitUploadAdapter]
 })
   .then(editor => {

@@ -26,7 +26,7 @@ class ValidateCKEditorUpload
      */
     public function handle($request, Closure $next)
     {
-        dump($request->post('uploaded-file'));
+        dump($request);
         $file = $request->file('uploaded-file');
         dump($file);
         if (isset($file) && !in_array($file->getMimeType(), $this->valid_mimetype)) {
