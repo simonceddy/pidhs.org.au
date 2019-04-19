@@ -4,24 +4,6 @@ class UploadAdapter {
     this.client = window.axios;
   }
 
-  __initListenters(resolve, reject, file) {
-    const client = this.client;
-    const loader = this.loader;
-    const genericErrorText = `Couldn't upload file: ${ file.name }.`;
-
-    
-  }
-
-  __initCancelToken()
-  {
-    const CancelToken = window.axios.CancelToken;
-    this.token = CancelToken.source();
-  }
-
-  __sendRequest() {
-
-  }
-
   upload() {
     let data = new FormData();
     data.append('uploaded-file', this.loader.file)
