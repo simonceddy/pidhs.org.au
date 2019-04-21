@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
+//const webpack = require('webpack')
 
 const CKEStyles = require( '@ckeditor/ckeditor5-dev-utils' ).styles;
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
@@ -9,7 +10,7 @@ const CKERegex = {
     css: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css/,
 };
 
-/* mix.listen('configReady', webpackConfig => {
+Mix.listen('configReady', webpackConfig => {
     const rules = webpackConfig.module.rules;
     const targetSVG = /(\.(png|jpe?g|gif|webp)$|^((?!font).)*\.svg$)/;
     const targetFont = /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/;
@@ -33,7 +34,7 @@ mix.webpackConfig({
     plugins: [
         new CKEditorWebpackPlugin({
             language: 'en'
-        })
+        }),
     ],
     module: {
         rules: [
@@ -64,17 +65,18 @@ mix.webpackConfig({
         ]
     },
     performance: { hints: false }
-}); */
+});
 
 
 mix
     //.js('resources/js/app.js', 'public/js')
-    //.js('resources/js/editor/index.build.js', 'public/js/editor.js')
-    .sass('resources/sass/index.scss', 'public/css/app.css')
+    .js('resources/js/editor/index.build.js', 'public/js/editor.js')
+    //.js('resources/js/editor/editor.js', 'public/js/editor/build.js')
+    /* .sass('resources/sass/index.scss', 'public/css/app.css')
     .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.js')],
-    })
+    }) */
     //.sourceMaps()
     //.dump()
 ;

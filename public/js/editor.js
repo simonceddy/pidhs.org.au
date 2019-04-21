@@ -102,10 +102,10 @@
 
 /***/ }),
 
-/***/ "./resources/js/editor/index.old.js":
-/*!******************************************!*\
-  !*** ./resources/js/editor/index.old.js ***!
-  \******************************************/
+/***/ "./resources/js/editor/index.build.js":
+/*!********************************************!*\
+  !*** ./resources/js/editor/index.build.js ***!
+  \********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -114,6 +114,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _plugins_uploadAdapter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugins/uploadAdapter */ "./resources/js/editor/plugins/uploadAdapter.js");
+
+/* import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight'; */
 
  // Add upload manager separate to build
 // Allows easy modifications if needed
@@ -125,7 +132,12 @@ function InitUploadAdapter(editor) {
 }
 
 _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a.create(document.querySelector('#editor'), {
-  extraPlugins: [InitUploadAdapter]
+  toolbar: {
+    items: ['undo', 'redo', '|', 'bold', 'italic', 'underline', '|', 'subscript', 'superscript', 'blockQuote', '|', 'alignment:left', 'alignment:center', 'alignment:right', 'alignment:justify', '|', 'imageUpload', 'mediaEmbed', 'link', '|', 'fontFamily', 'fontSize', 'fontColor', 'highlight', '|', 'heading']
+  },
+  extraPlugins: [//Alignment,
+  //Font,
+  InitUploadAdapter]
 }).then(function (editor) {
   console.log(editor);
   console.log('Editor loaded.');
@@ -161,46 +173,22 @@ function () {
   }
 
   _createClass(UploadAdapter, [{
-    key: "__initListenters",
-    value: function __initListenters(resolve, reject, file) {
-      var client = this.client;
-      var loader = this.loader;
-      var genericErrorText = "Couldn't upload file: ".concat(file.name, ".");
-    }
-  }, {
-    key: "__initCancelToken",
-    value: function __initCancelToken() {
-      var CancelToken = window.axios.CancelToken;
-      this.token = CancelToken.source();
-    }
-  }, {
-    key: "__sendRequest",
-    value: function __sendRequest() {}
-  }, {
     key: "upload",
     value: function upload() {
-      var _this = this;
-
       var data = new FormData();
       data.append('uploaded-file', this.loader.file);
-
-      this.__initCancelToken();
-
-      console.log(this.token);
-      return new Promise(function (resolve, reject) {
-        _this.client.post('/editor/upload', data, {
-          headers: {
-            'Content-Type': 'image/form-data'
-          } //cancelToken: this.token // fix
-
-        }).then(function (res) {
-          return res.data;
-        }).then(function (data) {
-          console.log(data);
-          resolve({
-            default: data.url
-          });
+      return this.client.post('/editor/upload', data, {
+        headers: {
+          'Content-Type': 'image/form-data'
+        }
+      }).then(function (res) {
+        console.log(res.data);
+        return Promise.resolve({
+          default: res.data.url
         });
+      }).catch(function (error) {
+        console.log(error);
+        return Promise.reject(error);
       });
     }
   }, {
@@ -220,13 +208,13 @@ function () {
 /***/ }),
 
 /***/ 0:
-/*!************************************************!*\
-  !*** multi ./resources/js/editor/index.old.js ***!
-  \************************************************/
+/*!**************************************************!*\
+  !*** multi ./resources/js/editor/index.build.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/index.old.js */"./resources/js/editor/index.old.js");
+module.exports = __webpack_require__(/*! /Users/simoneddy/Documents/dev/pidhs.org.au/resources/js/editor/index.build.js */"./resources/js/editor/index.build.js");
 
 
 /***/ })

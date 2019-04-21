@@ -1,5 +1,4 @@
 // app.js
-
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
@@ -23,64 +22,87 @@ import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import Table from '@ckeditor/ckeditor5-table/src/table';
-import Upload from '@ckeditor/ckeditor5-upload/src/filerepository';
+import FileRepository from '@ckeditor/ckeditor5-upload/src/filerepository';
+import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 
-export default class Editor extends ClassicEditor {}
+export default class PidhsEditor extends ClassicEditor {}
 
-Editor.builtinPlugins = [
-    Essentials,
-    Paragraph,
-    Bold,
-    Italic,
-    Underline,
-    Subscript,
-    Superscript,
-    Alignment,
-    Font,
-    Clipboard,
-    PasteFromOffice,
-    Heading,
-    Link,
-    BlockQuote,
-    MediaEmbed,
-    Upload,
-    Image,
-    ImageStyle,
-    ImageCaption,
-    ImageUpload,
-    ImageToolbar,
-    Table,
-    Highlight
+PidhsEditor.builtinPlugins = [
+  Essentials,
+  Paragraph,
+  Bold,
+  Italic,
+  Underline,
+  Subscript,
+  Superscript,
+  Alignment,
+  Font,
+  Clipboard,
+  PasteFromOffice,
+  Heading,
+  Link,
+  BlockQuote,
+  MediaEmbed,
+  FileRepository,
+  Image,
+  ImageStyle,
+  ImageCaption,
+  ImageUpload,
+  ImageToolbar,
+  Table,
+  Highlight,
+  UploadAdapter,
+  CKFinder,
+  EasyImage
 ];
 
-Editor.defaultConfig = {
-  toolbar: [
-    'undo',
-    'redo',
-    '|',
-    'bold',
-    'italic',
-    'underline',
-    '|',
-    'subscript',
-    'superscript',
-    'blockQuote',
-    '|',
-    'alignment:left',
-    'alignment:center',
-    'alignment:right',
-    'alignment:justify',
-    '|',
-    'imageUpload',
-    'mediaEmbed',
-    'link',
-    '|',
-    'fontFamily',
-    'fontSize',
-    'fontColor',
-    'highlight',
-    '|',
-    'heading'
-  ],
+PidhsEditor.defaultConfig = {
+  toolbar: {
+    items: [
+      'undo',
+      'redo',
+      '|',
+      'bold',
+      'italic',
+      'underline',
+      '|',
+      'subscript',
+      'superscript',
+      'blockQuote',
+      '|',
+      'alignment:left',
+      'alignment:center',
+      'alignment:right',
+      'alignment:justify',
+      '|',
+      'imageUpload',
+      'mediaEmbed',
+      'link',
+      '|',
+      'fontFamily',
+      'fontSize',
+      'fontColor',
+      'highlight',
+      '|',
+      'heading'
+    ]
+  },
+  image: {
+		toolbar: [
+			'imageStyle:full',
+			'imageStyle:side',
+			'|',
+			'imageTextAlternative'
+		]
+	},
+	table: {
+		contentToolbar: [
+			'tableColumn',
+			'tableRow',
+			'mergeTableCells'
+		]
+	},
   language: 'en'
 }

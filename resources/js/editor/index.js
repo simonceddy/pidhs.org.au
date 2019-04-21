@@ -1,7 +1,5 @@
-import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
-import toolbar from './config/toolbar';
-import plugins from './plugins';
+import PidhsEditor from './build';
 
 import UploadAdapter from './plugins/uploadAdapter';
 
@@ -11,10 +9,8 @@ function InitUploadAdapter(editor) {
   };
 }
 
-ClassicEditor.create(document.querySelector('#editor'), {
-  plugins: plugins,
-  extraPlugins: [InitUploadAdapter],
-  toolbar: toolbar,
+new PidhsEditor(document.querySelector('#editor'), {
+  extraPlugins: [InitUploadAdapter]
 })
 .then((editor) => {
   console.log(editor);
