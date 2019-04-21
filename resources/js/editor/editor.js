@@ -1,5 +1,6 @@
-// app.js
+// editor.js
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
@@ -23,42 +24,48 @@ import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import FileRepository from '@ckeditor/ckeditor5-upload/src/filerepository';
-import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
+// import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
+// import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+// import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 
-export default class PidhsEditor extends ClassicEditor {}
+import ImgUploadAdapter from './plugins/uploadAdapter';
 
-PidhsEditor.builtinPlugins = [
-  Essentials,
-  Paragraph,
-  Bold,
-  Italic,
-  Underline,
-  Subscript,
-  Superscript,
-  Alignment,
-  Font,
-  Clipboard,
-  PasteFromOffice,
-  Heading,
-  Link,
-  BlockQuote,
-  MediaEmbed,
-  FileRepository,
-  Image,
-  ImageStyle,
-  ImageCaption,
-  ImageUpload,
-  ImageToolbar,
-  Table,
-  Highlight,
-  UploadAdapter,
-  CKFinder,
-  EasyImage
-];
+function InitUploadAdapter(editor) {
+  editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+    return new ImgUploadAdapter( loader );
+  };
+}
 
-PidhsEditor.defaultConfig = {
+ClassicEditor.create(document.querySelector('#editor'), {
+  plugins: [
+    Essentials,
+    Paragraph,
+    Bold,
+    Italic,
+    Underline,
+    Subscript,
+    Superscript,
+    Alignment,
+    Font,
+    Clipboard,
+    PasteFromOffice,
+    Heading,
+    Link,
+    BlockQuote,
+    MediaEmbed,
+    FileRepository,
+    Image,
+    ImageStyle,
+    ImageCaption,
+    ImageUpload,
+    ImageToolbar,
+    Table,
+    Highlight,
+    /* UploadAdapter,
+    CKFinder,
+    EasyImage */
+  ],
+  extraPlugins: [InitUploadAdapter],
   toolbar: {
     items: [
       'undo',
@@ -105,4 +112,10 @@ PidhsEditor.defaultConfig = {
 		]
 	},
   language: 'en'
-}
+})
+.then((editor) => {
+  console.log(editor);
+})
+.catch(err => {
+  console.log(err);
+});

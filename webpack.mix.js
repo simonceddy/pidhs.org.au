@@ -70,7 +70,7 @@ mix.webpackConfig({
 
 mix
     //.js('resources/js/app.js', 'public/js')
-    .js('resources/js/editor/index.build.js', 'public/js/editor.js')
+    .js('resources/js/editor/editor.js', 'public/js/editor.js')
     //.js('resources/js/editor/editor.js', 'public/js/editor/build.js')
     /* .sass('resources/sass/index.scss', 'public/css/app.css')
     .options({

@@ -1,5 +1,5 @@
 
-import PidhsEditor from './build';
+import PidhsEditor from './editor';
 
 import UploadAdapter from './plugins/uploadAdapter';
 
@@ -9,7 +9,7 @@ function InitUploadAdapter(editor) {
   };
 }
 
-new PidhsEditor(document.querySelector('#editor'), {
+PidhsEditor.create(document.querySelector('#editor'), {
   extraPlugins: [InitUploadAdapter]
 })
 .then((editor) => {

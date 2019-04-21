@@ -5,25 +5,34 @@ class UploadAdapter {
   }
 
   upload() {
-    let data = new FormData();
-    
-    data.append('uploaded-file', this.loader.file);
+    return this.loader.file
+      .then(uploadedFile => {
+        return new Promise( ( resolve, reject ) => {
+          let data = new FormData();
+          data.append('uploaded-file', uploadedFile);
 
-    return this.client.post('/editor/upload', data, {
-        headers: {
-          'Content-Type': 'image/form-data'
-        },
-      })
-      .then(res => {
-        console.log(res.data);
-        return Promise.resolve({
-          default: res.data.url
+          this.client.post('/editor/upload', data, {
+            headers: {
+              'Content-Type': 'image/form-data'
+            },
+          })
+          .then( response => {
+
+            console.log(response);
+            if ( response.data.uploaded === true ) {
+                resolve( {
+                    default: response.data.url
+                } );
+            } else {
+              console.log('rejected');
+                reject( response.data.error );
+            }
+        })
+        .catch( response => {
+            reject( 'Upload failed' );
         });
-      })
-      .catch(error => {
-        console.log(error)
-        return Promise.reject(error)
       });
+    });
   }
 
   abort() {
