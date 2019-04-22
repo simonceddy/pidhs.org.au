@@ -6,3 +6,7 @@
 .collection-box:hover, .item-box:hover {
     background: $theme-green;
 }
+
+.collection-box:hover {
+    cursor: pointer;
+}

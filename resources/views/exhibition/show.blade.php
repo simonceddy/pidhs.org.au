@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="breadcrumb">
-<a href="{{route('exhibitions.index')}}">Exhibitions</a> > {{$exhibition->title}}
+<a class="link" href="{{route('exhibitions.index')}}">Exhibitions</a> > {{$exhibition->title}}
 </div>
     
 
@@ -21,7 +21,7 @@
         <h3 class="mb-2">Sections</h3>
         <div class="text-sm flex flex-col">
         @foreach ($exhibition->sections as $section)
-            <span class="my-1"><a class="no-underline hover:underline" href="{{route('section.show', [$exhibition, $section])}}">{{$section->title}}</a></span>
+            <span class="my-1"><a class="no-underline link" href="{{route('section.show', [$exhibition, $section])}}">{{$section->title}}</a></span>
         @endforeach
         </div>
     </div>
@@ -29,10 +29,10 @@
 
 @auth
     <div class="m-2">
-        <a href="{{ route('exhibitions.edit', $exhibition) }}" class="create-button">Edit Exhibition</a>
+        <a href="{{ route('exhibitions.edit', $exhibition) }}" class="link create-button">Edit Exhibition</a>
     </div>
     <div class="m-2">
-        <a href="{{ route('section.create', $exhibition) }}" class="create-button">Add Section</a>
+        <a href="{{ route('section.create', $exhibition) }}" class="link create-button">Add Section</a>
     </div>
 @endauth
 

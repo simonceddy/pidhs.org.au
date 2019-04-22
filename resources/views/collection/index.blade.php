@@ -10,16 +10,16 @@
 <div class="collections-container flex flex-row flex-wrap justify-around">
 
 
-    @foreach ($collections as $collection)
-    <div class="collection-box border px-4 py-6">
-    <a href="{{route('collection.show', $collection->id)}}">{{$collection->title}}</a>
+@foreach ($collections as $collection)
+    <div class="collection-box border px-4 py-6" onclick="location='{{route('collection.show', $collection->id)}}'">
+        <a href="{{route('collection.show', $collection->id)}}">{{$collection->title}}</a>
     </div>
-    @endforeach
+@endforeach
 </div>
 
 @auth
     <div>
-        <a href="{{ route('collection.create') }}" class="create-button">Add Collection</a>
+        <a class="link" href="{{ route('collection.create') }}" class="create-button">Add Collection</a>
     </div>
 @endauth
 @endsection

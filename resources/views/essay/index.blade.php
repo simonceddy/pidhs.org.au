@@ -5,7 +5,7 @@
 @section('content')
     @auth
         <div class="m-2">
-            <a href="{{ route('essay.create') }}" class="create-button">Add a new Essay</a>
+            <a href="{{ route('essay.create') }}" class="link create-button">Add a new Essay</a>
         </div>
     @endauth
     @include('shared.articlelist', [

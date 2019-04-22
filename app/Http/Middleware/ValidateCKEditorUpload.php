@@ -26,9 +26,9 @@ class ValidateCKEditorUpload
      */
     public function handle($request, Closure $next)
     {
-        dump($request);
+        //dump($request);
         $file = $request->file('uploaded-file');
-        dump($file);
+        //dump($file);
         if (isset($file) && !in_array($file->getMimeType(), $this->valid_mimetype)) {
             return response()->json([
                 'uploaded' => false,

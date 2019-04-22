@@ -21,14 +21,14 @@
         <h3 class="mb-2">Exhibitions</h3>
         <div class="text-sm flex flex-col">
         @foreach ($exhibitions as $exhibition)
-            <span class="my-1"><a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline hover:underline">{{$exhibition->title}}</a></span>
+            <span class="my-1"><a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline link">{{$exhibition->title}}</a></span>
         @endforeach
         </div>
     </div>
 </div>
 @auth
     <div class="m-2">
-        <a href="{{ route('exhibitions.create') }}" class="create-button">Add Exhibition</a>
+        <a href="{{ route('exhibitions.create') }}" class="create-button link">Add Exhibition</a>
     </div>
 @endauth
 @endsection

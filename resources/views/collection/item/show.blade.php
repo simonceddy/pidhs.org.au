@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="breadcrumb">
-<a href="{{route('collection.index')}}">Collections</a> > <a href="{{route('collection.show', $collection)}}">{{$collection->title}}</a>
+<a class="link" href="{{route('collection.index')}}">Collections</a> > <a class="link" href="{{route('collection.show', $collection)}}">{{$collection->title}}</a>
 </div>
 <div>
     <div class="my-2 item-box">
@@ -18,7 +18,7 @@
 </div>
 @auth
         <div>
-            <a href="{{ route('item.edit', [$collection, $item]) }}" class="create-button">Edit Item</a>
+            <a href="{{ route('item.edit', [$collection, $item]) }}" class="create-button link">Edit Item</a>
         </div>
         <div>
         @deleteForm([

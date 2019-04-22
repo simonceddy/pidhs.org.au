@@ -5,25 +5,25 @@
     <div class="navbar-item">
         <a href="#" id="about-dropdown">About</a>
         <div class="navbar-dropdown flex flex-col items-start">
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(committee)">Committee</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(aims_objectives)">Aims & Objectives</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(geographic_area)">Geographic Area</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(history_of_the_society)">History Of The Society</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(constitution)">Constitution</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(annual_reports)">Annual Reports</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(takedown_policy)">Takedown Policy</a>
             </div>
         </div>
@@ -34,13 +34,13 @@
     <div class="navbar-item">
         <a href="#">Museum</a>
         <div class="navbar-dropdown flex flex-col items-start">
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(where_when_to_find_us)">Where and When to Find Us</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(what_to_see_do)">What to See & Do</a>
             </div>
-            <div class="navbar-dropdown-item">
+            <div class="navbar-dropdown-item w-full">
                 <a href="@article(books_for_sale)">Books For Sale</a>
             </div>
         </div>

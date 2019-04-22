@@ -6,7 +6,7 @@
     <h1 class="m-2">{{$title ?? 'Events'}}</h1>
 
     <div class="m-2">
-        <a href="{{$linkUri ?? route('event.upcoming')}}">{{$linkText ?? 'Upcoming Events'}}</a>
+        <a class="link" href="{{$linkUri ?? route('event.upcoming')}}">{{$linkText ?? 'Upcoming Events'}}</a>
     </div>
     
     <div class="events-container mx-2">
@@ -24,7 +24,7 @@
     </div>
     @auth
         <div class="m-2">
-            <a href="{{ route('event.create') }}" class="create-button">Create a new Event</a>
+            <a href="{{ route('event.create') }}" class="create-button link">Create a new Event</a>
         </div>
     @endauth
 @endsection

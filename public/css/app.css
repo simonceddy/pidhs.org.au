@@ -552,10 +552,19 @@ table {
   font-weight: 700;
 }
 
-.link-sidebar:hover {
+.link-sidebar:hover,
+.link:hover {
   color: #fff;
   text-decoration: underline;
   background: #6b0c36;
+}
+
+.collection-thumbnail {
+  max-width: 190px;
+  max-height: 190px;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .container {
@@ -6210,7 +6219,6 @@ table {
 
 .navbar-dropdown-item {
   padding-top: 1px;
-  margin: 5px 2px;
 }
 
 .navbar-item > a:hover,
@@ -6265,6 +6273,10 @@ h1 {
 .collection-box:hover,
 .item-box:hover {
   background: #9c6;
+}
+
+.collection-box:hover {
+  cursor: pointer;
 }
 
 .form-default {

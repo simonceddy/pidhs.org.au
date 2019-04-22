@@ -15,4 +15,9 @@ class Exhibition extends Model
     {
         return $this->hasMany(Section::class);
     }
+
+    public function media()
+    {
+        return $this->hasMany(SectionMedia::class);
+    }
 }

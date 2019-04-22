@@ -16,4 +16,9 @@ class Section extends Model
     {
         return $this->belongsTo(Exhibition::class);
     }
+
+    public function media()
+    {
+        return $this->hasMany(SectionMedia::class);
+    }
 }

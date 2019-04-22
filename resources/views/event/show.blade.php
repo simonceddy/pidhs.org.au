@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="m-2">
-    <a href="{{session()->previousUrl()}}">Back to Events</a>
+    <a class="link" href="{{session()->previousUrl()}}">Back to Events</a>
 </div>
 <div class="event-container">
     <h1 class="m-2">{{ $title }}</h1>
@@ -15,7 +15,7 @@
 </div>
 @auth
     <div class="m-2">
-        <a href="{{ route('event.edit', $id) }}" class="create-button">Edit Event</a>
+        <a href="{{ route('event.edit', $id) }}" class="create-button link">Edit Event</a>
     </div>
 @endauth
 @endsection

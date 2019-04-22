@@ -3,7 +3,11 @@
     @apply no-underline block py-1 font-bold;
 }
 
-.link-sidebar:hover {
+.link-sidebar:hover, .link:hover {
     @apply text-white underline;
     background:$theme-purple;
+}
+
+.navbar-dropdown-link {
+    
 }
