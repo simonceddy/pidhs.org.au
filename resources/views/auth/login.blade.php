@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex justify-center items-center">
     <form method="POST" action="{{ route('login') }}" class="login-form w-1/2 my-12 mx-auto text-center flex flex-col justify-center items-center form-default p-5">
-        <div class="text-xl m-4">{{ __('Login') }}</div>
+        {{-- <div class="text-xl m-4">{{ __('Login') }}</div> --}}
         @csrf
 
         <div class="flex flex-row justify-around w-full m-2">
