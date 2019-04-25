@@ -27,12 +27,10 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::include('shared.component.ckeditor', 'ckeditor');
 
+        Blade::include('shared.component.publicationDate', 'published');
+
         Blade::include('shared.component.form.delete', 'deleteForm');
         Blade::include('shared.component.form.buttons', 'formButtons');
-
-        Blade::directive('shortDate', function ($date) {
-            dd($date);
-        });
 
         Blade::directive('itemUrl', function (string $thumb) {
             return Storage::url('collection/'.$thumb);
@@ -40,6 +38,10 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::directive('itemThumb', function (string $thumb) {
             return Storage::url('collection/thumb/th_'.$thumb);
+        });
+
+        Blade::directive('sectionThumb', function (string $thumb) {
+            return Storage::url('exhibitions/thumb/th_'.$thumb);
         });
     }
 

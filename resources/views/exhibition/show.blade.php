@@ -12,8 +12,21 @@
 
 <div class="flex flex-row m-2">
 
-    <div class="exhibitions-container flex flex-row flex-wrap flex-1">
+    <div class="exhibitions-container flex flex-col flex-1">
         {!! $exhibition->content !!}
+
+        <div class="flex flex-row flex-wrap">
+            @foreach ($exhibition->sections as $section)
+                <div class="collection-box p-2">
+                    <a href="{{route('section.show', [$exhibition, $section])}}" class="flex flex-col w-full h-full justify-center items-center">
+                        @if ($media = $section->media()->first())
+                            <img src="@sectionThumb({{$media->thumbnail}})" class="collection-thumbnail">
+                        @endif
+                        <span class="my-1">{{$section->title}}</span>
+                    </a>
+                </div>
+            @endforeach
+        </div>
     </div>
     {{-- @include('exhibition.component.sidebar', ['list' => $exhibition->exhibitions]) --}}
 

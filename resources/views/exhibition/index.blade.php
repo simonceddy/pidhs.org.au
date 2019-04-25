@@ -10,21 +10,26 @@
         <p>Exhibition text</p>
         <div class="exhibitions-container flex flex-row flex-wrap flex-1">
             @foreach ($exhibitions as $exhibition)
-            <div class="flex-1 border border-black">
-                <a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline hover:underline">{{$exhibition->title}}</a>
+            <div class="collection-box p-2">
+                <a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline hover:underline">
+                    @if ($media = $exhibition->media()->first())
+                        <img src="@sectionThumb({{$media->thumbnail}})" class="collection-thumbnail">
+                    @endif
+                    <span class="my-1">{{$exhibition->title}}</span>
+                </a>
             </div>
             @endforeach
         </div>
         {{-- @include('exhibition.component.sidebar', ['list' => $exhibitions]) --}}
     </div>
-    <div class="flex flex-col w-1/5 ml-6">
+    {{-- <div class="flex flex-col w-1/5 ml-6">
         <h3 class="mb-2">Exhibitions</h3>
         <div class="text-sm flex flex-col">
         @foreach ($exhibitions as $exhibition)
             <span class="my-1"><a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline link">{{$exhibition->title}}</a></span>
         @endforeach
         </div>
-    </div>
+    </div> --}}
 </div>
 @auth
     <div class="m-2">

@@ -7,7 +7,20 @@
 <div class="breadcrumb">
 <a class="link" href="{{route('exhibitions.index')}}">Exhibitions</a> > <a class="link" href="{{route('exhibitions.show', $exhibition)}}">{{$exhibition->title}}</a> > {{$title}}
 </div>
-@include('shared.component.htmlarticle')
+
+<h1 class="article-heading">{{ $title }}</h1>
+
+@foreach ($media as $item)
+<img src="/storage/exhibitions/{{$item->thumbnail}}">
+@endforeach
+
+<div class="text-left" id="article">
+    @published
+    <div class="article-content m-2" id="article-content">
+        {!! $content !!}
+    </div>
+</div>
+
 @auth
     <div class="m-2">
         <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button link">Edit Section</a>

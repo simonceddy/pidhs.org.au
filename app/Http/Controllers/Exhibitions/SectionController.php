@@ -6,6 +6,7 @@ use App\Exhibitions\Section;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Exhibitions\Exhibition;
+use App\Helpers\ImageHelper;
 
 class SectionController extends Controller
 {
@@ -43,10 +44,24 @@ class SectionController extends Controller
      */
     public function store(Exhibition $exhibition, Request $request)
     {
+        // handle section media uploads - separate into nested controllers
+        $files = $request->file();
+        $media = [];
+        if (isset($files['files'])) {
+            foreach ($files['files'] as $file) {
+                $media[] = [
+                    'exhibition_id' => $exhibition->id,
+                    'thumbnail' => ImageHelper::storeSectionMedia($file)
+                ];
+            }
+        }
         $data = $request->post();
         $data['exhibition_id'] = $exhibition->id;
         $section = new Section($data);
         $section->save();
+        if (!empty($media)) {
+            $section->media()->createMany($media);
+        }
         return redirect(route('section.show', [$exhibition, $section]));
     }
 
@@ -59,7 +74,8 @@ class SectionController extends Controller
     public function show(Exhibition $exhibition, Section $section)
     {
         return view('exhibition.section.show', $section, [
-            'exhibition' => $exhibition
+            'exhibition' => $exhibition,
+            'media' => $section->media()->get()
         ]);
     }
 
@@ -72,7 +88,8 @@ class SectionController extends Controller
     public function edit(Exhibition $exhibition, Section $section)
     {
         return view('exhibition.section.edit', $section, [
-            'exhibition' => $exhibition
+            'exhibition' => $exhibition,
+            'media' => $section->media()->get()
         ]);
     }
 
@@ -88,10 +105,22 @@ class SectionController extends Controller
         Exhibition $exhibition,
         Section $section
     ) {
+        $files = $request->file();
+        $media = [];
+        if (isset($files['files'])) {
+            foreach ($files['files'] as $file) {
+                $media[] = [
+                    'exhibition_id' => $exhibition->id,
+                    'thumbnail' => ImageHelper::storeSectionMedia($file)
+                ];
+            }
+        }
         $data = $request->post();
         $section->fill($data);
         $section->save();
-        //dd($section);
+        if (!empty($media)) {
+            $section->media()->createMany($media);
+        }
         return redirect(route('section.show', [$exhibition, $section]));
     }
 
@@ -103,6 +132,7 @@ class SectionController extends Controller
      */
     public function destroy(Exhibition $exhibition, Section $section)
     {
+        $section->media()->delete();
         $section->delete();
         return redirect(route('exhibitions.show', $exhibition));
     }
