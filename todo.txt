@@ -10,3 +10,6 @@ Todo
 
 - Convert old assets - in progress - see mem limit
 - Increase mem limit for intervention image
+
+- Change sectionmedia to exhibitionmedia - allow section_id to be null
+- Add ability to choose thumbnails
