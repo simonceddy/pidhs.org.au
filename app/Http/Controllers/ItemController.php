@@ -113,11 +113,15 @@ class ItemController extends Controller
      */
     public function destroy(Collection $collection, Item $item)
     {
-        if (Storage::exists($fn = 'public/collection/'.$item->thumbnail)) {
+        $path = 'public/collection/';
+        $thumb = $item->thumbnail;
+        if (!Storage::exists($path . $thumb)) {
             // return error
         }
+        Storage::delete($path . $thumb);
+        Storage::delete($path . 'thumb/th_' . $thumb);
         $item->delete();
-        Storage::delete($fn);
+        
         return redirect(route('collection.show', $collection));
     }
 }

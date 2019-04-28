@@ -19,16 +19,6 @@ class ExhibitionMediaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -46,17 +36,6 @@ class ExhibitionMediaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(ExhibitionMedia $exhibitionMedia)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Exhibition\ExhibitionMedia  $exhibitionMedia
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ExhibitionMedia $exhibitionMedia)
     {
         //
     }
@@ -81,6 +60,19 @@ class ExhibitionMediaController extends Controller
      */
     public function destroy(ExhibitionMedia $exhibitionMedia)
     {
-        //
+        $path = 'public/exhibitions/';
+        $thumb = $exhibitionMedia->thumbnail;
+        if (!Storage::exists($path . $thumb)) {
+            return response()->json([
+                'deleted' => false,
+                'error' => 'Could not locate image file'
+            ]);
+        }
+        Storage::delete($path . $thumb);
+        Storage::delete($path . 'thumb/th_' . $thumb);
+        $exhibitionMedia->delete();
+        return response()->json([
+            'deleted' => true
+        ]);
     }
 }

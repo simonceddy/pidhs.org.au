@@ -7,6 +7,10 @@ use Illuminate\Support\Str;
 
 class ImageHelper
 {
+    private static $mime_types = [
+        'image/jpeg' => 'jpeg'
+    ];
+
     public static function storeCollectionItem($image)
     {
         //dd($image);
@@ -25,7 +29,13 @@ class ImageHelper
         // todo: fix extensions
         
         $img = Image::make($image);
-        $fn = Str::random(40).'.'.$img->extension;
+        $ext = self::$mime_types[$img->mime] ?? false;
+
+        if (!$ext) {
+            dd($img);
+        }
+
+        $fn = Str::random(40).'.'.$ext;
         $img->save(storage_path('app/public/exhibitions').'/'.$fn);
         $img->heighten(200)->save(
             storage_path('app').'/public/exhibitions/thumb/th_'.$fn
