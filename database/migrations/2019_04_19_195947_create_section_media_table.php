@@ -13,11 +13,11 @@ class CreateSectionMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('section_media', function (Blueprint $table) {
+        Schema::create('exhibition_media', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('thumbnail')->unique();
             $table->unsignedInteger('exhibition_id');
-            $table->unsignedInteger('section_id');
+            $table->unsignedInteger('section_id')->nullable();
             $table->timestamps();
 
             $table->foreign('exhibition_id')->references('id')->on('exhibitions');

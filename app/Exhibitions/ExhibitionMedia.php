@@ -4,7 +4,7 @@ namespace App\Exhibitions;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SectionMedia extends Model
+class ExhibitionMedia extends Model
 {
     protected $fillable = [
         'exhibition_id',

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Exhibitions;
 
-use App\Exhibition\SectionMedia;
+use App\Exhibition\ExhibitionMedia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SectionMediaController extends Controller
+class ExhibitionMediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class SectionMediaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Exhibition\SectionMedia  $sectionMedia
+     * @param  \App\Exhibition\ExhibitionMedia  $exhibitionMedia
      * @return \Illuminate\Http\Response
      */
-    public function show(SectionMedia $sectionMedia)
+    public function show(ExhibitionMedia $exhibitionMedia)
     {
         //
     }
@@ -53,10 +53,10 @@ class SectionMediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Exhibition\SectionMedia  $sectionMedia
+     * @param  \App\Exhibition\ExhibitionMedia  $exhibitionMedia
      * @return \Illuminate\Http\Response
      */
-    public function edit(SectionMedia $sectionMedia)
+    public function edit(ExhibitionMedia $exhibitionMedia)
     {
         //
     }
@@ -65,10 +65,10 @@ class SectionMediaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Exhibition\SectionMedia  $sectionMedia
+     * @param  \App\Exhibition\ExhibitionMedia  $exhibitionMedia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SectionMedia $sectionMedia)
+    public function update(Request $request, ExhibitionMedia $exhibitionMedia)
     {
         //
     }
@@ -76,10 +76,10 @@ class SectionMediaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Exhibition\SectionMedia  $sectionMedia
+     * @param  \App\Exhibition\ExhibitionMedia  $exhibitionMedia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SectionMedia $sectionMedia)
+    public function destroy(ExhibitionMedia $exhibitionMedia)
     {
         //
     }

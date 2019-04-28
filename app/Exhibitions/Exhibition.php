@@ -18,6 +18,6 @@ class Exhibition extends Model
 
     public function media()
     {
-        return $this->hasMany(SectionMedia::class);
+        return $this->hasMany(ExhibitionMedia::class);
     }
 }
