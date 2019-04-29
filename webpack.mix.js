@@ -2,7 +2,7 @@ const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 //const webpack = require('webpack')
 
-const CKEStyles = require( '@ckeditor/ckeditor5-dev-utils' ).styles;
+/* const CKEStyles = require( '@ckeditor/ckeditor5-dev-utils' ).styles;
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 
 const CKERegex = {
@@ -65,14 +65,14 @@ mix.webpackConfig({
         ]
     },
     performance: { hints: false }
-});
+}); */
 
 
 mix
-    //.js('resources/js/app.js', 'public/js')
+    .js('resources/js/app.js', 'public/js')
 
     // Create editor script
-    .js('resources/js/editor/index.build.js', 'public/js/editor.js')
+    //.js('resources/js/editor/index.build.js', 'public/js/editor.js')
 
     // Export custom build - create instance externally
     //.js('resources/js/editor/editor.js', 'public/js/editor.js')
