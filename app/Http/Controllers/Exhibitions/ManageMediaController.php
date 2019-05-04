@@ -9,6 +9,10 @@ use App\Exhibitions\Section;
 
 class ManageMediaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     
     /**

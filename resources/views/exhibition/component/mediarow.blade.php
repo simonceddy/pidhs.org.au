@@ -1,4 +1,4 @@
-<div class="flex flex-row justify-between">
+<div class="flex flex-row justify-between m-4">
     <div>
         <img src="@sectionThumb({{$item->thumbnail}})" class="collection-thumbnail">
     </div>
