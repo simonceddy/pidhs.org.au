@@ -4,6 +4,7 @@ namespace App\Helpers;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Http\UploadedFile;
 
 class ImageHelper
 {
@@ -11,7 +12,7 @@ class ImageHelper
         'image/jpeg' => 'jpeg'
     ];
 
-    public static function storeCollectionItem($image)
+    public static function storeCollectionItem(UploadedFile $image)
     {
         //dd($image);
         $img = Image::make($image);
@@ -24,17 +25,11 @@ class ImageHelper
         return $fn;
     }
 
-    public static function storeSectionMedia($image)
+    public static function storeSectionMedia(UploadedFile $image)
     {
         // todo: fix extensions
-        
+        $ext = $image->guessExtension();
         $img = Image::make($image);
-        $ext = self::$mime_types[$img->mime] ?? false;
-
-        if (!$ext) {
-            dd($img);
-        }
-
         $fn = Str::random(40).'.'.$ext;
         $img->save(storage_path('app/public/exhibitions').'/'.$fn);
         $img->heighten(200)->save(

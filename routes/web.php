@@ -1,4 +1,6 @@
 <?php
+use App\Exhibitions\Exhibition;
+use App\Exhibitions\Section;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +23,20 @@ Route::get('/mob/{path?}', function () {
     return view('mobile');
 });
 
+Route::get(
+    'exhibitions/{exhibition}/section/{section}/media',
+    'Exhibitions\\ManageMediaController'
+)->name('media.index');
+
+Route::delete('exhibitions/media/{media}', 'Exhibitions\\DeleteMediaController')
+    ->name('media.destroy');
 
 Route::resource('exhibitions', 'Exhibitions\\ExhibitionController');
+
 Route::resource(
     'exhibitions/{exhibition}/section',
     'Exhibitions\\SectionController'
 )->except(['index']);
-
 
 // front controller for exhibitions react app
 /* 
@@ -35,12 +44,13 @@ Route::get('/exhibitions/{path?}', function () {
     return view('exhibition.app');
 })->name('exhibitions.app');
  */
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
 });
 
 Auth::routes([
-    //'register' => false
+    'register' => false
 ]);
 
 Route::get('event/upcoming', 'Events\\UpcomingEventsController')
@@ -58,17 +68,12 @@ Route::resources([
 ]);
 
 Route::resource('collection/{collection}/item', 'ItemController')->except(['index']);
-/*
-Route::resource('pdf', 'PdfController')
-    ->except(['update', 'create', 'edit']);
-Route::resource('photo', 'PhotoController')
-    ->except(['update', 'create', 'edit']); */
-
+/* 
 Route::get('upload', 'Collection\\UploadsController@create');
 
 Route::post('upload/item', 'Collection\\UploadsController@store');
 
 Route::get('addCaptions', 'Collection\AddCaptionsController@edit')
-    ->name('addCaptions');
+    ->name('addCaptions'); */
 
 Route::post('editor/upload', 'UploadsController');
