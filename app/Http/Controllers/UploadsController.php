@@ -9,7 +9,7 @@ class UploadsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('validate.ckupload');
+        $this->middleware(['auth', 'validate.ckupload']);
     }
 
     /**
