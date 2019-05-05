@@ -6,7 +6,6 @@
 <div class="breadcrumb">
 <a class="link" href="{{route('exhibitions.index')}}">Exhibitions</a> > {{$exhibition->title}}
 </div>
-    
 
 <h1 class="article-heading">{{$exhibition->title}}</h1>
 
@@ -19,7 +18,9 @@
             @foreach ($exhibition->sections as $section)
                 <div class="collection-box p-2">
                     <a href="{{route('section.show', [$exhibition, $section])}}" class="flex flex-col w-full h-full justify-center items-center">
-                        @if ($media = $section->media()->first())
+                        @if (!$section->thumbnail()->get()->isEmpty())
+                            <img src="@sectionThumb({{$section->thumbnail()->get()->first()->thumbnail}})" class="collection-thumbnail">
+                        @elseif (null !== ($media = $section->media()->first()))
                             <img src="@sectionThumb({{$media->thumbnail}})" class="collection-thumbnail">
                         @endif
                         <span class="my-1">{{$section->title}}</span>

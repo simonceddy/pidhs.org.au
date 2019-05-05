@@ -8,7 +8,8 @@ class Exhibition extends Model
 {
     protected $fillable = [
         'title',
-        'content'
+        'content',
+        'media_id'
     ];
 
     public function sections()
@@ -19,5 +20,10 @@ class Exhibition extends Model
     public function media()
     {
         return $this->hasMany(ExhibitionMedia::class);
+    }
+
+    public function thumbnail()
+    {
+        return $this->hasOne(ExhibitionMedia::class, 'id', 'media_id');
     }
 }

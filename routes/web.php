@@ -25,8 +25,33 @@ Route::get('/mob/{path?}', function () {
 
 Route::get(
     'exhibitions/{exhibition}/section/{section}/media',
-    'Exhibitions\\ManageMediaController'
-)->name('media.index');
+    'Exhibitions\\SectionMediaController'
+)->name('section.media.index');
+
+Route::get(
+    'exhibitions/{exhibition}/media',
+    'Exhibitions\\ExhibitionMediaController'
+)->name('exhibition.media.index');
+
+Route::post(
+    'exhibitions/{exhibition}/section/{section}/media',
+    'Exhibitions\\UploadMediaController'
+)->name('section.media.store');
+
+Route::post(
+    'exhibitions/{exhibition}/media',
+    'Exhibitions\\UploadMediaController'
+)->name('exhibition.media.store');
+
+Route::put(
+    'exhibitions/{exhibition}/section/{section}/cover/{media}',
+    'Exhibitions\\SectionThumbnailController'
+)->name('section.cover');
+
+Route::put(
+    'exhibitions/{exhibition}/cover/{media}',
+    'Exhibitions\\ExhibitionCoverController'
+)->name('exhibitions.cover');
 
 Route::delete('exhibitions/media/{media}', 'Exhibitions\\DeleteMediaController')
     ->name('media.destroy');

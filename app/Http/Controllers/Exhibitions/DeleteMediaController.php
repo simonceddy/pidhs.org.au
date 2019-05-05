@@ -37,6 +37,9 @@ class DeleteMediaController extends Controller
         $exhibition = $media->exhibition()->first();
         $section = $media->section()->first();
         $media->delete();
-        return redirect(route('media.index', [$exhibition, $section]));
+        if (!$section) {
+            return redirect(route('exhibition.media.index', [$exhibition]));
+        }
+        return redirect(route('section.media.index', [$exhibition, $section]));
     }
 }

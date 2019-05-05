@@ -12,7 +12,9 @@
             @foreach ($exhibitions as $exhibition)
             <div class="collection-box p-2">
                 <a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline hover:underline">
-                    @if ($media = $exhibition->media()->first())
+                    @if (!$exhibition->thumbnail()->get()->isEmpty())
+                        <img src="@sectionThumb({{$exhibition->thumbnail()->get()->first()->thumbnail}})" class="collection-thumbnail">
+                    @elseif (null !== ($media = $exhibition->media()->first()))
                         <img src="@sectionThumb({{$media->thumbnail}})" class="collection-thumbnail">
                     @endif
                     <span class="my-1">{{$exhibition->title}}</span>

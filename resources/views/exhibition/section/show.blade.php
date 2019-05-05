@@ -14,7 +14,7 @@
         </div>
 
         <div class="m-2">
-            <a href="{{ route('media.index', [$exhibition, $id]) }}" class="create-button link">Manage Section Media</a>
+            <a href="{{ route('section.media.index', [$exhibition, $id]) }}" class="create-button link">Manage Section Media</a>
         </div>
     </div>
 @endauth
@@ -39,7 +39,7 @@
         </div>
 
         <div class="m-2">
-            <a href="{{ route('media.index', [$exhibition, $id]) }}" class="create-button link">Manage Section Media</a>
+            <a href="{{ route('section.media.index', [$exhibition, $id]) }}" class="create-button link">Manage Section Media</a>
         </div>
     </div>
 @endauth
