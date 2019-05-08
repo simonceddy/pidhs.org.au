@@ -36,7 +36,7 @@
         "babel-preset-react": "^6.23.0",
         "bootstrap": "^4.3.1",
         "cross-env": "^5.1",
-        "jquery": "^3.4.0",
+        "jquery": "^3.4.1",
         "laravel-mix": "^4.0.15",
         "lodash": "^4.17.5",
         "popper.js": "^1.15.0",
@@ -48,7 +48,7 @@
         "react-router-dom": "^4.3.1",
         "redux": "^4.0.1",
         "resolve-url-loader": "^2.3.2",
-        "sass": "^1.19.0",
+        "sass": "^1.20.1",
         "sass-loader": "^7.1.0",
         "tailwindcss": "^0.7.4",
         "vue-template-compiler": "^2.6.10"
