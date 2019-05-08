@@ -1,7 +1,11 @@
+.button {
+    @apply rounded p-2 border border-2;
+}
+
 .delete-button {
-    @apply text-white bg-red-dark rounded p-2 border border-2 border-white;
+    @apply text-white bg-red-dark border-white;
 }
 
 .delete-button:hover {
-    @apply text-red-dark bg-white border border-2 border-red-dark;
+    @apply text-red-dark bg-white border-red-dark;
 }

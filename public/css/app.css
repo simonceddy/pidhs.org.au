@@ -525,21 +525,22 @@ table {
           text-decoration-color: inherit;
 }
 
-.delete-button {
-  color: #fff;
-  background-color: #cc1f1a;
+.button {
   border-radius: .25rem;
   padding: .5rem;
   border-width: 1px;
   border-width: 2px;
+}
+
+.delete-button {
+  color: #fff;
+  background-color: #cc1f1a;
   border-color: #fff;
 }
 
 .delete-button:hover {
   color: #cc1f1a;
   background-color: #fff;
-  border-width: 1px;
-  border-width: 2px;
   border-color: #cc1f1a;
 }
 
