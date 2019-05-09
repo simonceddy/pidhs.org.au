@@ -532,16 +532,40 @@ table {
   border-width: 2px;
 }
 
-.delete-button {
+.button-danger {
   color: #fff;
   background-color: #cc1f1a;
   border-color: #fff;
 }
 
-.delete-button:hover {
+.button-danger:hover {
   color: #cc1f1a;
   background-color: #fff;
   border-color: #cc1f1a;
+}
+
+.button-blue {
+  color: #fff;
+  background-color: #2779bd;
+  border-color: #fff;
+}
+
+.button-blue:hover {
+  color: #2779bd;
+  background-color: #fff;
+  border-color: #2779bd;
+}
+
+.button-green {
+  color: #fff;
+  background-color: #1f9d55;
+  border-color: #fff;
+}
+
+.button-green:hover {
+  color: #1f9d55;
+  background-color: #fff;
+  border-color: #1f9d55;
 }
 
 .link-sidebar {
