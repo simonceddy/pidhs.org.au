@@ -530,6 +530,7 @@ table {
   padding: .5rem;
   border-width: 1px;
   border-width: 2px;
+  text-decoration: none;
 }
 
 .button-danger {
@@ -566,6 +567,18 @@ table {
   color: #1f9d55;
   background-color: #fff;
   border-color: #1f9d55;
+}
+
+.button-orange {
+  background-color: #ef7d50;
+  color: #fff;
+  border-color: #fff;
+}
+
+.button-orange:hover {
+  color: #ef7d50;
+  border-color: #ef7d50;
+  background-color: #fff;
 }
 
 .link-sidebar {
@@ -6401,6 +6414,10 @@ body {
 
 .footer {
   border-top: 1px solid #00a0b0;
+}
+
+.ck-content {
+  min-height: 300px;
 }
 
 @media (min-width: 576px) {

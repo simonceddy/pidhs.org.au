@@ -5,11 +5,13 @@ Todo
     - validate pdf file via middleware
     - PdfController return a url to editor
 
+PRIORITY
 - Cancel button for forms
 - finished for essays/news -  Convert old publicationDate fields to created_at
 
+PRIORITY
 - Convert old assets - in progress - see mem limit
 - Increase mem limit for intervention image
 
-- Change sectionmedia to exhibitionmedia - allow section_id to be null
-- Add ability to choose thumbnails
+- Tidy up
+    - tidy up views, currently chaos
