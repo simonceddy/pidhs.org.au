@@ -1,3 +1,8 @@
+.exhibition-image {
+    max-height: 400px;
+    @apply w-auto block m-2;
+}
+
 .collection-thumbnail {
     max-width: 190px;
     max-height: 190px;

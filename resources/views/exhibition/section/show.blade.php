@@ -21,12 +21,16 @@
 
 <h1 class="article-heading">{{ $title }}</h1>
 
-@foreach ($media as $item)
-<img src="/storage/exhibitions/{{$item->thumbnail}}">
-@endforeach
+@published
+
+<div class="flex flex-row overflow-scroll justify-center">
+    @foreach ($media as $item)
+        <a href="/storage/exhibitions/{{$item->thumbnail}}">
+        <img src="/storage/exhibitions/{{$item->thumbnail}}" class="exhibition-image"></a>
+    @endforeach
+</div>
 
 <div class="text-left" id="article">
-    @published
     <div class="article-content m-2" id="article-content">
         {!! $content !!}
     </div>
