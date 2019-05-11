@@ -7,6 +7,6 @@
         <label for="caption">
             Caption
         </label>
-        <textarea name="caption[]" id="caption"></textarea>
+        <textarea name="caption[]"></textarea>
     </div>
 </div>
