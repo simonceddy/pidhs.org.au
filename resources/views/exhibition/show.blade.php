@@ -42,12 +42,15 @@
 </div>
 
 @auth
+<div class="admin-row">
+
     <div class="m-2">
-        <a href="{{ route('exhibitions.edit', $exhibition) }}" class="link create-button">Edit Exhibition</a>
+        <a href="{{ route('exhibitions.edit', $exhibition) }}" class="button button-blue">Edit Exhibition</a>
     </div>
     <div class="m-2">
-        <a href="{{ route('section.create', $exhibition) }}" class="link create-button">Add Section</a>
+        <a href="{{ route('section.create', $exhibition) }}" class="button button-green">Add Section</a>
     </div>
+</div>
 @endauth
 
 @endsection

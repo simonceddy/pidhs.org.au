@@ -18,6 +18,7 @@
         @ckeditor
         <div class="flex justify-center m-2">
             <button type="submit" class="submit-button">Save</button>
+            <button class="submit-button">Cancel</button>
         </div>
     </form>
 </div>

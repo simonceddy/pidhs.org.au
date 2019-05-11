@@ -18,8 +18,8 @@
 </div>
 
 @auth
-    <div>
-        <a class="link" href="{{ route('collection.create') }}" class="create-button">Add Collection</a>
+    <div class="admin-row">
+        <a href="{{ route('collection.create') }}" class="button button-green">Add Collection</a>
     </div>
 @endauth
 @endsection

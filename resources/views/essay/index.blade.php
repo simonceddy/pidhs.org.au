@@ -4,12 +4,17 @@
 
 @section('content')
     @auth
-        <div class="m-2">
-            <a href="{{ route('essay.create') }}" class="link create-button">Add a new Essay</a>
-        </div>
+    <div class="admin-row">
+        @createButton(['action' => route('essay.create'), 'label' => 'Add a new Essay'])
+    </div>
     @endauth
     @include('shared.articlelist', [
         'title' => $title ?? 'Essays & Talks',
         'baseUri' => 'essay'
     ])
+    @auth
+    <div class="admin-row">
+        @createButton(['action' => route('essay.create'), 'label' => 'Add a new Essay'])
+    </div>
+    @endauth
 @endsection

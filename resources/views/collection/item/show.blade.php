@@ -17,12 +17,10 @@
     </div>
 </div>
 @auth
-        <div>
-            <a href="{{ route('item.edit', [$collection, $item]) }}" class="create-button link">Edit Item</a>
-        </div>
-        <div>
-        @deleteForm([
-            'action' => route('item.destroy', [$collection, $item])
-        ])
-    @endauth
+<div class="admin-row">
+    <div class="m-2">
+        <a href="{{ route('item.edit', [$collection, $item]) }}" class="button button-blue">Edit Item</a>
+    </div>
+</div>
+@endauth
 @endsection

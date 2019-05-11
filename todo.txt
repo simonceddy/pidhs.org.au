@@ -7,7 +7,6 @@ Todo
 
 PRIORITY
 - Cancel button for forms
-- finished for essays/news -  Convert old publicationDate fields to created_at
 
 PRIORITY
 - Convert old assets - in progress - see mem limit
@@ -15,3 +14,5 @@ PRIORITY
 
 - Tidy up
     - tidy up views, currently chaos
+
+- lighthouse

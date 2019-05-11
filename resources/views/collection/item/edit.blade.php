@@ -16,4 +16,8 @@
         <button type="submit" class="submit-button">Save</button>
     </div>
 </form>
+
+@deleteForm([
+    'action' => route('item.destroy', [$collection, $id])
+])
 @endsection

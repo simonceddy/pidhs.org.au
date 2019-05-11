@@ -32,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::include('shared.component.form.delete', 'deleteForm');
         Blade::include('shared.component.form.buttons', 'formButtons');
 
+        Blade::include('shared.component.buttons.edit', 'editButton');
+        Blade::include('shared.component.buttons.create', 'createButton');
+
         Blade::directive('itemUrl', function (string $thumb) {
             return Storage::url('collection/'.$thumb);
         });

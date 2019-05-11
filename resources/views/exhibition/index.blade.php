@@ -34,8 +34,10 @@
     </div> --}}
 </div>
 @auth
+<div class="admin-row">
     <div class="m-2">
-        <a href="{{ route('exhibitions.create') }}" class="create-button link">Add Exhibition</a>
+        <a href="{{ route('exhibitions.create') }}" class="button button-green">Add Exhibition</a>
     </div>
+</div>
 @endauth
 @endsection

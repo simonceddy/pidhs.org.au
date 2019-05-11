@@ -21,11 +21,13 @@
     @endforeach
 </div>
 @auth
-    <div>
-        <a class="link" href="{{ route('collection.edit', $collection) }}" class="create-button">Edit Collection</a>
+<div class="admin-row">
+    <div class="m-2">
+        <a href="{{ route('collection.edit', $collection) }}" class="button button-blue">Edit Collection</a>
     </div>
-    <div>
-        <a class="link" href="{{ route('item.create', $collection) }}" class="create-button">Add Items to the Collection</a>
+    <div class="m-2">
+        <a href="{{ route('item.create', $collection) }}" class="button button-green">Add Items to the Collection</a>
     </div>
+</div>
 @endauth
 @endsection

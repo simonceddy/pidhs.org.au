@@ -6,10 +6,19 @@
 <div class="m-2">
     <a href="{{session()->previousUrl()}}">Back to Essays</a>
 </div>
+@auth
+<div class="admin-row">
+    <div class="m-2">
+        <a href="{{ route('essay.edit', $id) }}" class="button button-blue">Edit Essay</a>
+    </div>
+</div>
+@endauth
 @include('shared.component.htmlarticle')
 @auth
+<div class="admin-row">
     <div class="m-2">
-        <a href="{{ route('essay.edit', $id) }}" class="create-button link">Edit {{$title}}</a>
+        <a href="{{ route('essay.edit', $id) }}" class="button button-blue">Edit Essay</a>
     </div>
+</div>
 @endauth
 @endsection

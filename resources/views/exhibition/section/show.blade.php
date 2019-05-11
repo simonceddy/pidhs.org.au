@@ -8,13 +8,13 @@
 <a class="link" href="{{route('exhibitions.index')}}">Exhibitions</a> > <a class="link" href="{{route('exhibitions.show', $exhibition)}}">{{$exhibition->title}}</a> > {{$title}}
 </div>
 @auth
-    <div class="flex flex-row justify-start">
+    <div class="admin-row">
         <div class="m-2">
-            <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button link">Edit Section</a>
+            <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="button button-blue">Edit Section</a>
         </div>
 
         <div class="m-2">
-            <a href="{{ route('section.media.index', [$exhibition, $id]) }}" class="create-button link">Manage Section Media</a>
+            <a href="{{ route('section.media.index', [$exhibition, $id]) }}" class="button button-orange">Manage Section Media</a>
         </div>
     </div>
 @endauth
@@ -37,14 +37,14 @@
 </div>
 
 @auth
-    <div class="flex flex-row justify-start">
-        <div class="m-2">
-            <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="create-button link">Edit Section</a>
-        </div>
-
-        <div class="m-2">
-            <a href="{{ route('section.media.index', [$exhibition, $id]) }}" class="create-button link">Manage Section Media</a>
-        </div>
+<div class="admin-row">
+    <div class="m-2">
+        <a href="{{ route('section.edit', [$exhibition, $id]) }}" class="button button-blue">Edit Section</a>
     </div>
+
+    <div class="m-2">
+        <a href="{{ route('section.media.index', [$exhibition, $id]) }}" class="button button-orange">Manage Section Media</a>
+    </div>
+</div>
 @endauth
 @endsection

@@ -502,6 +502,16 @@ table {
   border-collapse: collapse;
 }
 
+.admin-row {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .heading,
 .article-heading {
   color: #ef7d50;
@@ -6428,8 +6438,12 @@ body {
   background: rgba(255, 255, 255, .86);
 }
 
-.footer {
+.border-t-blue {
   border-top: 1px solid #00a0b0;
+}
+
+.border-b-blue {
+  border-bottom: 1px solid #00a0b0;
 }
 
 .ck-content {
