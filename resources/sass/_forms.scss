@@ -5,27 +5,12 @@
     border-radius: 5px;
 }
 
-
-.submit-button {
-    width: 12em;
-    padding: 10px;
-    border: 2px solid #7c412b;
-    border-radius: 5px;
-    box-shadow: $theme-shadow;
-    color: #fff;
-    background: $theme-orange;
-    font-weight: bold;
-    -webkit-appearance: none;
-}
-
-.submit-button:hover {
-    cursor: pointer;
-    background: #fff;
-    color: $theme-orange;
-}
-
 .form-input {
-    border: 2px solid #666;
+    border: 2px solid $theme-gray;
     background: #efe;
     border-radius: 5px;
+}
+
+.item-caption-input {
+    min-height: 80px;
 }

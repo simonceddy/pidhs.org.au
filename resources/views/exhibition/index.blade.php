@@ -1,13 +1,31 @@
 @extends('layout')
 
-@section('title', 'Exhibitions')
+@section('title', $article->title)
 
 @section('content')
     
-<h1 class="article-heading">Exhibitions</h1>
-<div class="flex flex-row m-2">
-    <div class="m-2 flex-1">
-        <p>Exhibition text</p>
+<h1 class="article-heading">{{$article->title}}</h1>
+@auth
+<div class="admin-row">
+        @createButton([
+            'action' => route('exhibitions.create'),
+            'label' => 'Add Exhibition'
+        ])
+</div>
+@endauth
+<div class="flex flex-col m-2">
+    {{-- <div class="m-2 flex-1"> --}}
+        <div class="my-4">
+            {!! $article->content !!}
+            @auth
+            <div class="admin-row">
+                @editButton([
+                    'action' => route('article.edit', $article),
+                    'label' => 'Edit Article'
+                ])
+            </div>
+            @endauth
+        </div>
         <div class="exhibitions-container flex flex-row flex-wrap flex-1">
             @foreach ($exhibitions as $exhibition)
             <div class="collection-box p-2">
@@ -22,8 +40,7 @@
             </div>
             @endforeach
         </div>
-        {{-- @include('exhibition.component.sidebar', ['list' => $exhibitions]) --}}
-    </div>
+    {{-- </div> --}}
     {{-- <div class="flex flex-col w-1/5 ml-6">
         <h3 class="mb-2">Exhibitions</h3>
         <div class="text-sm flex flex-col">
@@ -33,11 +50,4 @@
         </div>
     </div> --}}
 </div>
-@auth
-<div class="admin-row">
-    <div class="m-2">
-        <a href="{{ route('exhibitions.create') }}" class="button button-green">Add Exhibition</a>
-    </div>
-</div>
-@endauth
 @endsection

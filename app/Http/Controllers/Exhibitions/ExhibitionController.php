@@ -6,6 +6,7 @@ use App\Exhibitions\Exhibition;
 //use App\Exhibitions\Section;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Article;
 
 class ExhibitionController extends Controller
 {
@@ -30,7 +31,12 @@ class ExhibitionController extends Controller
      */
     public function index()
     {
-        return view('exhibition.index', ['exhibitions' => Exhibition::all()]);
+        return view('exhibition.index', [
+            'exhibitions' => Exhibition::all(),
+            'article' => Article::where([
+                'slug' => 'exhibitions'
+            ])->first()
+        ]);
     }
 
     /**

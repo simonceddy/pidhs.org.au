@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
             return route('article.show', $slug);
         });
 
+        Blade::include('shared.component.buttons.cancel', 'cancel');
+
         Blade::include('shared.component.ckeditor', 'ckeditor');
 
         Blade::include('shared.component.publicationDate', 'published');

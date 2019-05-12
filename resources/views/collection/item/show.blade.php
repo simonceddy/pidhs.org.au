@@ -18,9 +18,10 @@
 </div>
 @auth
 <div class="admin-row">
-    <div class="m-2">
-        <a href="{{ route('item.edit', [$collection, $item]) }}" class="button button-blue">Edit Item</a>
-    </div>
+    @editButton([
+        'action' => route('item.edit', [$collection, $item]),
+        'label' => 'Edit Caption'
+    ])
 </div>
 @endauth
 @endsection

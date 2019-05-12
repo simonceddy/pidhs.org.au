@@ -1,11 +1,23 @@
 @extends('layout')
 
-@section('title', 'Phillip Island & District Historical Society')
+@section('title', $article->title)
 
 @section('content')
 <h1 class="m-2">
-    Collections
+    {{$article->title}}
 </h1>
+
+<div class="my-4">
+    {!! $article->content !!}
+    @auth
+    <div class="admin-row">
+        @editButton([
+            'action' => route('article.edit', $article),
+            'label' => 'Edit Article'
+        ])
+    </div>
+    @endauth
+</div>
 
 <div class="collections-container flex flex-row flex-wrap justify-around">
 

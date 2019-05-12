@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Collection;
 use Illuminate\Http\Request;
 use App\Item;
+use App\Article;
 
 class CollectionController extends Controller
 {
@@ -27,7 +28,12 @@ class CollectionController extends Controller
      */
     public function index()
     {
-        return view('collection.index', ['collections' => Collection::all()]);
+        return view('collection.index', [
+            'collections' => Collection::all(),
+            'article' => Article::where([
+                'slug' => 'collections'
+            ])->first()
+        ]);
     }
 
     /**

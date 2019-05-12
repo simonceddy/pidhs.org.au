@@ -36,3 +36,16 @@
     border-color: $theme-orange;
     @apply bg-white;
 }
+
+.submit-button {
+    border-color: $theme-brown;
+    box-shadow: $theme-shadow;
+    background: $theme-orange;
+    width: 12em;
+    @apply p-3 border border-2 rounded font-bold no-underline text-white text-center;
+}
+
+.submit-button:hover {
+    color: $theme-orange;
+    @apply cursor-pointer bg-white;
+}

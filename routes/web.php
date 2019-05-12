@@ -78,6 +78,14 @@ Auth::routes([
     'register' => false
 ]);
 
+Route::get('article/collections', function () {
+    return redirect(route('collection.index'));
+});
+
+Route::get('article/exhibitions', function () {
+    return redirect(route('exhibitions.index'));
+});
+
 Route::get('event/upcoming', 'Events\\UpcomingEventsController')
     ->name('event.upcoming');
 
