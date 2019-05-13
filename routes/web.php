@@ -13,15 +13,11 @@ use App\Exhibitions\Section;
 |
 */
 
-Route::get('/', function () {
-    return (new App\Http\Controllers\ArticleController)->show(
-        (new App\Article)->query()->where('slug', '=', 'home')->first()
-    );
-})->name('home');
+Route::get('/', 'Articles\\HomepageController')->name('home');
 
-Route::get('/mob/{path?}', function () {
+/* Route::get('/mob/{path?}', function () {
     return view('mobile');
-});
+}); */
 
 Route::get(
     'exhibitions/{exhibition}/section/{section}/media',
@@ -78,13 +74,9 @@ Auth::routes([
     'register' => false
 ]);
 
-Route::get('article/collections', function () {
-    return redirect(route('collection.index'));
-});
+Route::get('article/collections', 'Articles\\RedirectToCollections');
 
-Route::get('article/exhibitions', function () {
-    return redirect(route('exhibitions.index'));
-});
+Route::get('article/exhibitions', 'Articles\\RedirectToExhibitions');
 
 Route::get('event/upcoming', 'Events\\UpcomingEventsController')
     ->name('event.upcoming');

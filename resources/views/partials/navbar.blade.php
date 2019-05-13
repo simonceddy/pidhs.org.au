@@ -6,25 +6,25 @@
         <a href="#" id="about-dropdown">About</a>
         <div class="navbar-dropdown flex flex-col items-start">
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(committee)">Committee</a>
+                <a href="{{route('article.show', 'committee')}}">Committee</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(aims_objectives)">Aims & Objectives</a>
+                <a href="{{route('article.show', 'aims_objectives')}}">Aims & Objectives</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(geographic_area)">Geographic Area</a>
+                <a href="{{route('article.show', 'geographic_area')}}">Geographic Area</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(history_of_the_society)">History Of The Society</a>
+                <a href="{{route('article.show', 'history_of_the_society')}}">History Of The Society</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(constitution)">Constitution</a>
+                <a href="{{route('article.show', 'constitution')}}">Constitution</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(annual_reports)">Annual Reports</a>
+                <a href="{{route('article.show', 'annual_reports')}}">Annual Reports</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(takedown_policy)">Takedown Policy</a>
+                <a href="{{route('article.show', 'takedown_policy')}}">Takedown Policy</a>
             </div>
         </div>
     </div>
@@ -35,13 +35,13 @@
         <a href="#">Museum</a>
         <div class="navbar-dropdown flex flex-col items-start">
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(where_when_to_find_us)">Where and When to Find Us</a>
+                <a href="{{route('article.show', 'where_when_to_find_us')}}">Where and When to Find Us</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(what_to_see_do)">What to See & Do</a>
+                <a href="{{route('article.show', 'what_to_see_do')}}">What to See & Do</a>
             </div>
             <div class="navbar-dropdown-item w-full">
-                <a href="@article(books_for_sale)">Books For Sale</a>
+                <a href="{{route('article.show', 'books_for_sale')}}">Books For Sale</a>
             </div>
         </div>
     </div>
@@ -49,13 +49,13 @@
         <a href="{{route('event.upcoming')}}">Events</a>
     </div>
     <div class="navbar-item">
-        <a href="@article(contact)">Contact</a>
+        <a href="{{route('article.show', 'contact')}}">Contact</a>
     </div>
     <div class="navbar-item">
-        <a href="@article(membership)">Membership</a>
+        <a href="{{route('article.show', 'membership')}}">Membership</a>
     </div>
     <div class="navbar-item">
-        <a href="@article(donate)">Donate</a>
+        <a href="{{route('article.show', 'donate')}}">Donate</a>
     </div>
     <div class="navbar-item">
         <a href="{{route('exhibitions.index')}}">Exhibitions</a>
@@ -68,25 +68,25 @@
             <a href="#" id="about-dropdown">About</a>
             <ul class="navbar-dropdown flex flex-col items-start">
                 <li>
-                    <a href="@article(committee)">Committee</a>
+                    <a href="{{route('article.show', 'committee')}}">Committee</a>
                 </li>
                 <li>
-                <a href="@article(aims_objectives)">Aims & Objectives</a>
+                <a href="{{route('article.show', 'aims_objectives')}}">Aims & Objectives</a>
                 </li>
                 <li>
-                <a href="@article(geographic_area)">Geographic Area</a>
+                <a href="{{route('article.show', 'geographic_area')}}">Geographic Area</a>
                 </li>
                 <li>
-                <a href="@article(history_of_the_society)">History Of The Society</a>
+                <a href="{{route('article.show', 'history_of_the_society')}}">History Of The Society</a>
                 </li>
                 <li>
-                <a href="@article(constitution)">Constitution</a>
+                <a href="{{route('article.show', 'constitution')}}">Constitution</a>
                 </li>
                 <li>
-                <a href="@article(annual_reports)">Annual Reports</a>
+                <a href="{{route('article.show', 'annual_reports')}}">Annual Reports</a>
                 </li>
                 <li>
-                <a href="@article(takedown_policy)">Takedown Policy</a>
+                <a href="{{route('article.show', 'takedown_policy')}}">Takedown Policy</a>
                 </li>
             </ul>
         </li>
@@ -97,22 +97,22 @@
                 <a href="#">Museum</a>
 
                 <ul>
-                    <li><a href="@article(where_when_to_find_us)">Where and When to Find Us</a></li>
-                    <li><a href="@article(what_to_see_do)">What to See & Do</a></li>
-                    <li><a href="@article(books_for_sale)">Books For Sale</a></li>
+                    <li><a href="{{route('article.show', 'where_when_to_find_us')}}">Where and When to Find Us</a></li>
+                    <li><a href="{{route('article.show', 'what_to_see_do')}}">What to See & Do</a></li>
+                    <li><a href="{{route('article.show', 'books_for_sale')}}">Books For Sale</a></li>
                 </ul>
             </li>
         <li class="nav-item">
         <a href="{{route('event.index')}}">Events</a>
         </li>
         <li class="nav-item">
-            <a href="@article(contact)">Contact</a>
+            <a href="{{route('article.show', 'contact')}}">Contact</a>
         </li>
         <li class="nav-item">
-            <a href="@article(membership)">Membership</a>
+            <a href="{{route('article.show', 'membership')}}">Membership</a>
         </li>
         <li class="nav-item">
-            <a href="@article(donate)">Donate</a>
+            <a href="{{route('article.show', 'donate')}}">Donate</a>
         </li>
         <li class="nav-item">
             <a href="{{route('exhibitions.app')}}">Exhibitions</a>

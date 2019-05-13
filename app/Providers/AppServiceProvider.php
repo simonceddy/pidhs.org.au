@@ -19,11 +19,8 @@ class AppServiceProvider extends ServiceProvider
         Resource::withoutWrapping();
 
         Paginator::defaultView('vendor.pagination.default');
+        
         Paginator::defaultSimpleView('vendor.pagination.simple-default');
-
-        Blade::directive('article', function (string $slug) {
-            return route('article.show', $slug);
-        });
 
         Blade::include('shared.component.buttons.cancel', 'cancel');
 
