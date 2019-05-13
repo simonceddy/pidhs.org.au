@@ -23,14 +23,10 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultSimpleView('vendor.pagination.simple-default');
 
         Blade::include('shared.component.buttons.cancel', 'cancel');
-
+        Blade::include('shared.component.buttons.submit', 'submit');
         Blade::include('shared.component.ckeditor', 'ckeditor');
-
         Blade::include('shared.component.publicationDate', 'published');
-
         Blade::include('shared.component.form.delete', 'deleteForm');
-        Blade::include('shared.component.form.buttons', 'formButtons');
-
         Blade::include('shared.component.buttons.edit', 'editButton');
         Blade::include('shared.component.buttons.create', 'createButton');
 

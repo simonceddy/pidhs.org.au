@@ -14,8 +14,9 @@
     </div>
 
     @ckeditor
-    <div class="flex flex-row m-2 justify-center">
-        <button type="submit" class="submit-button">Save</button>
+    <div class="flex flex-row m-2 justify-around">
+        @submit(['label' => 'Save'])
+        @cancel(['action' => route('exhibitions.show', $exhibition)])
     </div>
 </form>
 @endsection

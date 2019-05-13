@@ -26,10 +26,10 @@
             </div>
             @endauth
         </div>
-        <div class="exhibitions-container flex flex-row flex-wrap flex-1">
+        <div class="exhibitions-container flex flex-row flex-wrap flex-1 justify-center items-center">
             @foreach ($exhibitions as $exhibition)
             <div class="collection-box p-2">
-                <a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline hover:underline">
+                <a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline hover:underline flex flex-col justify-center items-center">
                     @if (!$exhibition->thumbnail()->get()->isEmpty())
                         <img src="@sectionThumb({{$exhibition->thumbnail()->get()->first()->thumbnail}})" class="collection-thumbnail">
                     @elseif (null !== ($media = $exhibition->media()->first()))

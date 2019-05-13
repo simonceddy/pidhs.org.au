@@ -11,8 +11,9 @@
         @method('PATCH')
         @csrf
         @include('shared.component.form.title')
-        <div class="flex flex-row m-2 justify-center">
+        <div class="flex flex-row m-2 justify-around">
             <button type="submit" class="submit-button">Save</button>
+            @cancel(['action' => route('collection.index')])
         </div>
     </form>
 

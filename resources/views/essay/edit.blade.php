@@ -10,7 +10,7 @@
             @ckeditor
 
             <div class="flex flex-row m-2 justify-around">
-                @include('shared.component.buttons.submit', ['label' => 'Save'])
+                @submit(['label' => 'Save'])
                 @cancel(['action' => route('essay.show', $id)])
             </div>
     </form>
