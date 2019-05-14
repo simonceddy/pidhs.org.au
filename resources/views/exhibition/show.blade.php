@@ -23,7 +23,7 @@
                         @elseif (null !== ($media = $section->media()->first()))
                             <img src="@sectionThumb({{$media->thumbnail}})" class="collection-thumbnail">
                         @endif
-                        <span class="my-1">{{$section->title}}</span>
+                        <span class="my-1 text-xl">{{$section->title}}</span>
                     </a>
                 </div>
             @endforeach

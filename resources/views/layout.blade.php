@@ -26,11 +26,11 @@
             
             <div class="main-section flex-1 flex flex-col w-full pt-4">
                 @auth
-                    <div class="px-8 border-b-blue mb-4">
+                    <div class="px-32 border-b-blue mb-4">
                         @include('shared.component.userrow')
                     </div>
                 @endauth
-                <div class="content flex-1 px-8 pb-4">
+                <div class="content flex-1 px-32 pb-4">
                     @yield('content')
                 </div>
             </div>
