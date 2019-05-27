@@ -41,7 +41,9 @@ class OldItems extends Command
     public function handle()
     {
         $items = Item::all(['id', 'thumbnail']);
+
         foreach ($items as $item) {
+        
             if (!Storage::exists(
                 'public/collection/'.($fn = $item->thumbnail)
             )) {
@@ -52,7 +54,7 @@ class OldItems extends Command
                     $this->error($fn.' not found');
                     return;
                 }
-                $thumbnail = ImageHelper::storeCollectionItem($resolved);
+                $thumbnail = ImageHelper::relocate($resolved);
                 $item->thumbnail = $thumbnail;
                 $item->save();
             }

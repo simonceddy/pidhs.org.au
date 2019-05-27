@@ -7,7 +7,7 @@
 <a class="link" href="{{route('collection.index')}}">Collections</a> > <a class="link" href="{{route('collection.show', $collection)}}">{{$collection->title}}</a>
 </div>
 <div>
-    <div class="my-2 item-box">
+    <div class="my-2 item-box text-center">
         <a href="@itemUrl({{$item->thumbnail}})">
             <img src="@itemUrl({{$item->thumbnail}})">
         </a>
