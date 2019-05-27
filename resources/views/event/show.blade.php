@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="m-2">
-    <a class="link" href="{{session()->previousUrl()}}">Back to Events</a>
+    <a class="link" href="{{route('event.upcoming')}}">Back to Events</a>
 </div>
 
 @auth
