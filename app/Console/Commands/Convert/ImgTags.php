@@ -85,6 +85,7 @@ class ImgTags extends Command
     private function handleImgTag(\DOMElement $node)
     {
         if (!file_exists($fn = storage_path($node->getAttribute('src')))) {
+            dd('here', $fn);
             return;
         }
         try {
