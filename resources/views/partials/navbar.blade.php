@@ -57,9 +57,9 @@
     <div class="navbar-item">
         <a href="{{route('article.show', 'donate')}}">Donate</a>
     </div>
-    <div class="navbar-item">
+    {{-- <div class="navbar-item">
         <a href="{{route('exhibitions.index')}}">Exhibitions</a>
-    </div>
+    </div> --}}
     {{-- <ul class="navbar-menu flex justify-around">
         <li>
             <a href="{{route('home')}}">Home</a>
