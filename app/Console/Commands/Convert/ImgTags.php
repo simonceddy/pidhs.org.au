@@ -84,19 +84,24 @@ class ImgTags extends Command
 
     private function handleImgTag(\DOMElement $node)
     {
-        if (!file_exists($fn = storage_path($node->getAttribute('src')))) {
-            dd('here', $fn);
-            return;
+        $src = $node->getAttribute('src');
+        $src = explode('/', $src);
+        $fn = str_replace('%20', ' ', array_pop($src));
+        //dump(storage_path('gallery/uploads/' . $fn));
+        if (file_exists($fn = storage_path('gallery/uploads/' . $fn))) {
+            //dd('here', $fn);
+            //return;
+            try {
+                //dd($fn);
+                $img = Image::make($fn);
+                $img->save(
+                    storage_path('app/public/assets').'/'.Str::random(40).'.'.$img->extension
+                );
+            } catch (\Exception $e) {
+                throw $e;
+            }
+            $node->setAttribute('src', '/storage/assets/'.$img->basename);
         }
-        try {
-            //dd($fn);
-            $img = Image::make($fn);
-            $img->save(
-                storage_path('app/public/assets').'/'.Str::random(40).'.'.$img->extension
-            );
-        } catch (\Exception $e) {
-            throw $e;
-        }
-        $node->setAttribute('src', '/storage/assets/'.$img->basename);
+        //dd($fn);
     }
 }
