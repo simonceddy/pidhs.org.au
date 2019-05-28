@@ -69,7 +69,7 @@ mix.webpackConfig({
 
 
 mix
-    //.js('resources/js/app.js', 'public/js')
+    .js('resources/js/app.js', 'public/js')
 
     // Create editor script
     //.js('resources/js/editor/index.build.js', 'public/js/editor.js')

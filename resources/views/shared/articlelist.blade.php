@@ -2,7 +2,7 @@
     {{ $articles->links() }}
 <div class="article-container">
     @foreach ($articles as $article)
-    <div class="m-2">
+    <div class="mx-2 my-6">
         <h1 class="heading m-1"><a href="/{{ $baseUri ?? 'news' }}/{{$article->id}}" class="">
             {{$article->title}}
         </a></h1>
