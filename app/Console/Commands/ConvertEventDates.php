@@ -41,7 +41,13 @@ class ConvertEventDates extends Command
     {
         $events = Event::all(['id', 'event_date']);
         foreach ($events as $event) {
-            dump(Carbon::createFromTimestamp($event->event_date));
+            dump($this->convertDate($event->event_date));
         }
+    }
+
+    private function convertDate(string $date)
+    {
+        [$year, $month, $day] = explode('-', $date, 3);
+        return Carbon::createFromDate($year, $month, $day);
     }
 }
