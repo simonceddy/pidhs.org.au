@@ -21,33 +21,8 @@
 @import './pagination';
 @import './tables';
 
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-}
-
 body {
 	color: $theme-dark;
-	background-color: #CCC;
-	background-image:url(/storage/muralbg1.jpg);
-	background-repeat:no-repeat;
-	background-position:center;
-	background-attachment:fixed;
-	font-family: Arial, Helvetica, sans-serif;
-  	background-size: cover;
-}
-
-.app {
-    margin: 0 auto;
-    min-height: 100%;
-    width: 73%;
-}
-
-.bg-default {
-    background: rgba(255, 255, 255, 0.9);
 }
 
 .border-t-blue {

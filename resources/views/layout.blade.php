@@ -7,6 +7,36 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Website of the Phillip Island & District Historical Society">
     <title>@yield('title')</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-color: #CCC;
+            background-image:url(/storage/muralbg1.jpg);
+            background-repeat:no-repeat;
+            background-position:center;
+            background-attachment:fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: cover;
+        }
+
+        .app {
+            margin: 0 auto;
+            min-height: 100%;
+            width: 73%;
+        }
+
+        .bg-default {
+            background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>

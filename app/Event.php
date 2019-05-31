@@ -9,6 +9,7 @@ class Event extends Model
     //
     protected $fillable = [
         'event_date',
+        'event_timestamp',
         'title',
         'content'
     ];

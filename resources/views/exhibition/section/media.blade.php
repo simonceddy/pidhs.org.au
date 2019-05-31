@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('exhibition.layout.app')
 
 @section('title', 'Exhibitions')
 
