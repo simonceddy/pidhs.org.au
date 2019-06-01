@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <div class="app flex flex-col min-h-full w-full">
+    <div class="app flex flex-col min-h-full w-full px-2">
         @include('exhibition.layout.partials.header')
         @auth
             <div class="px-32 border-b-blue mb-4">

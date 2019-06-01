@@ -72,7 +72,8 @@ class ExhibitionController extends Controller
     public function show(Exhibition $exhibition)
     {
         //$exhibition->loadMissing(['sections']);
-        return view('exhibition.show', ['exhibition' => $exhibition]);
+        $sections = $exhibition->sections()->orderBy('title')->get();
+        return view('exhibition.show', ['exhibition' => $exhibition, 'sections' => $sections]);
     }
 
     /**

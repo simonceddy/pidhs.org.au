@@ -15,8 +15,8 @@
         {!! $exhibition->content !!}
 
         <div class="flex flex-row flex-wrap">
-            @foreach ($exhibition->sections as $section)
-                <div class="collection-box p-2">
+            @foreach ($sections as $section)
+                <div class="collection-box p-2 m-2">
                     <a href="{{route('section.show', [$exhibition, $section])}}" class="flex flex-col w-full h-full justify-center items-center">
                         @if (!$section->thumbnail()->get()->isEmpty())
                             <img src="@sectionThumb({{$section->thumbnail()->get()->first()->thumbnail}})" class="collection-thumbnail">
@@ -34,8 +34,8 @@
     <div class="flex flex-col w-1/5 ml-6">
         <h3 class="mb-2">Sections</h3>
         <div class="text-sm flex flex-col">
-        @foreach ($exhibition->sections as $section)
-            <span class="my-1"><a class="no-underline link" href="{{route('section.show', [$exhibition, $section])}}">{{$section->title}}</a></span>
+        @foreach ($sections as $section)
+            <span class="my-1"><a class="no-underline link text-xl" href="{{route('section.show', [$exhibition, $section])}}">{{$section->title}}</a></span>
         @endforeach
         </div>
     </div>
