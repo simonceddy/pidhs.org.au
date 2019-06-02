@@ -19,9 +19,9 @@
                 <div class="collection-box p-2 m-2">
                     <a href="{{route('section.show', [$exhibition, $section])}}" class="flex flex-col w-full h-full justify-center items-center">
                         @if (!$section->thumbnail()->get()->isEmpty())
-                            <img src="@sectionThumb({{$section->thumbnail()->get()->first()->thumbnail}})" class="collection-thumbnail">
+                            <img src="@sectionThumb({{$section->thumbnail()->get()->first()->thumbnail}})" class="exhibition-thumbnail">
                         @elseif (null !== ($media = $section->media()->first()))
-                            <img src="@sectionThumb({{$media->thumbnail}})" class="collection-thumbnail">
+                            <img src="@sectionThumb({{$media->thumbnail}})" class="exhibition-thumbnail">
                         @endif
                         <span class="my-1 text-xl">{{$section->title}}</span>
                     </a>

@@ -31,9 +31,9 @@
             <div class="collection-box p-2">
                 <a href="{{route('exhibitions.show', $exhibition)}}" class="no-underline hover:underline flex flex-col justify-center items-center">
                     @if (!$exhibition->thumbnail()->get()->isEmpty())
-                        <img src="@sectionThumb({{$exhibition->thumbnail()->get()->first()->thumbnail}})" class="collection-thumbnail">
+                        <img src="@sectionThumb({{$exhibition->thumbnail()->get()->first()->thumbnail}})" class="exhibition-thumbnail">
                     @elseif (null !== ($media = $exhibition->media()->first()))
-                        <img src="@sectionThumb({{$media->thumbnail}})" class="collection-thumbnail">
+                        <img src="@sectionThumb({{$media->thumbnail}})" class="exhibition-thumbnail">
                     @endif
                     <span class="my-1 text-3xl">{{$exhibition->title}}</span>
                 </a>

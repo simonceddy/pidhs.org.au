@@ -44,7 +44,7 @@ class ImageHelper
         $img = Image::make($image);
         $fn = Str::random(40).'.'.$ext;
         $img->save(storage_path('app/public/exhibitions').'/'.$fn);
-        $img->heighten(200)->save(
+        $img->heighten(360)->save(
             storage_path('app').'/public/exhibitions/thumb/th_'.$fn
         );
         return $fn;
