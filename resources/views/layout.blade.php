@@ -43,7 +43,7 @@
     <div class="app flex flex-col items-center">
         <div class="bg-default flex flex-col items-center w-full rounded-lg my-6">
             <header class="justify-center m-3">
-                <a href="{{route('home')}}"><img src="/storage/logo1.png"></a>
+                <a href="{{route('home')}}"><img src="/storage/logo1.png" alt="Phillip Island & District Historical Society"></a>
             </header>
             @include('partials/navbar')
         </div>
