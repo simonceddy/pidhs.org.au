@@ -24,7 +24,7 @@
                 @include('shared.component.userrow')
             </div>
         @endauth
-        <div class="flex-1">
+        <div class="flex-1 m-3">
             @yield('content')
         </div>
         <div>

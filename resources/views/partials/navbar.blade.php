@@ -57,7 +57,7 @@
     <div class="navbar-item">
         <a href="{{route('article.show', 'donate')}}">Donate</a>
     </div>
-    {{-- <div class="navbar-item">
+    <div class="navbar-item">
         <a href="{{route('exhibitions.index')}}">Online Exhibitions</a>
-    </div> --}}
+    </div>
 </div>
