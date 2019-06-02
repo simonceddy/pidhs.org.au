@@ -17,8 +17,8 @@ class UpcomingEventsController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $events = Event::where('event_date', '>=', Carbon::now())
-            ->orderBy('event_date', 'desc')
+        $events = Event::where('event_timestamp', '>=', Carbon::now())
+            ->orderBy('event_timestamp', 'desc')
             ->paginate(15);
         return view('event.index', [
             'title' => 'Upcoming Events',

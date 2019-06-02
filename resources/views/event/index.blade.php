@@ -21,7 +21,7 @@
     @foreach ($events as $event)
     <div class="my-3">
         <div class="flex flex-row items-center">
-            <span class="event-list-date text-sm">{{date('d-M-y', strtotime($event->event_date))}}</span>
+            <span class="event-list-date text-sm">{{date('d-M-y', strtotime($event->event_timestamp))}}</span>
             <a href="{{route('event.show', $event->id)}}" class="no-underline hover:underline"><h1 class="heading m-2">{{$event->title}}</h1></a>
             
         </div>

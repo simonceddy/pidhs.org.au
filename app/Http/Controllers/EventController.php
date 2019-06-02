@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use App\Helpers\DateToCarbon;
 
 class EventController extends Controller
 {
@@ -55,7 +56,8 @@ class EventController extends Controller
     {
         // validate
         $data = $request->post();
-        $data['event_date'] = $data['event-date'];
+        $data['event_timestamp'] = DateToCarbon::process($data['event-date']);
+        //dd($data);
         $event = new Event($data);
         $event->save();
         return redirect(route('event.show', $event));
@@ -94,6 +96,8 @@ class EventController extends Controller
     {
         $data = $request->post();
         // validate data
+
+        $data['event_timestamp'] = DateToCarbon::process($data['event-date']);
         $event->fill($data);
         $event->save();
         return redirect(route('event.show', $event));

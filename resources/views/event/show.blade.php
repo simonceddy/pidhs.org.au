@@ -14,7 +14,7 @@
 @endauth
 <div class="event-container">
     <h1 class="m-2">{{ $title }}</h1>
-    <h3 class="m-2">{{$event_date}}</h3>
+    <h3 class="m-2">{{date('d-M-y', strtotime($event_timestamp))}}</h3>
     <div class="m-2">
         {!!$content!!}
     </div>

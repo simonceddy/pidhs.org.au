@@ -41,7 +41,9 @@ class ConvertEventDates extends Command
     {
         $events = Event::all(['id', 'event_date']);
         foreach ($events as $event) {
-            dump($this->convertDate($event->event_date));
+            $event->event_timestamp = $this->convertDate($event->event_date);
+            $event->save();
+            dump($event->event_timestamp);
         }
     }
 
