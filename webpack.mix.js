@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
+require('laravel-mix-purgecss');
 //const webpack = require('webpack')
 
 /* const CKEStyles = require( '@ckeditor/ckeditor5-dev-utils' ).styles;
@@ -82,6 +83,7 @@ mix
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.js')],
     })
+    .purgeCss()
     //.sourceMaps()
     //.dump()
 ;
