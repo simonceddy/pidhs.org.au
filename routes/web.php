@@ -1,7 +1,4 @@
 <?php
-use App\Exhibitions\Exhibition;
-use App\Exhibitions\Section;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
