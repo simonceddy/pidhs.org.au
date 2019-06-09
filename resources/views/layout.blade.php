@@ -60,7 +60,7 @@
                         @include('shared.component.userrow')
                     </div>
                 @endauth
-                <div class="content flex-1 px-32 pb-4">
+                <div class="content flex-1 pb-4">
                     @yield('content')
                 </div>
             </div>
