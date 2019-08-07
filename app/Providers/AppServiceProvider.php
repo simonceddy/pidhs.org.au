@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Storage;
+use Jenssegers\Agent\Facades\Agent;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -40,6 +41,10 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::directive('sectionThumb', function (string $thumb) {
             return Storage::url('exhibitions/thumb/th_'.$thumb);
+        });
+
+        Blade::if('isMobile', function () {
+            return Agent::isMobile();
         });
     }
 

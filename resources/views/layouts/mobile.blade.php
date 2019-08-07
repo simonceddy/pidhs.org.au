@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title ?? "Phillip Island & District Historical Society"}}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="Website of the Phillip Island & District Historical Society">
+    <title>@yield('title')</title>
     <style>
         body, html {
             margin: 0;

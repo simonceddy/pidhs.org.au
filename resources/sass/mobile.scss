@@ -1,13 +1,13 @@
 @import './variables';
 
-@tailwind preflight;
+@tailwind base;
 
-@import './components/colouring';
-@import './components/divs';
-@import './components/headings';
-@import './components/buttons';
-@import './components/links';
-@import './components/images';
+@import './mobile/components/colouring';
+@import './mobile/components/divs';
+@import './mobile/components/headings';
+@import './mobile/components/buttons';
+@import './mobile/components/links';
+@import './mobile/components/images';
 
 @tailwind components;
 @tailwind utilities;

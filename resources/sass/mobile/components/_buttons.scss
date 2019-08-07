@@ -1,0 +1,51 @@
+.button {
+    @apply rounded p-2 border border-2 no-underline;
+}
+
+.button-danger {
+    @apply text-white bg-red-700 border-white;
+}
+
+.button-danger:hover {
+    @apply text-red-700 bg-white border-red-700;
+}
+
+.button-blue {
+    @apply text-white bg-blue-700 border-white;
+}
+
+.button-blue:hover {
+    @apply text-blue-700 bg-white border-blue-700;
+}
+
+.button-green {
+    @apply text-white bg-green-700 border-white;
+}
+
+.button-green:hover {
+    @apply text-green-700 bg-white border-green-700;
+}
+
+.button-orange {
+    background-color: $theme-orange;
+    @apply text-white border-white;
+}
+
+.button-orange:hover {
+    color: $theme-orange;
+    border-color: $theme-orange;
+    @apply bg-white;
+}
+
+.submit-button {
+    border-color: $theme-brown;
+    box-shadow: $theme-shadow;
+    background: $theme-orange;
+    width: 12em;
+    @apply p-3 border border-2 rounded font-bold no-underline text-white text-center;
+}
+
+.submit-button:hover {
+    color: $theme-orange;
+    @apply cursor-pointer bg-white;
+}

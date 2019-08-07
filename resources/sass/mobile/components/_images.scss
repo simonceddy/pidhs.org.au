@@ -1,0 +1,18 @@
+.exhibition-image {
+    max-height: 400px;
+    @apply w-auto block m-2;
+}
+
+.collection-thumbnail, .exhibition-thumbnail {
+    @apply w-auto h-auto block
+}
+
+.collection-thumbnail {
+    max-width: 190px;
+    max-height: 190px;
+}
+
+.exhibition-thumbnail {
+    max-width: 360px;
+    max-height: 360px;
+}
