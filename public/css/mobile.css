@@ -722,10 +722,14 @@ video {
 }
 
 .link-sidebar:hover, .link:hover {
+  background: #6b0c36;
   color: #fff;
   text-decoration: underline;
-  background: #6b0c36;
 }
+
+/* .navbar-dropdown-link {
+
+} */
 
 .exhibition-image {
   max-height: 400px;

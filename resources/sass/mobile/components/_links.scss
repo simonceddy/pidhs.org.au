@@ -4,10 +4,10 @@
 }
 
 .link-sidebar:hover, .link:hover {
-    @apply text-white underline;
     background:$theme-purple;
+    @apply text-white underline;
 }
 
-.navbar-dropdown-link {
+/* .navbar-dropdown-link {
     
-}
+} */

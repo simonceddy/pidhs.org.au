@@ -1,5 +1,5 @@
 @isMobile()
     @include('layouts.mobile')
 @else
-    @include('layouts.mobile')
+    @include('layouts.desktop')
 @endisMobile
