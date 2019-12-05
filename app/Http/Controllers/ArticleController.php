@@ -93,7 +93,7 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         // TODO: validate
-        $article->fill($request->post());
+        $article->fill((array) $request->post());
         $article->save();
         return redirect(route('article.show', $article));
     }

@@ -3,27 +3,27 @@
 }
 
 .button-danger {
-    @apply text-white bg-red-dark border-white;
+    @apply text-white bg-red-800 border-white;
 }
 
 .button-danger:hover {
-    @apply text-red-dark bg-white border-red-dark;
+    @apply text-red-800 bg-white border-red-800;
 }
 
 .button-blue {
-    @apply text-white bg-blue-dark border-white;
+    @apply text-white bg-blue-800 border-white;
 }
 
 .button-blue:hover {
-    @apply text-blue-dark bg-white border-blue-dark;
+    @apply text-blue-800 bg-white border-blue-800;
 }
 
 .button-green {
-    @apply text-white bg-green-dark border-white;
+    @apply text-white bg-green-800 border-white;
 }
 
 .button-green:hover {
-    @apply text-green-dark bg-white border-green-dark;
+    @apply text-green-800 bg-white border-green-800;
 }
 
 .button-orange {

@@ -10,7 +10,11 @@
 |
 */
 
-Route::get('/', 'Articles\\HomepageController')->name('home');
+Route::get('/', function () {
+    return view('child');
+});
+
+Route::get('/home', 'Articles\\HomepageController')->name('home');
 
 /* Route::get('/mob/{path?}', function () {
     return view('mobile');

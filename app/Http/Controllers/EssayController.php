@@ -54,7 +54,7 @@ class EssayController extends Controller
     {
         $data = $request->post();
         // todo validate
-        $essay = new Essay($data);
+        $essay = new Essay((array) $data);
         $essay->save();
         return redirect(route('essay.show', $essay->id));
     }
@@ -92,7 +92,7 @@ class EssayController extends Controller
     {
         $data = $request->post();
         // validate data
-        $essay->fill($data);
+        $essay->fill((array) $data);
         $essay->save();
         return redirect(route('essay.show', $essay));
     }
