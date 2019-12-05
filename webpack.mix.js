@@ -78,7 +78,7 @@ mix
     // Export custom build - create instance externally
     //.js('resources/js/editor/editor.js', 'public/js/editor.js')
 
-    .sass('resources/sass/index.scss', 'public/css/app.css')
+    .sass('resources/sass/app.scss', 'public/css/app.css')
     // .sass('resources/sass/mobile.scss', 'public/css/mobile.css')
     .options({
         processCssUrls: false,

@@ -34,33 +34,33 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <div class="min-h-full flex flex-row">
-        <div class="sm:w-11/12 md:w-4/5 lg:w-2/3 w-full min-h-full justify-between mx-auto flex flex-col items-center">
-            <div class="bg-white flex flex-col items-center w-full rounded-lg my-6">
-                <header class="justify-center m-3">
-                    <a href="{{route('home')}}"><img src="/storage/logo1.png" alt="Phillip Island & District Historical Society"></a>
-                </header>
-                @include('includes.navbar1')
-            </div>
-            <div class="flex-1 bg-white w-full rounded-lg flex flex-col sm:mb-2">
-                <div>
-                    <div class="sidebar-container float-left absolute pin-l ml-3">
-                        @include('includes.navbar2')
-                    </div>
-                </div>
+    <div id="outer-container" class="min-h-full w-full flex flex-col">
+        <div class="w-full flex flex-row">
+            @include('includes.header')
+        </div>
+        <div class="w-full flex flex-row flex-1">
+            <div class="sm:w-11/12 md:w-4/5 lg:w-2/3 w-full min-h-full justify-between mx-auto flex flex-col items-center">
                 
-                <div class="main-section flex-1 flex flex-col w-full pt-4">
-                    {{-- @auth
-                        <div class="px-32 border-b-blue mb-4">
-                            @include('shared.component.userrow')
+                <div class="flex-1 bg-white w-full rounded-lg flex flex-col sm:mb-2">
+                    <div>
+                        <div class="sidebar-container float-left absolute pin-l ml-3">
+                            @include('includes.navbar2')
                         </div>
-                    @endauth --}}
-                    <div class="content flex-1 pb-4">
-                        @yield('content')
                     </div>
-                </div>
-                <div class="p-4">
-                    @include('includes.footer')
+                    
+                    <div class="main-section flex-1 flex flex-col w-full pt-4">
+                        {{-- @auth
+                            <div class="px-32 border-b-blue mb-4">
+                                @include('shared.component.userrow')
+                            </div>
+                        @endauth --}}
+                        <div class="content flex-1 pb-4">
+                            @yield('content')
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        @include('includes.footer')
+                    </div>
                 </div>
             </div>
         </div>

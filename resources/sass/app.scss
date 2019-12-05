@@ -4,3 +4,20 @@
 
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+	color: $theme-dark;
+}
+
+.border-t-blue {
+	border-top: 1px solid $theme-blue;
+}
+
+.border-b-blue {
+    border-bottom: 1px solid $theme-blue;
+}
+
+.ck-content {
+    min-height: 300px;
+}
