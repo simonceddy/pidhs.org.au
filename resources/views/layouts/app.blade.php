@@ -1,71 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="Website of the Phillip Island & District Historical Society">
-    <title>@yield('title')</title>
 
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        body {
-            background-color: #CCC;
-            background-image:url(/storage/muralbg1.jpg);
-            background-repeat:no-repeat;
-            background-position:center;
-            background-attachment:fixed;
-            font-family: Arial, Helvetica, sans-serif;
-            background-size: cover;
-        }
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-        .bg-default {
-            background: rgba(255, 255, 255, 0.9);
-        }
-    </style>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="/css/app.css">
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="outer-container" class="min-h-full w-full flex flex-col">
-        <div class="w-full flex flex-row">
-            @include('includes.header')
-        </div>
-        <div class="w-full flex flex-row flex-1">
-            <div class="sm:w-11/12 md:w-4/5 lg:w-2/3 w-full min-h-full justify-between mx-auto flex flex-col items-center">
-                
-                <div class="flex-1 bg-white w-full rounded-lg flex flex-col sm:mb-2">
-                    <div>
-                        <div class="sidebar-container float-left absolute pin-l ml-3">
-                            @include('includes.navbar2')
-                        </div>
-                    </div>
-                    
-                    <div class="main-section flex-1 flex flex-col w-full pt-4">
-                        {{-- @auth
-                            <div class="px-32 border-b-blue mb-4">
-                                @include('shared.component.userrow')
-                            </div>
-                        @endauth --}}
-                        <div class="content flex-1 pb-4">
-                            @yield('content')
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        @include('includes.footer')
-                    </div>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                @if (Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                @endif
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
-<script src="/js/app.js"></script>
-@stack('scripts')
 </body>
 </html>
