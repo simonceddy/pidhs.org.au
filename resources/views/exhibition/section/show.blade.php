@@ -25,8 +25,8 @@
 
 <div class="flex flex-row overflow-scroll justify-center">
     @foreach ($media as $item)
-        <a href="/storage/exhibitions/{{$item->thumbnail}}">
-        <img src="/storage/exhibitions/{{$item->thumbnail}}" class="exhibition-image"></a>
+        <a href="/storage/exhibitions/{{$item['thumbnail']}}">
+        <img src="/storage/exhibitions/{{$item['thumbnail']}}" class="exhibition-image"></a>
     @endforeach
 </div>
 

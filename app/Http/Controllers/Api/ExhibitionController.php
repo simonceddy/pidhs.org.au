@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Article;
 use App\Exhibitions\Exhibition;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,8 +29,14 @@ class ExhibitionController extends Controller
      */
     public function index()
     {
-        //
-        return Exhibition::all();
+        return response()->json(
+            [
+                'exhibitions' => Exhibition::all(),
+                'article' => Article::where([
+                    'slug' => 'exhibitions'
+                ])->first()
+            ]
+        );
     }
 
     /**
@@ -51,7 +58,7 @@ class ExhibitionController extends Controller
      */
     public function show(Exhibition $exhibition)
     {
-        $exhibition->load('sections');
+        $exhibition->loadMissing('sections', 'thumbnail');
         return $exhibition;
     }
 

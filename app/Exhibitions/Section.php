@@ -13,6 +13,10 @@ class Section extends Model
         'media_id'
     ];
 
+    protected $with = [
+        'media'
+    ];
+
     public function exhibition()
     {
         return $this->belongsTo(Exhibition::class);

@@ -74,8 +74,7 @@ class SectionController extends Controller
     public function show(Exhibition $exhibition, Section $section)
     {
         return view('exhibition.section.show', $section, [
-            'exhibition' => $exhibition,
-            'media' => $section->media()->get()
+            'exhibition' => $exhibition
         ]);
     }
 
