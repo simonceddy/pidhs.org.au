@@ -66,8 +66,8 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <div class="app lg:bg-transparent bg-trans-white flex flex-col items-center">
-        <div class="header-container lg:bg-trans-white flex flex-col items-center w-full rounded-lg mt-5 mb-6">
+    <div class="app lg:bg-transparent bg-trans-white flex flex-col items-center sm:my-6 my-2 rounded-lg">
+        <div class="header-container lg:bg-trans-white flex flex-col items-center w-full rounded-lg mb-6">
             <header class="justify-center m-3">
                 <a href="{{route('home')}}"><img src="/storage/logo1.png" alt="Phillip Island & District Historical Society"></a>
             </header>

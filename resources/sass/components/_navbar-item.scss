@@ -1,8 +1,8 @@
 .navbar-item {
-    @apply mx-1;
+    @apply mx-1 my-1;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
     .navbar-item {
         @apply mx-2;
     }

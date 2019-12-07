@@ -15,10 +15,10 @@ use Illuminate\Http\Request;
 
 /* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
 
 Route::apiResource('exhibition', 'Api\\ExhibitionController')
     ->names('api.exhibition');
 
 Route::apiResource('exhibition/{exhibition}/section', 'Api\\SectionController')
-    ->names('api.section'); */
+    ->names('api.section');

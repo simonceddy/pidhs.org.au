@@ -9,7 +9,7 @@
 
 <h1 class="article-heading">{{$exhibition->title}}</h1>
 
-<div class="flex flex-row m-2">
+<div class="flex sm:flex-row flex-col-reverse m-2">
 
     <div class="exhibitions-container flex flex-col flex-1">
         {!! $exhibition->content !!}

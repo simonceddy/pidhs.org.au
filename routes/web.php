@@ -12,9 +12,9 @@
 
 Route::get('/', 'Articles\\HomepageController')->name('home');
 
-/* Route::get('/mob/{path?}', function () {
-    return view('mobile');
-}); */
+Route::get('/oep/{path?}', function () {
+    return view('oep');
+});
 
 Route::get(
     'exhibitions/{exhibition}/section/{section}/media',

@@ -765,9 +765,11 @@ a {
 .navbar-item {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .navbar-item {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -20355,8 +20357,19 @@ blockquote {
 }
 
 .content {
-  padding-left: 11%;
-  padding-right: 11%;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.article-content a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-left: 11%;
+    padding-right: 11%;
+  }
 }
 
 .collection-box {

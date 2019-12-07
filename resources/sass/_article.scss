@@ -16,6 +16,17 @@ blockquote {
 }
 
 .content {
-    padding-left: 11%;
-    padding-right: 11%;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.article-content a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .content {
+        padding-left: 11%;
+        padding-right: 11%;
+    }
 }
