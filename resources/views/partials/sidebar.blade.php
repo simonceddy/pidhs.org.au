@@ -1,4 +1,4 @@
-<div id="sidebar" class="bg-default sidebar flex flex-col text-left p-6 rounded-lg">
+<div id="sidebar" class="sidebar lg:bg-trans-white flex lg:flex-col flex-row justify-around text-left p-6 lg:rounded-lg">
     <div class="siderbar-item">
         <a href="{{route('article.show', 'services')}}" class="link-sidebar">Services</a>
     </div>

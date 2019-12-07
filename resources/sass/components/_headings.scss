@@ -3,12 +3,14 @@
 }
 
 .article-heading {
-    @apply mx-2 mt-2 mb-4;
+    font-size: 2rem;
+    line-height: 1.15;
+    @apply mx-2 mt-2 mb-4 font-bold;
 }
 
 .heading > a {
-    @apply no-underline;
     color: inherit;
+    @apply no-underline;
 }
 
 .heading > a:hover {

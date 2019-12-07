@@ -7,7 +7,10 @@
 @import './components/headings';
 @import './components/buttons';
 @import './components/links';
+@import './components/link-sidebar';
 @import './components/images';
+@import './components/navbar-item';
+@import './components/navbar-link';
 
 @tailwind components;
 @tailwind utilities;
@@ -23,6 +26,10 @@
 
 body {
 	color: $theme-dark;
+}
+
+.bg-default {
+    background-color: $theme-bg-white;
 }
 
 .border-t-blue {

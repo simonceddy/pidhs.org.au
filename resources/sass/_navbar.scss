@@ -7,7 +7,7 @@
     overflow: visible;
 }
 .navbar-item:hover > .navbar-dropdown {
-    display: flex;
+    display: block;
 }
 
 .navbar-item > a, .navbar-dropdown-item > a {
@@ -16,10 +16,6 @@
     color:#fff;
     background:$theme-dark;
     display: block;
-}
-
-.navbar-item {
-    margin: 4px 8px;
 }
 
 .navbar-dropdown-item {
