@@ -1,4 +1,4 @@
-<div class="navbar flex flex-row flex-wrap justify-around text-center lg:pb-4 pt-4 pb-1 font-bold my-2 mx-auto">
+<div class="navbar flex flex-col md:flex-row flex-wrap justify-around text-center lg:pb-4 pt-4 pb-1 font-bold my-2 mx-auto">
     <div class="nav-toggle">
 
     </div>
