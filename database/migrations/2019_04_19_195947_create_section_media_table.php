@@ -32,6 +32,6 @@ class CreateSectionMediaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('section_media');
+        // Schema::dropIfExists('section_media');
     }
 }

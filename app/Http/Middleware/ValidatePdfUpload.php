@@ -22,7 +22,7 @@ class ValidatePdfUpload
      */
     public function handle($request, Closure $next)
     {
-        $files = $request->file('pdf-upload') ?? $request->file();
+        $files = $request->file();
         //dd($files);
         if (!empty($files)) {
             $this->checkFiles($files);

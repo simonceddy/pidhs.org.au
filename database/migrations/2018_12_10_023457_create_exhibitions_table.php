@@ -27,6 +27,6 @@ class CreateExhibitionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exhibitions');
+        // Schema::dropIfExists('exhibitions');
     }
 }

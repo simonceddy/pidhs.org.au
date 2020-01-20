@@ -44,7 +44,12 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->post();
+        // TODO validate
+        $report = new Report($data);
+        $report->save();
+
+        // TODO return response
     }
 
     /**

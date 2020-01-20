@@ -28,6 +28,6 @@ class News extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        // Schema::dropIfExists('news');
     }
 }

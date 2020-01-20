@@ -28,7 +28,7 @@ class Essays extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('essays');
+        // Schema::dropIfExists('essays');
 
     }
 }
