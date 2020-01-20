@@ -63,6 +63,7 @@ class Kernel extends HttpKernel
         'html.purify' => \App\Http\Middleware\PurifyHtmlInput::class,
         'cors' => \Barryvdh\Cors\HandleCors::class,
         'validate.upload' => \App\Http\Middleware\ValidateUploadedFile::class,
+        'validate.pdf' => \App\Http\Middleware\ValidatePdfUpload::class,
         'validate.ckupload' => \App\Http\Middleware\ValidateCKEditorUpload::class,
     ];
 
