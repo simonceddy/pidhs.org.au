@@ -32,7 +32,7 @@ class ValidateCKEditorUpload
         if (isset($file) && !in_array($file->getMimeType(), $this->valid_mimetype)) {
             return response()->json([
                 'uploaded' => false,
-                'error' => ['Invalid Mimetype']
+                'error' => ['Invalid Filetype']
             ])->setStatusCode(500);
         }
         return $next($request);
