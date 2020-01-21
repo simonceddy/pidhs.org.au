@@ -28,7 +28,7 @@ import FileRepository from '@ckeditor/ckeditor5-upload/src/filerepository';
 // import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 // import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 
-import ImgUploadAdapter from './plugins/uploadAdapter';
+import ImgUploadAdapter from '../ckeditor/plugins/uploadAdapter';
 
 function InitUploadAdapter(editor) {
   editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {

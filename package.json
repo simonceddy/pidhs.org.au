@@ -56,6 +56,7 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^11.2.0",
+        "@ckeditor/ckeditor5-core": "^16.0.0",
         "@ckeditor/ckeditor5-dev-webpack-plugin": "^8.0.6",
         "@ckeditor/ckeditor5-image": "^13.1.2",
         "@ckeditor/ckeditor5-upload": "^11.1.1",

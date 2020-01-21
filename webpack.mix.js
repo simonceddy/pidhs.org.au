@@ -1,9 +1,9 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
 require('laravel-mix-purgecss');
-//const webpack = require('webpack')
+const webpack = require('webpack')
 
-/* const CKEStyles = require( '@ckeditor/ckeditor5-dev-utils' ).styles;
+const CKEStyles = require( '@ckeditor/ckeditor5-dev-utils' ).styles;
 const CKEditorWebpackPlugin = require( '@ckeditor/ckeditor5-dev-webpack-plugin' );
 
 const CKERegex = {
@@ -66,25 +66,18 @@ mix.webpackConfig({
         ]
     },
     performance: { hints: false }
-}); */
+});
 
 
 mix
     //.js('resources/js/app.js', 'public/js')
-
-    // Create editor script
-    //.js('resources/js/editor/index.build.js', 'public/js/editor.js')
-
-    // Export custom build - create instance externally
-    //.js('resources/js/editor/editor.js', 'public/js/editor.js')
-
-    .sass('resources/sass/app.scss', 'public/css/app.css')
-    // .sass('resources/sass/mobile.scss', 'public/css/mobile.css')
-    .options({
+    .js('resources/js/ckeditor/index.js', 'public/js/editor.js')
+    // .sass('resources/sass/app.scss', 'public/css/app.css')
+    /* .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.config.js')],
-    })
+    }) */
     // .purgeCss()
-    //.sourceMaps()
+    .sourceMaps()
     //.dump()
 ;
