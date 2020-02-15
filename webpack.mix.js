@@ -48,9 +48,6 @@ mix.webpackConfig({
                 use: [
                     {
                         loader: 'style-loader',
-                        options: {
-                            singleton: true
-                        }
                     },
                     {
                         loader: 'postcss-loader',
@@ -70,7 +67,7 @@ mix.webpackConfig({
 
 
 mix
-    //.js('resources/js/app.js', 'public/js')
+    .js('resources/js/app.js', 'public/js')
     .js('resources/js/ckeditor/index.js', 'public/js/editor.js')
     // .sass('resources/sass/app.scss', 'public/css/app.css')
     /* .options({
