@@ -9,14 +9,11 @@
 </div>
 
 @push('scripts')
-<script src="/js/editor.js"></script>
-{{-- <script>
-CKEditor.create(document.querySelector('#editor'))
-    .then((editor) => {
-        console.log(editor);
-    })
-    .catch(err => {
-        console.log(err);
+<script src="/js/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: '#{{$editor_id ?? 'editor'}}'
     });
-</script> --}}
+</script>
+{{-- <script src="/js/editor.js"></script> --}}
 @endpush

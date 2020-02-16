@@ -71,8 +71,8 @@
             <header class="justify-center m-3">
                 <a href="{{route('home')}}"><img src="/storage/logo1.png" alt="Phillip Island & District Historical Society"></a>
             </header>
-            <div id="root"></div>
-            {{-- @include('partials/navbar') --}}
+            {{-- <div id="root"></div> --}}
+            @include('partials/navbar')
         </div>
         <div class="flex-1 lg:bg-trans-white w-full rounded-lg flex flex-col">
             <div>
