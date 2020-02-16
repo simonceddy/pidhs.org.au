@@ -6,3 +6,12 @@
  */
 
 require('./bootstrap');
+
+const { $ } = window;
+
+$(document).ready(() => {
+  $('#toggle-menu-button').click(() => {
+    console.log('toggle menu');
+    $('#main-menu').toggle(220);
+  });
+});
