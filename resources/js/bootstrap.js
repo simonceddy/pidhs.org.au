@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 
 window._ = require('lodash');
 
@@ -8,11 +9,14 @@ window._ = require('lodash');
  */
 
 try {
-    //window.Popper = require('popper.js').default;
-    window.$ = window.jQuery = require('jquery');
+  // window.Popper = require('popper.js').default;
+  // eslint-disable-next-line no-multi-assign
+  window.$ = window.jQuery = require('jquery');
 
-    //require('bootstrap');
-} catch (e) {}
+  // require('bootstrap');
+} catch (e) {
+  //
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -30,12 +34,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * a simple convenience so we don't have to attach every token manually.
  */
 
-let token = document.head.querySelector('meta[name="csrf-token"]');
+const token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**
@@ -55,4 +59,4 @@ if (token) {
 //     encrypted: true
 // });
 
-//window.CKEditor = require('@ckeditor/ckeditor5-build-classic');
+// window.CKEditor = require('@ckeditor/ckeditor5-build-classic');
