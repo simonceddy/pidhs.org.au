@@ -1,5 +1,7 @@
 <div class="nav-toggle md:hidden w-11/12">
-    <button type="button" id="toggle-menu-button" class="w-full border rounded p-1 hover:text-white hover:bg-black">☰ Menu</button>
+    <button type="button" id="toggle-menu-button" class="w-full border rounded py-1 px-3 hover:text-white hover:bg-black flex flex-row justify-between items-center">
+        <span>☰</span> <span>Menu</span>
+    </button>
 </div>
 <ul class="navbar md:flex hidden flex-col md:flex-row flex-wrap justify-around text-center lg:pb-4 pt-4 pb-1 font-bold my-2 mx-auto md:items-center" id="main-menu">
     <li class="navbar-item">

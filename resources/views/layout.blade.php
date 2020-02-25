@@ -83,7 +83,7 @@
 
             <div class="main-section flex-1 flex flex-col w-full pt-4">
                 @auth
-                    <div class="px-32 border-b-blue mb-4">
+                    <div class="md:px-32 px-2 border-b-blue mb-4">
                         @include('shared.component.userrow')
                     </div>
                 @endauth
