@@ -69,12 +69,12 @@ mix.webpackConfig({
 mix
     .js('resources/js/app.js', 'public/js')
     // .js('resources/js/ckeditor/index.js', 'public/js/editor.js')
-    // .sass('resources/sass/app.scss', 'public/css/app.css')
-    /* .options({
+    .sass('resources/sass/app.scss', 'public/css/app.css')
+    .options({
         processCssUrls: false,
         postCss: [tailwindcss('./tailwind.config.js')],
-    }) */
-    // .purgeCss()
+    })
+    .purgeCss()
     .sourceMaps()
     //.dump()
 ;

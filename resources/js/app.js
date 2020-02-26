@@ -10,8 +10,9 @@ require('./bootstrap');
 const { $ } = window;
 
 $(document).ready(() => {
+  // console.log('menu loaded');
   $('#toggle-menu-button').click(() => {
-    console.log('toggle menu');
+    // console.log('toggle menu');
     $('#main-menu').toggle(220);
   });
 });
