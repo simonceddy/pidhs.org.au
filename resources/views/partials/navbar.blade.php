@@ -62,7 +62,7 @@
     <li class="navbar-item">
         <a class="navbar-link" href="{{route('article.show', 'donate')}}">Donate</a>
     </li>
-    <li class="navbar-item md:hidden">
+    <li class="navbar-item">
         <a class="navbar-link" href="{{route('exhibitions.index')}}">Online Exhibitions</a>
     </li>
     <li class="navbar-item md:hidden">
