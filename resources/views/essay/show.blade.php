@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="m-2">
-    <a href="{{session()->previousUrl()}}">Back to Essays</a>
+    <a href="{{ route('essay.index') }}">Back to Essays</a>
 </div>
 @auth
 <div class="admin-row">
