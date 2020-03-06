@@ -3,7 +3,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Http\Resources\Json\Resource;
+// use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Storage;
 use Jenssegers\Agent\Facades\Agent;
@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Resource::withoutWrapping();
+        // Resource::withoutWrapping();
 
         Paginator::defaultView('vendor.pagination.default');
         

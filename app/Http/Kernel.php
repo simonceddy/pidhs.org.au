@@ -61,7 +61,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'html.purify' => \App\Http\Middleware\PurifyHtmlInput::class,
-        'cors' => \Barryvdh\Cors\HandleCors::class,
+        'cors' => \Fruitcake\Cors\HandleCors::class,
         'validate.upload' => \App\Http\Middleware\ValidateUploadedFile::class,
         'validate.pdf' => \App\Http\Middleware\ValidatePdfUpload::class,
         'validate.ckupload' => \App\Http\Middleware\ValidateCKEditorUpload::class,
