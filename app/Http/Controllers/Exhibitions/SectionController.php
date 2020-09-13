@@ -47,7 +47,7 @@ class SectionController extends Controller
         // handle section media uploads - separate into nested controllers
         $files = $request->file();
         $media = [];
-        if (isset($files['files'])) {
+        if (!empty($files['files'])) {
             foreach ($files['files'] as $file) {
                 $media[] = [
                     'exhibition_id' => $exhibition->id,
