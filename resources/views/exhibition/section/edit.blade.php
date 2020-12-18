@@ -13,10 +13,12 @@
         @if ($media)
         <div class="flex flex-col m-2">
             @foreach ($media as $item)
+                @if ($item)
                 <div class="flex flex-row justify-around items-center">
                     <img src="@sectionThumb({{$item->thumbnail}})" class="collection-thumbnail">
                     <span class="flex-1 ml-4">{{$item->thumbnail}}</span>
                 </div>
+                @endif
             @endforeach
         </div>
             
